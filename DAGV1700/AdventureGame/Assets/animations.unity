@@ -395,7 +395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80523067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a28a400391344b9c88e28b4820b5ed7, type: 3}
   m_Name: 
@@ -409,19 +409,7 @@ MonoBehaviour:
       m_Calls: []
   triggerEnterEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 80523068}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: PlayInFixedTime
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SpikedBallAnim
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   triggerEnterRepeatEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1758,7 +1746,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2453528926048934133, guid: 269209202bab61b4b8e3bf7a6604109e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9553847
+      value: -3.955385
       objectReference: {fileID: 0}
     - target: {fileID: 2453528926048934133, guid: 269209202bab61b4b8e3bf7a6604109e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1803,7 +1791,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5504537825686840163, guid: 269209202bab61b4b8e3bf7a6604109e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1284366065}
   m_SourcePrefab: {fileID: 100100000, guid: 269209202bab61b4b8e3bf7a6604109e, type: 3}
 --- !u!1001 &1235205659
 PrefabInstance:
@@ -1862,6 +1853,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c79f2da19e324605ab2de5a4db83975, type: 3}
+--- !u!1 &1284366062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5504537825686840163, guid: 269209202bab61b4b8e3bf7a6604109e, type: 3}
+  m_PrefabInstance: {fileID: 1223813501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1284366065
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284366062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f0844c790806e64cb6892f09d274e6b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1355435025
 PrefabInstance:
   m_ObjectHideFlags: 0
