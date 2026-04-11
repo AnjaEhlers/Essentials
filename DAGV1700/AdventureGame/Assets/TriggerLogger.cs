@@ -1,10 +1,45 @@
 using UnityEngine;
 
-public class TriggerLogger : MonoBehaviour
+using UnityEngine.UI;
+
+using UnityEngine.SceneManagement;
+
+
+
+[RequireComponent(typeof(Image))]
+
+public class MySimpleImageBehavior : MonoBehaviour
+
 {
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void OnTriggerEnter(Collider other)
+
+	private Image imageObj;
+
+	public SimpleFloatData dataObj;
+
+	private void Start()
+
 	{
-		Debug.Log("Triggered!");
+
+		imageObj = GetComponent<Image>();
+
 	}
+
+
+
+	public void UpdateWithFloatData()
+
+	{
+
+		imageObj.fillAmount = dataObj.value;
+
+		if (dataObj.value <= 0f)
+
+		{
+
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+		}
+
+	}
+
 }
