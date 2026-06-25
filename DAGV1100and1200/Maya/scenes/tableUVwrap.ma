@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: tableUVwrap.ma
-//Last modified: Tue, Jun 23, 2026 11:18:33 PM
+//Last modified: Thu, Jun 25, 2026 02:53:33 PM
 //Codeset: 1252
 requires maya "2026";
 requires -nodeType "materialxStack" -nodeType "MaterialXSurfaceShader" -dataType "MxDocumentStackData"
@@ -14,12 +14,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202505131231-aff5f20443";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "FF88046F-4970-BDC9-6BF1-349BF75D25BE";
+fileInfo "UUID" "C38DCF74-49F3-331A-2176-B6B030A3F125";
 createNode transform -shared -name "persp";
 	rename -uuid "301EAF5B-4998-7F93-5912-6CB061623F9F";
 	setAttr ".visibility" no;
-	setAttr ".translate" -type "double3" 13.600454524418044 1.390747367718677 -15.676052078650148 ;
-	setAttr ".rotate" -type "double3" 3.8616472704039526 153.79999999999774 0 ;
+	setAttr ".translate" -type "double3" 1.031562747941976 3.9916955343182505 -18.134668198938638 ;
+	setAttr ".rotate" -type "double3" -5.138352729593783 178.1999999999901 0 ;
 createNode camera -shared -name "perspShape" -parent "persp";
 	rename -uuid "29A2CED8-4ADE-D505-A8C0-42A61105D581";
 	setAttr -keyable off ".visibility" no;
@@ -79,29 +79,6 @@ createNode camera -shared -name "sideShape" -parent "side";
 	setAttr ".homeCommand" -type "string" "viewSet -s %camera";
 	setAttr ".orthographic" yes;
 	setAttr ".aiTranslator" -type "string" "orthographic";
-createNode transform -name "myTable:materialXStack1";
-	rename -uuid "EF809B3F-4C77-2DF8-2EDA-4CAA30C07904";
-createNode materialxStack -name "myTable:materialXStackShape1" -parent "myTable:materialXStack1";
-	rename -uuid "BE338A6A-4431-74A9-52B0-9190757020A8";
-	setAttr -keyable off ".visibility";
-	setAttr ".documents" -type "string" (
-		"[\n    {\n        \"document\": \"AAABW3icdZBBDsIgEEX3PQXhAGLjxgWlG5fWKzSjTCNJoQ1Q095eUsQQotvPz3+P4e2qR/JC69RkGlofjrQVFdfg0SoY1/zpdKaiIoR3sMEV9B2tJwY0NjRLakr8NofMLXaAB7onSLSUmEmixCF2b5d+jPW+qLGd8AmTRUbpS0zqZISwXgzs3mFXmXlJzgX4r/SvH0ZLVlDC3dj3cKJ6A3YsdyU=\",\n        \"name\": \"document1\"\n    },\n    {\n        \"document\": \"AAABW3icdZBBDsIgEEX3PQXhAGLjxgWlG5fWKzSjTCNJoQ1Q095eUsQQotvPz3+P4e2qR/JC69RkGlofjrQVFdfg0SoY1/zpdKaiIoR3sMEV9B2tJwY0NjRLakr8NofMLXaAB7onSLSUmEmixCF2b5d+jPW+qLGd8AmTRUbpS0zqZISwXgzs3mFXmXlJzgX4r/SvH0ZLVlDC3dj3cKJ6A3YsdyU=\",\n        \"name\": \"document2\"\n    },\n    {\n        \"document\": \"AAABu3icdVHNDoIwDL7zFM3ORsDFRA3gxaN68k6K1EiyARk/gbd3js0g0VPT9sv300bHQQroSTVFVcYsXAfsmHiRxJZUgWKYr/iOJR5AdMERzygzUi2UKClms0nIoB1rPWs69cA7NU/MSTEoq5xyekzY6ykVEzz9hr35tUJR1p3jvleiUo7UNJxBj6LTbbAON3u+Al1Dbmqw5RsGvvHpz2yZgdVy4azAQY43zAQd3vDU4rlTdOBZAu1+wfTL9yL/36P8uqD1v1DRf/E/j0m8FxLlksY=\",\n        \"name\": \"document3\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLDoIwEEX3fEXTtRGwMbLgsXGp/gIZoUSSPkh5BP7eWqipDa4mM3Nz58xMWsycoYmqvpUiw/ExwkUepBwGqlpgs9siCc4DhNI7LHAD/qRqQAI4zbBTiTEalk7X+lE1UNH+BTVVGAlZ05o2q/ZxLdkqL39lH389oRXdaL0ryaSypiYhGE3ARp1GmomcD0jHS5SYeCK6HRrO0MEyhW2WXc6BL316q3HANbRnsIfrrf33FnuH27C9Kfod4fcfefAG6e2PkQ==\",\n"
-		+ "        \"name\": \"document4\"\n    },\n    {\n        \"document\": \"AAABxHicdVG5DoJAEO35isnWRkDUFQLYWKqVPRlliCS7YJYj8PeuyBok2s3x8o6ZcN9JAS2pKi+LiLlLh+1jK5RYk8pRdNOVt2OxBRCesMcjyiupGgqUFLHJxGVQ9w89qxqV4Y2qO6akGBRlSillb+z5kIg3PPmGvfi1Ql48GsN9K0WpDOnQeAxaFI1unaWz5WvX9xegy43vcO4O5Ypzz+cM7MGwPfE3DEZRk3JUCmR/waug4AVPRvzGSBvwJIqOMWP6FWB2iL/X+XXK0f9MRT/I/nwotp5IL5S7\",\n        \"name\": \"document5\"\n    },\n    {\n        \"document\": \"AAABxHicdVHJDoIwEL3zFU3PBtBGqYbl4lE9eSejDJGkBVKWwN9blhokepvl5S0zftRJQVpUVVbkAd3aLo1Cy5dQo8pAdMsV4zS0CPGv0MMF5ANVTXKQGNDFZEtJ3Zd6VjUqhSdWL0hQUZIXCSaYTtjbORYTPP6GDfxaIcvLxnA/C1EoQzo2jJIWRKNb13YPnsddb0N0uT+yI2NjufM459qKMxp2Fv7GwSxqUs5KJ9nf4SHwNMDjGX8w0ga8iKJjrJh+BVgd4u91fp1y9r9S0Q9yPh8KrTdJ6JS9\",\n        \"name\": \"document6\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFU3PBqgsGsJy8aievJNBhkjSgilg5O8tSw0SPE1m5uUtM2HyFpy8UDZlXUWUmTZNYiMU0KIsgb+XK+dIY4OQ8AI9nEFkKFtSgcCILiaMkrZ/qlnTyQLu2DwgR0lJVeeYYzFhr6eUT/D0FzbwK4Wyenaa+17zWmrSsXEoeQHvVGube9tnO2KbzHP9oe49V62t0ae1sDUOZi0dbhYIRH+DjGMwwNMZf9CKGrxIoNyvmLZ8r/L/PcrWBWf/KxX1F+v7mNj4ABrNktA=\",\n"
-		+ "        \"name\": \"document7\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFZOeDVCK4IHl4lH9BTJCiSRlSVkCf29lMZXgbZaXt8wE8VgKGLhsi7oKCTVtEkdGUGLHZYFi1FfsQiIDILjjhDcsn1x2UGHJQ6JNKIFuatSs7WWOKW9fmHFJoKoznvF8wT6uiVjgyS/sw68UiqrpN+60FrXcSOeGERhQ9Kq1Tds/XzybnUCVnuf6jM4low51XALWbNjS/M2DVXRLqaVI9jE2jJZAud8RHPne5f97lKMLrrZ3Kuov1vcxkfEG4tSRVg==\",\n        \"name\": \"document8\"\n    },\n    {\n        \"document\": \"AAABsnicdZFJDoMwDEX3nMLKugLCpC4YNl22vQJyIahICaAwCG7fMFUpoivL9tf3sx0mo+AwMNmWdRURatokiY1QYMdkiXzUW+6VxAZA+MAJ7yheTHZQoWAR0SqUQDc1qtb2ssCMtW/MmSRQ1TnLWbFqn7eUr/L0Vzb7qwll1fS7d1bzWu6mS+ISGJD3KrVNxw7oBWyT+l4wR8f3VNtaOC0Naylss/blNPj0SL9rNHAFfTA4wz2s/fcWZ4fbsA9T1Dus7z9i4wPhVI+I\",\n        \"name\": \"document9\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLDoIwEEX3fMWkawPlFVnw2LhUf4GMUCNJC6Q8An9vBWoqwVUz05t7z8zE2SQ4jEx2VVMnxLUpyVIrFtgzWSGfzC8/IqkFEN9wxiuKB5M91ChYQoyOS6CfW9XrBvnEgnUvLJkkUDclK9lz1d4vOV/l+a/s468SqrodtHfR8EZq06XwCYzIB1VSO6SBfwJqB9E5XF4v9Ag4C6djYC2NLUsPZ8Dne3qtMcAV9M7gCHc39t9dHC1uw96lqHM433uk1hvqlI+S\",\n        \"name\": \"document10\"\n"
-		+ "    },\n    {\n        \"document\": \"AAABuHicdVHJCoMwEL37FSHnokapC7hcemz7CzLVSIUkSlzQv2/cSir2NsvjLTNROnKGBirbqhYxJqaN08SIOHRUVsBGfeUGODEQih4wwR34i8oOCeA0xtqEYNRNjZq1vSwhp+0bCioxEnVBC1qu2OctYys8+4XN/EqhEk2/c+c1q+VOujQuRgOwXrW26ThXx/MuSFXE9z0yVyQIQ1eBrMWtpZlbBpviHlGLkB0z7BjNvrJ+IDgzfQj/9yJn59tsH1TUU6zvVxLjA52wkNE=\",\n        \"name\": \"document11\"\n    },\n    {\n        \"document\": \"AAABuHicdVHJDoIwEL3zFZOeDVBAlITl4lH9BTJCiSRlSVkCf2/ZTCV4m+XlLTN+NBQceiaavCoDQnWTRKHmF9gykSMf1JV9JaEG4D9wxDsWLyZaKLFgAVEmlEA71nLWdCLDhDVvTJkgUFYpS1m2YJ+3mC/w+Bc28UuFvKy7jTupeCU20rmxCfTIO9maumU5nnU+gazoxbGtqaJXz3VcAsbs1lDMzYNVcYuoRIj3GTaMYl9a3xEcmd6F/3uRo/Ottncq8inG9yuh9gGa7pDO\",\n        \"name\": \"document12\"\n    },\n    {\n        \"document\": \"AAABt3icdVHJCoMwEL37FUPOxbWlEVwuPbb9BZlqpEJciAv6941LSir2NsvjLTNBPJYcBibaoq5C4pg2iSMjKLFjokA+6iuPksgACB444R3LFxMdVFiykGgTh0A3NXLW9iLHlLVvzJggUNUZy1i+Yp+3hK/w5Bc280uFomp6xZ3WvBaKdGk8AgPyXra26boXzzufQFbOlbp0rhzq+z4BazFrad6WwSaoEmoJkn0EhdHcS+c7giPPu+x/D3J0vc32TkX+xPo+JTI+MRKQpA==\",\n        \"name\": \"document13\"\n"
-		+ "    },\n    {\n        \"document\": \"AAABuHicdVHJDoIwEL3zFZOeDTuICcvFo/oLZIQSSVogZQn8vZXFVIK3WV7eMhMmI2cwUNGWdRURSzdJEmshx46KEtmorpyAxBpAeMcJb8ifVHRQIacRUSYWgW5q5KztRYEZbV+YU0GgqnOa02LBPq4pW+DpL+zDLxXKquk37qxmtdhI58YhMCDrZWvqlmf7tnMCWblnz7nMlR34gUvAmN0airl5sCpuEZUI6T7DhlHsS+s7giPTu/B/L3J0vtX2TkU+xfh+JdbemtuQzg==\",\n        \"name\": \"document14\"\n    },\n    {\n        \"document\": \"AAABuHicdVHJCoMwEL37FUPOxaVqieBy6bHtL8hUIxXiQlzQv28ataRib7M83jITJlPFYWSiK5s6Io5pkyQ2wgp7Jkrkk75yKYkNgPCOM96wejLRQ40Vi4g2cQj0cytn3SAKzFj3wpwJAnWTs5wVC/ZxTfkCT39hH36pUNbtsHFnDW/ERqoal8CIfJCtbZ4DL3DoCWRFfTtwVeXRix8QsJRbSzOnBqviFlGLkO4zbBjNvrS+IzgyvQv/9yJH51tt71TkU6zvV2LjDarjkN8=\",\n        \"name\": \"document15\"\n    },\n    {\n        \"document\": \"AAABuHicdVFHDoMwELzzipXPEc0pIFEuOSb5AtqAUZBMkSmC38ehRI5FbltGU3aDeCw5DEy0RV2FxDFtEkdGUGLHRIF8VFfUI5EBENxxwhuWTyY6qLBkIVEmDoFuauSs7UWOKWtfmDFBoKozlrF8wT6uCV/gyS/swy8ViqrpN+605rXYSOeGEhiQ97K1TYfSs+8fQFau7x5Pc+W4F9cjYM1uLcXcPFgVt4hKhETPsGEU+9K6RrBnWgv/9yJ751ttayryKdb3K5HxBpmykMw=\",\n        \"name\": \"document16\"\n"
-		+ "    },\n    {\n        \"document\": \"AAABt3icdZFJDoMwDEX3nCLKugICiLJg2HTZ9grIBaMihYDCILh9w1SliO5i5+v7fTtMxoqTAWVb1iKizLRpEhthBR3KEviof7kBjQ1CwgdMcIfqhbIjAiqMqNZhlHRTo3ptLwvIsH1DjpISUeeYY7Fqn7eUr/L0Vzb7qwmlaPrdO6t5LXfTpXApGYD3qrRN5l2Z717I/HIcf3k4nh0oDGuBtTS2pbEN3BNqCdJjhF2j0Svyg8EZ8yH734WcbW/DPkxRN7G+R4mNDxaAkIY=\",\n        \"name\": \"document17\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJCoMwEL37FUPORSNqVXC59Nj2F2SqkQpxIS7o3zduJRV7m+XxlpkgHksOAxNtUVchMXVK4kgLSuyYKJCP6srySKQBBA+c8I7li4kOKixZSJSJSaCbGjlre5Fjyto3ZkwQqOqMZSxfsc9bwld48gub+aVCUTX9zp3WvBY76dJYBAbkvWypTq++T23vAnPpOq6zlo7n29QmYCyGDcXfMthE95RKiuQYY8coCaT7A8GZ70P+v0c5u+Bm+6Ai/2J8HxNpHwLBkXk=\",\n        \"name\": \"document18\"\n    },\n    {\n        \"document\": \"AAABsnicdZFJDoMwDEX3nMLKuoIgqGDBsOmy7RWQC0FFCgSFQXD7hqlKI7qybH99P9tROtUcRia7SjQxcW1K0sSKauyZrJBPessLSWIBRA+c8Y71i8keGqxZTLSKS6CfW1XrBllizro3FkwSaETBClZu2uct45s8+5Ut/mpC1bTD4Z0LLuRhuiYegRH5oFJqh67vXUBFSoMlBlfqE3BWTkfDWgv7rGM5DT4z6Q+NBq6gDYMzXGPtv7c4O9yObUxR73C+/0isD+jYj5A=\",\n        \"name\": \"document19\"\n    },\n"
-		+ "    {\n        \"document\": \"AAACPHicdZLNDoIwDMfvPEWzs+EjGOMB4eJRfQVSR40kY5ANDLy948tMMpIe1q79dfu3SdZXAj6kdFnLC4v8kGWpl1TYkipR9PZVfGapB5DcccAbVk9SLUis6MKsSMSgHRoT0516ISf9xoIUA1kXVNBrzn1cczGn5/9pI990KGXTrWxei1qt0MmJGXxQdMaNDjAag8BR2CqUukFFkg879eEBRnPXl5KjLEhzA6A9gB8ew3N0ig3FcVzASWAJNAWWX68yWzLmWx3XHEtCI98G4BJuM4DdqbhGuDx708UsRvDbjNT7AklzuHM=\",\n        \"name\": \"document20\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLDoJADEX3fEUzawOMmIgJj41L9RdIhRpJBoYMj8DfO7zMSHDVtL25PW2DuC8EdKTqXJYh47bL4sgKCmxI5Sh6s+X5LLIAgjsOeMPiSaqBEgsKmVHhDJqh0rW6VS9MqX5jRopBKTPK6DVrH9dEzPLkVzb66wl5WbWrdyqFVKvplHgMOhStTl3b9fzTAcbI+RSP5wsDZ+J0DKypsMxalzPgky39qjHANfTGYA93s/bfW+wdbsHeTNHvcL7/iKwP4GyPhw==\",\n        \"name\": \"document21\"\n    },\n    {\n        \"document\": \"AAACNXicjZLBCsIwDIbve4rQs7jNiijMefGovsKIXcRB1412E/f2xumkjglCKU2afGn/JNndSw03sq6ozFbE80js0iApsSFboL77V3It0gAgOWKHByzPZBswWNJWeJ5YQNPV7HOtvaAid8WcrABT5ZTT5RV72mf6FZ59hz35XKEwdTuwVaUrO0B7Qwq4oW7ZjObRZga8y3ghl7I/LparlYBwglQYhSYnp8go+kVkBq9pQGPRuBot53d/5Sehp0zveH930NfTLxsLOMR42rFuI8CUYiPlf7ZjqnfvZ4+q8ESEn5FIgwcgabcJ\",\n"
-		+ "        \"name\": \"document22\"\n    },\n    {\n        \"document\": \"AAABsXicdZFJDoMwDEX3nMLKumIQbWHBsOmy7RWQC0FFCgGFQXD7hiFVGtGVZfvr+9mO0qlmMFLRVQ2PiWe7JE2sqMaeigrZpLf8kCQWQPTAGe9Yv6jogWNNY6JVPAL93MpaN4gSc9q9saCCAG8KWtBy0z5vGdvk2a9s8ZcTKt4OyjtvWCOU6Zr4BEZkg0xd2wvd6wlkDM7BEt3wQsBZMR2Nai3so9RuGntmwiuNxi2ZDYMjWmPrv6c4utuObUyR33C+70isD3r+j2A=\",\n        \"name\": \"document23\"\n    },\n    {\n        \"document\": \"AAACJHicnZK7DoMwDEV3vsLKjAqIpQOPpWPbX0BuMCpSCCgBBH/f8KpSBEslL3aur5MTR+lQCehJ6bKWMQsuPksTJ6qwJVWiGOyj8MoSByB64Ih3rF6kWpBYUcysSsCgHRtT050qkJN+Y06KgaxzyqlYtM9bJhZ59iub/M2EUjbd5s1rUavNdE5CBj2KzqSBC1Mw8A4aW4VSN6hI8vGf/lJylDlpbgzoxMB3YYrVIPIsEHNhfd2G08KV7XltGguVwbQzOAK0A31K/+ir1mvvppgF8L4bkDgfK0izug==\",\n        \"name\": \"document24\"\n    },\n    {\n        \"document\": \"AAABsnicdZFJDoMwDEX3nMLKuoJQBGXBsOmy7RWQC6mKFAaFQXD7hiFVGtFVZOfr/2c7SqeKw8hEVzZ1TFybkjSxogp7Jkrkk/7lhSSxAKI7znjD6slEDzVWLCZaxyXQz63sdYN4Yc66NxZMEKibghXstWkf14xv8uxXtvjLhLJuB+WdN7wRynQtPAIj8kGW1D57F/8E1HbdIFxeGlCfgLNyOhrW2tiz1HAafGbSK40GLqENgyNcY+y/uzha3I5tpMhzON97JNYH5iiPjQ==\",\n"
-		+ "        \"name\": \"document25\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLDoIwEEX3fMWkawOUmuiCx8al+gtkhBJJ2kLKI/D3lpepBFfNTG/uPTMTJoMU0HPdlJWKCHV9ksROKLHlukQx2F/sSmIHIHzgiHeUL65bUCh5RKwOJdCOtek1nS4w480bc64JqCrnOS8W7fOWikWe/somf5NQqrrbvLNKVHoznQtGoEfRmdJ36YUFJ/BdRgM2vdQ/GwJv5vQsrLmxZm3DWfDpnn7TWOAGemdwhLsb++8ujha3Yu9SzDm87z1i5wPXvo99\",\n        \"name\": \"document26\"\n    },\n    {\n        \"document\": \"AAABW3icdZBBDsIgEEX3PQXhAGLjxgWlG5fWKzSjTCNJoQ1Q095eUsQQotvPz3+P4e2qR/JC69RkGlofjrQVFdfg0SoY1/zpdKaiIoR3sMEV9B2tJwY0NjRLakr8NofMLXaAB7onSLSUmEmixCF2b5d+jPW+qLGd8AmTRUbpS0zqZISwXgzs3mFXmXlJzgX4r/SvH0ZLVlDC3dj3cKJ6A3YsdyU=\",\n        \"name\": \"document27\"\n    },\n    {\n        \"document\": \"AAABsHicdZHLDoIwEEX3fEXTteEhgbBA2LhUf4GMUCJJH6Q8An9vLdTUBlfNTG/uPTOTlwujaCZy6AS/4MgPcVl4OYORyA7oYn/FGS48hPI7rHAD9iRyRBwYuWCrE2E0rr3qDZNsoSbDCxoiMeKiIQ1pN+3jWtFNXv3KPv4qoeP9ZLxrQYU0prqIMZqBTqoM/XN6QqGfZIl+0zRW+YGmDCwo3diTzGgWeuWyG42FrZAdgyNYZ+i/mzha247tpKhjBN9rFN4bDgOPMQ==\",\n        \"name\": \"document28\"\n    },\n    {\n        \"document\": \"AAABsnicdZFJDoMwDEX3nMLKumIKrbpg2HTZ9grIhaAihYDCILh9w5AqRXRl2f76frbDZKw4DEy2ZS0i4tkuSWIrrLBjskQ+mi16JbEFED5wwjtWLyY7EFixiBgVj0A3NarW9rLAjLVvzJkkIOqc5axYtc9byld5+iub/dWEUjS99s5qXkttuiSUwIC8V6lrU8+nJ1DRDYI5+v7lTMBZOB0Daylss/RyBny6p9caA1xB7wyOcHdr/73F0eE27N0U9Q7n+4/Y+gDdqY+E\",\n"
-		+ "        \"name\": \"document29\"\n    },\n    {\n        \"document\": \"AAACBnicdZHBDoIwDEDvfEWzswEGknhAvHhUf4FUKJFkDDLAwN87BMxc4LS1a1671/gyVALepNqylmfGXZ9dEieusCNVohjMp/DEEgcgvuOIN6yepDqQWNGZGRnOoBsbnWt7VWBG7QtzUgxknVNOxVz7uKZiLk//yya+7lDKpl/ZWS1qtUK/QcjgjaLXoe8GAT8dwHf5MZqPMGLgbWA6hbJtUJHMxn1aFHE/mED2bYHGnvHVb2KZfxVmCEltI2uNIUOLsABbCiyVu363lrGMbXXRK/Z+O06cD7MZpuY=\",\n        \"name\": \"document30\"\n    },\n    {\n        \"document\": \"AAABxnicdVG7DoJAEOz5is3VRiBwKoRHY6lW9mSVJZLcATkekb/3QDBItNvHZGZnNoifUkBHqs7LImT21mJxZAQSG1I5iudy5RxYZAAEZ+zxhPJGqoECJYVsMbEZNH2lZ3WrMrxT/cCUFIOiTCml7I29HBPxhiffsIFfK+RF1c7c91KUaiYdG4dBh6LVrbW1bM9xubuBodx53OZjae097vEDA3O82FwcOA4m1dnmJOXL/oo3Qf4ATya883E0oxdmtJEV1S8Lqyj+5vMrzMnASkW/yPz8KDJeMDiVFg==\",\n        \"name\": \"document31\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLCoMwEEX3fsWQdfFRobRgddNl21+QqUYq5CHxgf59UzUlBrsKM7nce2YmyUbOYKCqraW4ksgPSZZ6CceOqhrZaH/FZ5J6AMkDJ7wjf1HVgUBOr8TqRAS6qdG9tlcVFrR9Y0kVASFLWtJq0T5vOVvk+Vb29dcJtWh6411IJpUxnYuYwICs12XoHy/R6QDbl0AwcwYW1txYs8xwFnzu0huNBa6hHYM9XGfsv7vYW9yK7aTocwS/e6TeB+8fj5c=\",\n"
-		+ "        \"name\": \"document32\"\n    },\n    {\n        \"document\": \"AAABsnicdZHJCoNADIbvPkWYc3GFYsHqpce2ryCpjlSYRcYFffuOy5Sp2FNI8vPnS5JkI2cwUNXWUlxJ4PokS52EY0dVjWy0W1FMUgcgeeCEd+QvqjoQyOmVWJWAQDc1utb2qsKCtm8sqSIgZElLWq3a5y1nqzz/lc3+ekItmt54F5JJZUyXJCIwIOt16rv+JT6fYI5haCIBb+H0LKylsM0yy1nw+Z7eaCxwDb0zOMLdrf33FkeH27B3U/Q7vO8/UucD6uOPkg==\",\n        \"name\": \"document33\"\n    },\n    {\n        \"document\": \"AAABsnicdZG7DoMwDEV3vsLKXPEeGHgsHdv+AnIhqEghQeEh+PumQKo0opNl++r62E6LpWMwUzm0gmckcH1S5E7a4Uhli2wxW1FCcgcgveOKN+yeVI7AsaMZMSoBgXHtVW2YZIMVHV5YU0mAi5rWtNm1j2vJdnn5K/v4qwkt7yftXQkmpDbdkojAjGxSqe+GYZBcQEU/jnUk4G2cnoG1FY5ZejkDvrTptcYAV9CWwRmutfbfW5wd7sC2pqh3eN9/5M4b3BiPgg==\",\n        \"name\": \"document34\"\n    },\n    {\n        \"document\": \"AAABo3icdZFJDoMwDEX3nMLyuipFbLpg2HTZ9grIhaAiZUBhENy+YUiVRlTKxvbX9/tOkk+Cw8h01yiZYnS+YJ4FiaCe6Yb45I7iK2YBQPKgme4kXkz3IEmwFJ1OhNDPrel1g66pZN2bKqYRpKpYxepN+7wVfJMXv7LF32xoZDtY71Jxpa3pWsQII/HBlNEJlocQrmChw7E2dnObxqEtfFyrcUgNpWdwxOfl/Bv+6FI7trfF3D/8fkAWfABrhYya\",\n        \"name\": \"document35\"\n    },\n"
-		+ "    {\n        \"document\": \"AAABsnicdZHLCoMwEEX3fsWQdfFRQRSsbrps+wsy1UiFPCQ+0L9vGrWkYldhJpd7z8yk+cQZjFR1jRQXErg+yTMn5dhT1SCb7K8wJpkDkN5xxhvyJ1U9COT0QqxOQKCfW93rBlVjSbsXVlQRELKiFa0X7eNasEVe/Mo+/jqhEe2weZeSSbWZmiIkMCIbdOm75ySITuC7QRKF5vXjiIBnOD0LyzTWrG04C77Y028aC1xD7wyOcHdj/93F0eJW7F2KPof3vUfmvAHtXY+V\",\n        \"name\": \"document36\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLCoNADEX3fkWYdamKFLrwsemy7S9IqpEK85Dxgf59pz7KONjVkMzl3pMkzkbBYSDd1komLDwHLEu9WGBHukY+2l/RlaUeQPzACe8oXqQ7kCgoYVYnZNBNjem1va6woPaNJWkGUpVUUrVon7ecL/J8L/v6m4RaNv3mXSiu9GY6FxGDAXlvysAwRZcT7F8G/szpW1hzY83ahrPgc5d+01jgBtoxOMJ1xv67i6PFrdhOijmH/7tH6n0A8d2Pmg==\",\n        \"name\": \"document37\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFZOeDRTZNGG5eFR/gYxQI0kLpCyBv7eCNZXobZaXt8zE2SQ4jEx2VVMnxLUpyVIrFtgzWSGfzJV3IKkFEF9wxjOKG5M91ChYQoyJS6CfWzXrBnnHgnUPLJkkUDclK9l9xV5POV/h+Tfsxa8UqrodNHfR8EZq0qXxCIzIB9VSmx68I3WjHagy8n1dhvuAhgEBZzHsGP6WwVtUpzRS5NsYGmMkUO43BL98b/L/PcqvC75tb1TUX5zPY1LrCefMkVw=\",\n        \"name\": \"document38\"\n    },\n    {\n        \"document\": \"AAABt3icdVHJDoIwEL3zFZOeDVAwVROWi0f1F8gIJZK0QMoS+Hsri6kEb7O8vGUmiAcpoOeqKaoyJNR2SRxZgcSWqwLFYK78M4ksgOCOI95QPrlqoUTJQ2JMKIF2rPWs6VSOKW9emHFFoKwynvF8xj6uiZjhyS/sw68VirLuVu60EpVaSafGJ9Cj6HTr2vTo0xM9gK48dmFT4TLGPALOZNYxvE2DRXBNaCRIthFWjOFeO98Q7HneZP97kL3rLbY3KvonzvcpkfUGHliQjw==\",\n"
-		+ "        \"name\": \"document39\"\n    },\n    {\n        \"document\": \"AAABuHicdVHJDoIwEL3zFZOeDVAQAwnLxaP6C2SEEklKIWUJ/L2VxVSCt1le3jITJmPFYWCyLWsREWraJImNsMKOyRL5qK9cn8QGQHjHCW9YPZnsQGDFIqJNKIFuatSs7WWBGWtfmDNJQNQ5y1mxYB/XlC/w9Bf24VcKpWj6jTureS030rlxCQzIe9XaJj07thucQFWOF3iXubI9n/oErNmtpZmbB6viFlGLkO4zbBjNvrK+IzgyvQv/9yJH51tt71TUU6zvV2LjDZSRkMc=\",\n        \"name\": \"document40\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFZOeDRRBgYTl4lH9BTJCjSSlkLIE/t7KYirB2ywvb5kJk6Hk0DPZFJWIiG1SksRGWGLLZIF80FeOT2IDILzhiFcsH0y2ILBkEdEmNoF2rNWs6eQTM9a8MGeSgKhylrPnjL1fUj7D01/Yh18pFKLuVu6s4pVcSafGIdAj71RLTep7ju96B1Cl57kBPU7l+WRTGhCwJsOW5m8aLKJrSi1Fuo2xYrQEyv2GYM/3Jv/fo+xdcLG9UVF/sb6PiY0383CRaA==\",\n        \"name\": \"document41\"\n    },\n    {\n        \"document\": \"AAABu3icdVFJDoMwDLzzCivnCoJY1Eoslx7bfgG5kKpIYVFYBL9vCFClEb2N7dF4xo7SqeIwMtGVTR0T16YkTayowp6JEvmkj7wzSSyA6I4z3rB6MtFDjRWLidZxCfRzK3vdIF6Ys+6NBRME6qZgBXut3Mc14ys9+6Ut+nJDWbfDrp03vBG7qCo8AiPyQZbUpv6Fhm5wggV6AQ19Bb0wkJiAoww7mj/V2JbuKbUUmRlj52gJpHtD4Mi3kf/vUY4uuNk2tsi/ON/HJNYH5NGRWQ==\",\n"
-		+ "        \"name\": \"document42\"\n    },\n    {\n        \"document\": \"AAABwXicdVFLDoIwEN1ziknXhr8gCeDGpXoFMsIYSUohBQzc3oJiKsHddPryfhMfh4rDk2Rb1iJhjmmzY2rEFXYkS+SD/uUdWGoAxBcc8YzVjWQHAitKmLZxGHRjo3ZtL++YU/vAgiQDURdU0P2NvZ4y/oZnv7CJXymUoukX7k6iaBuUJPJx4c5rXkuPwRN5r562aXvh3g92ME2eG/mHeXTDKHQCBtZs29JczouP9JJVy5KtwywYLYfKsCLYcr9q4W81Wz1+bK9U1HWs73lS4wVONpQy\",\n        \"name\": \"document43\"\n    },\n    {\n        \"document\": \"AAABW3icdZBBDsIgEEX3PQXhAGLjxgWlG5fWKzSjTCNJoQ1Q095eUsQQotvPz3+P4e2qR/JC69RkGlofjrQVFdfg0SoY1/zpdKaiIoR3sMEV9B2tJwY0NjRLakr8NofMLXaAB7onSLSUmEmixCF2b5d+jPW+qLGd8AmTRUbpS0zqZISwXgzs3mFXmXlJzgX4r/SvH0ZLVlDC3dj3cKJ6A3YsdyU=\",\n        \"name\": \"document44\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJCoMwEL37FUPOxRVrBZdLj21/QaaaUiEuxAX9+8YlJQ32NsvjLTNROlUMRsq7sqlj4pg2SRMjqrCnvEQ2qSvvQhIDILrjjDesnpT3UGNFY6JMHAL93IpZN/AX5rR7Y0E5gbopaEFfG/ZxzdgGz35hC79QKOt2kNx5wxouSdfGIzAiG0Rrm7YX+E4QnmApPfccbqUbhL4dELBWw5bibx3sojKlkiLTY0iMkkC41wiOfGv5/x7l6IK7bU1F/MX6PiYxPvkNkW8=\",\n        \"name\": \"document45\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFZOeDYsg0oTl4lH9BTJCiSRlSVkCf2/ZTCV4m+XlLTN+NBQceiaavCoDYukmiULNL7BlIkc+qCvbI6EG4D9wxDsWLyZaKLFgAVEmFoF2rOWs6USGCWvemDJBoKxSlrJswT5vMV/g8S9s4pcKeVl3G3dS8UpspHNjE+iRd7I1dfNMbXpxTjCVruleraW0PEodAsZs2FD8zYNVdEuppIj3MTaMkkC63xEc+d7l/3uUowuutncq8i/G9zGh9gHyhpFo\",\n"
-		+ "        \"name\": \"document46\"\n    },\n    {\n        \"document\": \"AAABu3icdVFLDoIwEN1ziknXBlqKyoLPxqV6BTJCiSQtkAJGbm9BMZXgbj4v7zMTpU8l4SF0VzV1TJhLSZo4kcJe6Arl017xkCQOQHTBEc+obkL3UKMSMbEmjEA/tmbWDbrEXHR3LIQmUDeFKET5xl5PmXzDs1/YxG8UqrodFu68kY1eSOeGE3igHExLXepzylmwg6mkgc8Pc8mObB/6BLzZsGf5mwcf0SWllSJbx1gwVgLjfkWw5XuV/+9Rti74sb1SMX/xvo9JnBfTmpFH\",\n        \"name\": \"document47\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFZOeDbQi6IHl4lH9BTJCjSQtkLIE/t6ymUrwNsvLW2aCuJcCOq7qvCxCwmxK4sgKJDZc5Sh6c+VeSGQBBHcc8IbyyVUDBUoeEmPCCDRDpWd1q16Y8vqNGVcEijLjGX/N2Mc1ETM8+YWN/FohL6p25U5LUaqVdGpcAh2KVrfUpsz1T557gLE8MkqXkjLfOxNwJsOO4W8aLKJrSiNFso2xYowE2v2GYM/3Jv/fo+xdcLG9UdF/cb6PiawPz4CRQg==\",\n        \"name\": \"document48\"\n    },\n    {\n        \"document\": \"AAABvXicdVFJDoJAELzzis6cDQyLAgnLxaP6BdLCEEmGJcMS+L0jixkJ3nqpVFdVB/FYchiYaIu6CompUxJHWlBix0SBfFRXtkciDSC444Q3LJ9MdFBhyUKiTEwC3dTIWduLHFPWvjBjgkBVZyxj+YJ9XBO+wJNf2IdfXiiqpt+405rXYiOdG5vAgLyXLdWpSR3qOSeQJfUty/fX2nXPjnUhYMySDUXhPFjPbj4VH8neyIZRPEj9O4Ij5bsE/sZylOEqe3dFfsb4vibS3s3ykcQ=\",\n"
-		+ "        \"name\": \"document49\"\n    },\n    {\n        \"document\": \"AAABsnicdZHLDoIwEEX3fMWka8NDIGrCY+NS/QUyQokkLSXlEfh7Kw9TG1w1M72598xMlI6cwUBlW4k6Jp7tkjSxIo4dlRWyUf/yzySxAKI7TnhD/qSygxo5jYnW8Qh0U6N6bS9LzGn7woJKArUoaEHLRfu4ZmyRZ7+yj79KqOqm37xzwYTcTOfCJzAg61Xp2t7xEhzAtd1TEM5vGFwIODOno2HNjTVrG06Dz0z6TaOBK2jDYA/XGPvvLvYWt2IbKeoczvceifUG61iPkw==\",\n        \"name\": \"document50\"\n    },\n    {\n        \"document\": \"AAABuHicdVHJDoIwEL3zFZOeDasBTFguHtVfICOUSNICKUvg760FTCV4m+XlLTNROnEGIxVd1dQxcUybpIkRceypqJBN+soLSWIARHec8Yb8SUUPNXIaE23iEOjnVs66QZSY0+6FBRUE6qagBS0X7OOasQWe/cI+/FKhqtth484b1oiNVDUegRHZIFvbtP3ACU4gCy/0A1dVbni+BBcClnJraebUYFXcImoRsn2GDaPZl9Z3BEemd+H/XuTofKvtnYp8ivX9SmK8AaLJkNc=\",\n        \"name\": \"document51\"\n    },\n    {\n        \"document\": \"AAABuXicdVHJDoIwEL3zFZOeDRRBUxOWi0f1F8gIJZK0QMoS+Hsri6kEb7O8vGUmiAcpoOeqKaoyJK5NSRxZgcSWqwLFYK48RiILILjjiDeUT65aKFHykBgTl0A71nrWdCrHlDcvzLgiUFYZz3g+Yx/XRMzw5Bf24dcKRVl3K3daiUqtpFPjEehRdLqlNvV8xs4H0NWRUnaaKtdnlF4IOJNdx3A3DRbJNaORIdmGWDGGf+19Q7DnepP+70n27rfY3qjorzjft0TWGwCAkPM=\",\n"
-		+ "        \"name\": \"document52\"\n    },\n    {\n        \"document\": \"AAABu3icdVHJDoIwEL3zFU3PBlqRKgnLxaP6C2SEEknKkrIE/t7KYmqDt1le3jITxGMp0MBlW9RViKlNcBxZQQkdlwWIUV+5FxxZCAV3mOAG5ZPLDlVQ8hBrE4pRNzVq1vYyh5S3L8i4xKiqM57xfME+rolY4Mkv7MOvFIqq6TfutBa13EjnxsVoANGrltjk6FGfnQ9IlfTkEcaWkjCfKCvObNjR/M2DVXRLqaVIzBgbRkug3BsEe76N/H+PsnfB1bahov7ifB8TWW/idJFW\",\n        \"name\": \"document53\"\n    },\n    {\n        \"document\": \"AAACC3icdZHNboMwDIDvPIWV81SS0hEqAb3s2O0VkAeuihQCCj8qb9+UnylD9GTFcT7Hn+PLo1IwkGnLWidMHDi7pF5cYUemRPVwr4KIpR5A/I0jXrH6JdOBxooS5mQEg25sbK7tzQ1zau9YkGGg64IKus21P1+Zmsuz/2Uvvu1Q6qZf2Z1B3TZoSOfjys5rVZuAwYCqt0d+OEn++QE2hmE4x6Nk4O/gpqdvOVxE4hxFLwQX/CTlRONcyqMQYiHGvjPvlFiGWK05VrKtlrXGMWJtbAB7HjY+30re28jy7U0Xu2f/b9Gp9wTQf6gN\",\n        \"name\": \"document54\"\n    }\n]\n");
 createNode transform -name "myTable:Table";
 	rename -uuid "B79B84C2-43EA-DF63-05AF-EE974E1297F4";
 	setAttr ".translate" -type "double3" 0.22167552442586572 0 8.976542197770403 ;
@@ -305,7 +282,10 @@ createNode mesh -name "myTable:pCubeShape3" -parent "myTable:pCube3";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvSet1";
 	setAttr ".currentUVSet" -type "string" "uvSet1";
+	setAttr ".displayColors" yes;
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
+	setAttr ".currentColorSet" -type "string" "colorSet1";
+	setAttr ".colorSet[0].colorName" -type "string" "colorSet1";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
 	setAttr ".collisionDepthVelocityMultiplier[0]"  0 1 1;
 createNode mesh -name "myTable:polySurfaceShape1" -parent "myTable:pCube3";
@@ -369,7 +349,10 @@ createNode mesh -name "myTable:pCubeShape4" -parent "myTable:pCube4";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvSet1";
 	setAttr ".currentUVSet" -type "string" "uvSet1";
+	setAttr ".displayColors" yes;
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
+	setAttr ".currentColorSet" -type "string" "colorSet1";
+	setAttr ".colorSet[0].colorName" -type "string" "colorSet1";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
 	setAttr ".collisionDepthVelocityMultiplier[0]"  0 1 1;
 createNode mesh -name "myTable:polySurfaceShape4" -parent "myTable:pCube4";
@@ -433,7 +416,10 @@ createNode mesh -name "myTable:pCubeShape5" -parent "myTable:pCube5";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvSet1";
 	setAttr ".currentUVSet" -type "string" "uvSet1";
+	setAttr ".displayColors" yes;
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
+	setAttr ".currentColorSet" -type "string" "colorSet1";
+	setAttr ".colorSet[0].colorName" -type "string" "colorSet1";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
 	setAttr ".collisionDepthVelocityMultiplier[0]"  0 1 1;
 createNode mesh -name "myTable:polySurfaceShape3" -parent "myTable:pCube5";
@@ -497,7 +483,10 @@ createNode mesh -name "myTable:pCubeShape1" -parent "myTable:pCube1";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvSet1";
 	setAttr ".currentUVSet" -type "string" "uvSet1";
+	setAttr ".displayColors" yes;
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
+	setAttr ".currentColorSet" -type "string" "colorSet1";
+	setAttr ".colorSet[0].colorName" -type "string" "colorSet1";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
 	setAttr ".collisionDepthVelocityMultiplier[0]"  0 1 1;
 createNode mesh -name "myTable:polySurfaceShape5" -parent "myTable:pCube1";
@@ -548,21 +537,27 @@ createNode mesh -name "myTable:polySurfaceShape5" -parent "myTable:pCube1";
 	setAttr ".creaseVertexData" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -name "materialXStack1";
+	rename -uuid "538B43E2-4FA7-E254-A3AC-C8A664892EAE";
+createNode materialxStack -name "materialXStackShape1" -parent "materialXStack1";
+	rename -uuid "6DE169F0-41A1-75F8-AD9E-4FA1D6E5D500";
+	setAttr -keyable off ".visibility";
+	setAttr ".documents" -type "string" "[\n    {\n        \"document\": \"AAABW3icdZBBDsIgEEX3PQXhAGLjxgWlG5fWKzSjTCNJoQ1Q095eUsQQotvPz3+P4e2qR/JC69RkGlofjrQVFdfg0SoY1/zpdKaiIoR3sMEV9B2tJwY0NjRLakr8NofMLXaAB7onSLSUmEmixCF2b5d+jPW+qLGd8AmTRUbpS0zqZISwXgzs3mFXmXlJzgX4r/SvH0ZLVlDC3dj3cKJ6A3YsdyU=\",\n        \"name\": \"document1\"\n    }\n]\n";
 createNode lightLinker -shared -name "lightLinker1";
-	rename -uuid "C9B9B186-44E2-C18C-8086-CCB19F6BA8C5";
-	setAttr -size 12 ".link";
-	setAttr -size 12 ".shadowLink";
+	rename -uuid "3535A0D2-475C-D8B3-2B20-92B69D95EC8D";
+	setAttr -size 22 ".link";
+	setAttr -size 22 ".shadowLink";
 createNode shapeEditorManager -name "shapeEditorManager";
-	rename -uuid "44E30029-4392-764B-C2CA-368AEDC53E34";
+	rename -uuid "600FC207-4E99-0301-ACA7-83B0E7064D34";
 createNode poseInterpolatorManager -name "poseInterpolatorManager";
-	rename -uuid "14AA4FE6-493F-1ABE-4563-EF9948D175E1";
+	rename -uuid "DC26B306-46DD-49D1-5080-90A9A5A6DF9B";
 createNode displayLayerManager -name "layerManager";
-	rename -uuid "3D6D4816-4733-5898-67BC-228F6F280C9A";
+	rename -uuid "CACB28F9-4106-C9A8-BCD2-EDB326655962";
 createNode displayLayer -name "defaultLayer";
 	rename -uuid "075215BD-44C4-D128-2894-BE9CEB55DB21";
 	setAttr ".ufeMembers" -type "stringArray" 0  ;
 createNode renderLayerManager -name "renderLayerManager";
-	rename -uuid "723F62F7-41D3-6EDD-CD48-B384042845AA";
+	rename -uuid "8CE317C3-4469-08B9-6310-BE98FB3CD9E0";
 createNode renderLayer -name "defaultRenderLayer";
 	rename -uuid "65D40A6B-4D78-E0A3-7DEF-5B8762599990";
 	setAttr ".global" yes;
@@ -572,85 +567,54 @@ createNode shadingEngine -name "myTable:Maya_Lambert3SG";
 	rename -uuid "A8E2281D-44C6-12B6-5069-10AE54F4202D";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
-createNode MaterialXSurfaceShader -name "myTable:Maya_Lambert3";
-	rename -uuid "25F9641B-4A6C-BAB4-8F8D-0097377F29E8";
-	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document3%:myTable:Maya_Lambert3";
 createNode materialInfo -name "myTable:materialInfo6";
 	rename -uuid "33849EC9-4C75-5E73-0869-D6A7342169D5";
 createNode shadingEngine -name "myTable:Maya_Lambert6SG";
 	rename -uuid "2B6FEE23-47B2-68C3-6FAA-489D3DBDC819";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
-createNode MaterialXSurfaceShader -name "myTable:Maya_Lambert6";
-	rename -uuid "C298EDB0-412B-9FD5-C60C-358AD641DCB7";
-	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document6%:myTable:Maya_Lambert6";
 createNode materialInfo -name "myTable:materialInfo31";
 	rename -uuid "A071C073-4CF3-E81B-69A3-F092EA2B8FC6";
 createNode shadingEngine -name "myTable:Maya_Lambert31SG";
 	rename -uuid "A23D9DEA-4429-2248-C9A8-3D8A84B3E705";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
-createNode MaterialXSurfaceShader -name "myTable:Maya_Lambert31";
-	rename -uuid "713D1496-40AF-7FFD-215E-7EA7271E058C";
-	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document31%:myTable:Maya_Lambert31";
 createNode materialInfo -name "myTable:materialInfo7";
 	rename -uuid "3902540D-4EB6-F456-6601-2EB8524B2D53";
 createNode shadingEngine -name "myTable:Maya_Lambert7SG";
 	rename -uuid "58A44B73-4A12-C18B-8471-E8B5C5568345";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
-createNode MaterialXSurfaceShader -name "myTable:Maya_Lambert7";
-	rename -uuid "FF04076C-40E5-F66C-AB1E-B2B0E82BF750";
-	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document7%:myTable:Maya_Lambert7";
 createNode materialInfo -name "myTable:materialInfo5";
 	rename -uuid "DDE8525E-408D-6460-2875-B0BB42993652";
 createNode shadingEngine -name "myTable:Maya_Lambert5SG";
 	rename -uuid "2057EBC4-4C6E-07C5-F00D-D788E5EFDA12";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
-createNode MaterialXSurfaceShader -name "myTable:Maya_Lambert5";
-	rename -uuid "703EB607-4DE1-62B4-FBDF-8FB8707AEFDF";
-	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document5%:myTable:Maya_Lambert5";
-createNode MaterialXSurfaceShader -name "Maya_Lambert1";
-	rename -uuid "FFBFD8FB-4597-BB68-0EDF-2DA0977DF99A";
-	setAttr ".ufePath" -type "string" "|myTable:materialXStack1|myTable:materialXStackShape1,%document50%Maya_Lambert1";
 createNode shadingEngine -name "Maya_Lambert1SG";
 	rename -uuid "675D1954-4B17-2B2A-20E9-C497FD5DA903";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo1";
 	rename -uuid "E03DB923-483D-21DD-5D9B-3C8B60909C4D";
-createNode MaterialXSurfaceShader -name "Maya_Lambert2";
-	rename -uuid "9C943A99-4830-9C59-E54A-A19AEBEC217C";
-	setAttr ".ufePath" -type "string" "|myTable:materialXStack1|myTable:materialXStackShape1,%document51%Maya_Lambert1";
 createNode shadingEngine -name "Maya_Lambert2SG";
 	rename -uuid "C3B0B6B6-4E49-03EA-B388-28A0B4B06EF9";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo2";
 	rename -uuid "5A6C7887-4C63-DD80-D662-CBA175871376";
-createNode MaterialXSurfaceShader -name "Maya_Lambert3";
-	rename -uuid "3D0D4ECA-4086-68DF-D82A-2D867E732501";
-	setAttr ".ufePath" -type "string" "|myTable:materialXStack1|myTable:materialXStackShape1,%document52%Maya_Lambert1";
 createNode shadingEngine -name "Maya_Lambert3SG";
 	rename -uuid "BF9432BF-4D76-C4FA-713F-3C9B96004E66";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo3";
 	rename -uuid "F7B7AC5E-4B2A-4E4E-FF99-A197B1A7BCEC";
-createNode MaterialXSurfaceShader -name "Maya_Lambert4";
-	rename -uuid "0A6BC4CA-4C4B-5594-8247-D9B5924FDAED";
-	setAttr ".ufePath" -type "string" "|myTable:materialXStack1|myTable:materialXStackShape1,%document53%Maya_Lambert1";
 createNode shadingEngine -name "Maya_Lambert4SG";
 	rename -uuid "9FCC3552-4426-EA23-C80B-029CDB40FFFE";
 	setAttr ".isHistoricallyInteresting" 0;
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo4";
 	rename -uuid "EC4D78D7-4892-273F-C4B4-E389B98FC29B";
-createNode MaterialXSurfaceShader -name "Maya_Lambert5";
-	rename -uuid "52E02A83-4E06-D27E-2D07-3CBC75C16FAC";
-	setAttr ".ufePath" -type "string" "|myTable:materialXStack1|myTable:materialXStackShape1,%document54%Maya_Lambert1";
-	setAttr ".vp2Transparency" 1;
 createNode shadingEngine -name "Maya_Lambert5SG";
 	rename -uuid "84524634-40DA-73B9-38F4-629FEE7859CE";
 	setAttr ".isHistoricallyInteresting" 0;
@@ -663,17 +627,17 @@ createNode script -name "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 875\n            -height 513\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
-		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 875\n            -height 513\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
-		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
-		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 875\n            -height 513\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
+		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1957\n            -height 1073\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1757\n            -height 1073\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n"
 		+ "            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
 		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
@@ -700,8 +664,8 @@ createNode script -name "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n"
 		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1757\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1757\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".scriptType" 3;
 createNode script -name "sceneConfigurationScriptNode";
@@ -763,6 +727,825 @@ createNode polyAutoProj -name "polyAutoProj5";
 	setAttr ".scale" -type "double3" 13.228411441332129 13.228411441332129 13.228411441332129 ;
 	setAttr ".percentageSpace" 0.20000000298023224;
 	setAttr ".denseLayout" yes;
+createNode shadingEngine -name "Maya_Lambert6SG";
+	rename -uuid "8E09860E-45ED-1869-4CD8-9F8CC4758B29";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo6";
+	rename -uuid "B4CADEE2-46A3-0C88-E12B-6080FECE461F";
+createNode shadingEngine -name "Maya_Lambert7SG";
+	rename -uuid "C897D5E4-4F6C-EC8E-C2F0-EF8F24385A95";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo7";
+	rename -uuid "CB33EF08-42EE-C6F5-8298-B987DDB04195";
+createNode polyColorPerVertex -name "polyColorPerVertex1";
+	rename -uuid "A55326BD-472F-CDD6-081D-4D8F736F1A4E";
+	setAttr ".useOldPolyArchitecture" yes;
+	setAttr -size 24 ".vertexColor";
+	setAttr ".vertexColor[0].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[0].vertexFaceColor";
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[15].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[15].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[18].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[18].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[1].vertexFaceColor";
+	setAttr ".vertexColor[1].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[12].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[12].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[18].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[18].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[2].vertexFaceColor";
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[17].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[17].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[18].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[18].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[3].vertexFaceColor";
+	setAttr ".vertexColor[3].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[16].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[16].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[19].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[19].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[4].vertexFaceColor";
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[12].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[12].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[19].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[19].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[5].vertexFaceColor";
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[15].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[15].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[19].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[19].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[6].vertexFaceColor";
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[17].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[17].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[20].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[20].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[7].vertexFaceColor";
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[6].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[6].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[12].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[12].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[20].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[20].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[8].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[8].vertexFaceColor";
+	setAttr ".vertexColor[8].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[8].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[8].vertexFaceColor[6].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[8].vertexFaceColor[6].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[8].vertexFaceColor[13].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[8].vertexFaceColor[13].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[8].vertexFaceColor[20].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[8].vertexFaceColor[20].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[9].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[9].vertexFaceColor";
+	setAttr ".vertexColor[9].vertexFaceColor[6].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[9].vertexFaceColor[6].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[9].vertexFaceColor[7].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[9].vertexFaceColor[7].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[9].vertexFaceColor[13].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[9].vertexFaceColor[13].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[9].vertexFaceColor[21].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[9].vertexFaceColor[21].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[10].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[10].vertexFaceColor";
+	setAttr ".vertexColor[10].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[10].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[10].vertexFaceColor[6].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[10].vertexFaceColor[6].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[10].vertexFaceColor[12].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[10].vertexFaceColor[12].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[10].vertexFaceColor[21].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[10].vertexFaceColor[21].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[11].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[11].vertexFaceColor";
+	setAttr ".vertexColor[11].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[11].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[11].vertexFaceColor[7].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[11].vertexFaceColor[7].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[11].vertexFaceColor[16].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[11].vertexFaceColor[16].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[11].vertexFaceColor[21].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[11].vertexFaceColor[21].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[12].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[12].vertexFaceColor";
+	setAttr ".vertexColor[12].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[12].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[12].vertexFaceColor[8].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[12].vertexFaceColor[8].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[12].vertexFaceColor[17].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[12].vertexFaceColor[17].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[12].vertexFaceColor[22].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[12].vertexFaceColor[22].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[13].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[13].vertexFaceColor";
+	setAttr ".vertexColor[13].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[13].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[13].vertexFaceColor[9].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[13].vertexFaceColor[9].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[13].vertexFaceColor[13].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[13].vertexFaceColor[13].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[13].vertexFaceColor[22].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[13].vertexFaceColor[22].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[14].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[14].vertexFaceColor";
+	setAttr ".vertexColor[14].vertexFaceColor[8].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[14].vertexFaceColor[8].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[14].vertexFaceColor[9].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[14].vertexFaceColor[9].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[14].vertexFaceColor[14].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[14].vertexFaceColor[14].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[14].vertexFaceColor[22].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[14].vertexFaceColor[22].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[15].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[15].vertexFaceColor";
+	setAttr ".vertexColor[15].vertexFaceColor[9].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[15].vertexFaceColor[9].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[15].vertexFaceColor[10].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[15].vertexFaceColor[10].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[15].vertexFaceColor[14].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[15].vertexFaceColor[14].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[15].vertexFaceColor[23].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[15].vertexFaceColor[23].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[16].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[16].vertexFaceColor";
+	setAttr ".vertexColor[16].vertexFaceColor[7].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[16].vertexFaceColor[7].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[16].vertexFaceColor[9].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[16].vertexFaceColor[9].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[16].vertexFaceColor[13].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[16].vertexFaceColor[13].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[16].vertexFaceColor[23].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[16].vertexFaceColor[23].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[17].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[17].vertexFaceColor";
+	setAttr ".vertexColor[17].vertexFaceColor[7].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[17].vertexFaceColor[7].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[17].vertexFaceColor[10].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[17].vertexFaceColor[10].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[17].vertexFaceColor[16].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[17].vertexFaceColor[16].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[17].vertexFaceColor[23].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[17].vertexFaceColor[23].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[18].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[18].vertexFaceColor";
+	setAttr ".vertexColor[18].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[18].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[18].vertexFaceColor[8].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[18].vertexFaceColor[8].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[18].vertexFaceColor[17].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[18].vertexFaceColor[17].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[18].vertexFaceColor[24].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[18].vertexFaceColor[24].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[19].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[19].vertexFaceColor";
+	setAttr ".vertexColor[19].vertexFaceColor[8].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[19].vertexFaceColor[8].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[19].vertexFaceColor[11].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[19].vertexFaceColor[11].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[19].vertexFaceColor[14].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[19].vertexFaceColor[14].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[19].vertexFaceColor[24].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[19].vertexFaceColor[24].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[20].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[20].vertexFaceColor";
+	setAttr ".vertexColor[20].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[20].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[20].vertexFaceColor[11].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[20].vertexFaceColor[11].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[20].vertexFaceColor[15].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[20].vertexFaceColor[15].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[20].vertexFaceColor[24].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[20].vertexFaceColor[24].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[21].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[21].vertexFaceColor";
+	setAttr ".vertexColor[21].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[21].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[21].vertexFaceColor[11].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[21].vertexFaceColor[11].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[21].vertexFaceColor[15].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[21].vertexFaceColor[15].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[21].vertexFaceColor[25].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[21].vertexFaceColor[25].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[22].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[22].vertexFaceColor";
+	setAttr ".vertexColor[22].vertexFaceColor[10].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[22].vertexFaceColor[10].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[22].vertexFaceColor[11].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[22].vertexFaceColor[11].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[22].vertexFaceColor[14].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[22].vertexFaceColor[14].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[22].vertexFaceColor[25].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[22].vertexFaceColor[25].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[23].vertexAlpha" 1;
+	setAttr -size 4 ".vertexColor[23].vertexFaceColor";
+	setAttr ".vertexColor[23].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[23].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[23].vertexFaceColor[10].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[23].vertexFaceColor[10].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[23].vertexFaceColor[16].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[23].vertexFaceColor[16].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[23].vertexFaceColor[25].vertexFaceColorRGB" -type "float3" 
+		0.5 0.5 0.5 ;
+	setAttr ".vertexColor[23].vertexFaceColor[25].vertexFaceAlpha" 1;
+	setAttr ".colorSetName" -type "string" "colorSet1";
+	setAttr ".clamped" no;
+createNode polyColorPerVertex -name "polyColorPerVertex2";
+	rename -uuid "EC9645A4-40B9-3B03-33C6-7BAC9165FEB4";
+	setAttr ".useOldPolyArchitecture" yes;
+	setAttr -size 8 ".vertexColor";
+	setAttr ".vertexColor[0].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[0].vertexFaceColor";
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[1].vertexFaceColor";
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[2].vertexFaceColor";
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[3].vertexFaceColor";
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[4].vertexFaceColor";
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[5].vertexFaceColor";
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[6].vertexFaceColor";
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[7].vertexFaceColor";
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".colorSetName" -type "string" "colorSet1";
+	setAttr ".clamped" no;
+createNode polyColorPerVertex -name "polyColorPerVertex3";
+	rename -uuid "2B1BBB9E-4BA9-363F-AB18-B6B73EADA41D";
+	setAttr ".useOldPolyArchitecture" yes;
+	setAttr -size 8 ".vertexColor";
+	setAttr ".vertexColor[0].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[0].vertexFaceColor";
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[1].vertexFaceColor";
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[2].vertexFaceColor";
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[3].vertexFaceColor";
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[4].vertexFaceColor";
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[5].vertexFaceColor";
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[6].vertexFaceColor";
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[7].vertexFaceColor";
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".colorSetName" -type "string" "colorSet1";
+	setAttr ".clamped" no;
+createNode polyColorPerVertex -name "polyColorPerVertex4";
+	rename -uuid "326B2282-4305-3554-823E-DBADA011C796";
+	setAttr ".useOldPolyArchitecture" yes;
+	setAttr -size 8 ".vertexColor";
+	setAttr ".vertexColor[0].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[0].vertexFaceColor";
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[1].vertexFaceColor";
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[2].vertexFaceColor";
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[3].vertexFaceColor";
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[4].vertexFaceColor";
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[5].vertexFaceColor";
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[6].vertexFaceColor";
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[7].vertexFaceColor";
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".colorSetName" -type "string" "colorSet1";
+	setAttr ".clamped" no;
+createNode polyColorPerVertex -name "polyColorPerVertex5";
+	rename -uuid "E59E0887-4859-EB56-A0AC-E18D1259FF4E";
+	setAttr ".useOldPolyArchitecture" yes;
+	setAttr -size 8 ".vertexColor";
+	setAttr ".vertexColor[0].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[0].vertexFaceColor";
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[0].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[1].vertexFaceColor";
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[1].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[2].vertexFaceColor";
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[2].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[3].vertexFaceColor";
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[0].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[3].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[4].vertexFaceColor";
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[4].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[5].vertexFaceColor";
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[1].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[5].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[6].vertexFaceColor";
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[6].vertexFaceColor[5].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexAlpha" 1;
+	setAttr -size 3 ".vertexColor[7].vertexFaceColor";
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[2].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[3].vertexFaceAlpha" 1;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceColorRGB" -type "float3" 0.5 
+		0.5 0.5 ;
+	setAttr ".vertexColor[7].vertexFaceColor[4].vertexFaceAlpha" 1;
+	setAttr ".colorSetName" -type "string" "colorSet1";
+	setAttr ".clamped" no;
+createNode shadingEngine -name "Maya_Phong1SG";
+	rename -uuid "AC1DAFDC-421A-D37E-179D-239CBB4B3379";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo8";
+	rename -uuid "0AA0CB83-4770-BB55-DD19-E4B1AED0A04B";
+createNode place2dTexture -name "place2dTexture1";
+	rename -uuid "2CE7A4FE-4480-9782-6017-78BB15F5748F";
+	setAttr ".repeatUV" -type "float2" 4 4 ;
+createNode shadingEngine -name "Maya_Lambert1SG1";
+	rename -uuid "580CF1A1-49CC-47F7-6D26-10A0A374D9F6";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo9";
+	rename -uuid "1F9D9FDB-4A44-549D-EF6F-5686D8B05C89";
+createNode shadingEngine -name "Maya_Lambert1SG2";
+	rename -uuid "8B7291FE-460A-5553-7A87-54A728ED3D10";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo10";
+	rename -uuid "925352A8-4C64-F7C3-C822-739DC42550B3";
+createNode checker -name "checker2";
+	rename -uuid "3990E822-47C8-944F-FA5F-8EBDA07ED563";
+	setAttr ".color1" -type "float3" 1 0 1 ;
+createNode place2dTexture -name "place2dTexture2";
+	rename -uuid "35C4B2E1-4E3A-E2D9-5C5C-E88372418CDD";
+	setAttr ".repeatUV" -type "float2" 4 4 ;
+createNode materialInfo -name "materialInfo11";
+	rename -uuid "884817D8-41D9-4029-DAF7-649A2A71FD1F";
+createNode shadingEngine -name "Maya_Lambert11SG";
+	rename -uuid "6C5F6F2D-44D8-6B1A-C7EB-CD9BFB367979";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo16";
+	rename -uuid "D0B803FF-4CCE-C0AC-0DAE-C58156FA0932";
+createNode lambert -name "checker2Material";
+	rename -uuid "B084F0D8-48E3-BC1B-66E3-67B5E8D6267F";
+createNode shadingEngine -name "checker2SG";
+	rename -uuid "FF3D1FE5-431C-1ED7-F49E-67BDA093C84A";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo17";
+	rename -uuid "A0E4667B-4001-633D-C923-7A9B37C65DDB";
+createNode shadingEngine -name "Maya_Lambert1SG3";
+	rename -uuid "A818AF13-4D9B-6605-8F4D-1486ED073D06";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr -size 4 ".dagSetMembers";
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo18";
+	rename -uuid "BE1C1359-4EF6-37C1-1A0B-A7AB7176C120";
+createNode MaterialXSurfaceShader -name "Maya_Lambert1";
+	rename -uuid "5A12BD77-4E84-D46A-D46A-EAA4A115ADCC";
+	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document1%Maya_Lambert1";
+createNode shadingEngine -name "Maya_Lambert1SG4";
+	rename -uuid "B9B32067-44DF-CF68-4D7E-60A6260E5C31";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo19";
+	rename -uuid "8E579898-4598-00D4-4F3F-6391D26A751B";
+createNode nodeGraphEditorInfo -name "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uuid "E1F74E61-41BE-B35D-79FA-51B59A36C4A1";
+	setAttr ".tabGraphInfo[0].tabName" -type "string" "Untitled_1";
+	setAttr ".tabGraphInfo[0].viewRectLow" -type "double2" 381.2566201408801 -717.70688635149702 ;
+	setAttr ".tabGraphInfo[0].viewRectHigh" -type "double2" 1595.5422861752168 -98.659291902619628 ;
+	setAttr -size 8 ".tabGraphInfo[0].nodeInfo";
+	setAttr ".tabGraphInfo[0].nodeInfo[0].positionX" -84.285713195800781;
+	setAttr ".tabGraphInfo[0].nodeInfo[0].positionY" -190;
+	setAttr ".tabGraphInfo[0].nodeInfo[0].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].positionX" 332.38095092773438;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].positionY" -170.71427917480469;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].positionX" 31.428571701049805;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].positionY" -238.57142639160156;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].positionX" 1321.9046630859375;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].positionY" -504.76193237304688;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[4].positionX" 1269.591552734375;
+	setAttr ".tabGraphInfo[0].nodeInfo[4].positionY" -229.50448608398438;
+	setAttr ".tabGraphInfo[0].nodeInfo[4].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[5].positionX" 656.19049072265625;
+	setAttr ".tabGraphInfo[0].nodeInfo[5].positionY" -138.57142639160156;
+	setAttr ".tabGraphInfo[0].nodeInfo[5].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[6].positionX" 600;
+	setAttr ".tabGraphInfo[0].nodeInfo[6].positionY" -485.71429443359375;
+	setAttr ".tabGraphInfo[0].nodeInfo[6].nodeVisualState" 1922;
+	setAttr ".tabGraphInfo[0].nodeInfo[7].positionX" 907.14288330078125;
+	setAttr ".tabGraphInfo[0].nodeInfo[7].positionY" -531.4285888671875;
+	setAttr ".tabGraphInfo[0].nodeInfo[7].nodeVisualState" 1923;
 select -noExpand :time1;
 	setAttr ".outTime" 1;
 	setAttr ".unwarpedTime" 1;
@@ -774,13 +1557,16 @@ select -noExpand :hardwareRenderingGlobals;
 	setAttr ".floatingPointRTEnable" yes;
 	setAttr ".floatingPointRTFormat" 1;
 select -noExpand :renderPartition;
-	setAttr -size 12 ".sets";
+	setAttr -size 21 ".sets";
 select -noExpand :renderGlobalsList1;
 select -noExpand :defaultShaderList1;
-	setAttr -size 16 ".shaders";
+	setAttr -size 8 ".shaders";
 select -noExpand :postProcessList1;
 	setAttr -size 2 ".postProcesses";
+select -noExpand :defaultRenderUtilityList1;
+	setAttr -size 2 ".utilities";
 select -noExpand :defaultRenderingList1;
+select -noExpand :defaultTextureList1;
 select -noExpand :standardSurface1;
 	setAttr ".baseColor" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".specularRoughness" 0.5;
@@ -810,11 +1596,11 @@ select -noExpand :defaultColorMgtGlobals;
 select -noExpand :hardwareRenderGlobals;
 	setAttr ".colorTextureResolution" 256;
 	setAttr ".bumpTextureResolution" 512;
-connectAttr "polyAutoProj2.output" "myTable:pCubeShape2.inMesh";
-connectAttr "polyAutoProj1.output" "myTable:pCubeShape3.inMesh";
-connectAttr "polyAutoProj4.output" "myTable:pCubeShape4.inMesh";
-connectAttr "polyAutoProj3.output" "myTable:pCubeShape5.inMesh";
-connectAttr "polyAutoProj5.output" "myTable:pCubeShape1.inMesh";
+connectAttr "polyColorPerVertex1.output" "myTable:pCubeShape2.inMesh";
+connectAttr "polyColorPerVertex2.output" "myTable:pCubeShape3.inMesh";
+connectAttr "polyColorPerVertex3.output" "myTable:pCubeShape4.inMesh";
+connectAttr "polyColorPerVertex4.output" "myTable:pCubeShape5.inMesh";
+connectAttr "polyColorPerVertex5.output" "myTable:pCubeShape1.inMesh";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "myTable:Maya_Lambert3SG.message" ":defaultLightSet.message";
@@ -827,6 +1613,15 @@ relationship "link" ":lightLinker1" "Maya_Lambert2SG.message" ":defaultLightSet.
 relationship "link" ":lightLinker1" "Maya_Lambert3SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert4SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Phong1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert1SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert1SG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "checker2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert1SG3.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert1SG4.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Maya_Lambert11SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "myTable:Maya_Lambert3SG.message" ":defaultLightSet.message";
@@ -839,84 +1634,33 @@ relationship "shadowLink" ":lightLinker1" "Maya_Lambert2SG.message" ":defaultLig
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert3SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert4SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Phong1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert1SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert1SG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "checker2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert1SG3.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert1SG4.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Maya_Lambert11SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.displayLayerId[0]" "defaultLayer.identification";
 connectAttr "renderLayerManager.renderLayerId[0]" "defaultRenderLayer.identification"
 		;
 connectAttr "myTable:Maya_Lambert3SG.message" "myTable:materialInfo3.shadingGroup"
 		;
-connectAttr "myTable:Maya_Lambert3.message" "myTable:materialInfo3.material";
-connectAttr "myTable:Maya_Lambert3.message" "myTable:materialInfo3.texture" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert3.outColor" "myTable:Maya_Lambert3SG.surfaceShader"
-		;
-connectAttr "myTable:materialXStackShape1.stack" "myTable:Maya_Lambert3.stack";
 connectAttr "myTable:Maya_Lambert6SG.message" "myTable:materialInfo6.shadingGroup"
 		;
-connectAttr "myTable:Maya_Lambert6.message" "myTable:materialInfo6.material";
-connectAttr "myTable:Maya_Lambert6.message" "myTable:materialInfo6.texture" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert6.outColor" "myTable:Maya_Lambert6SG.surfaceShader"
-		;
-connectAttr "myTable:materialXStackShape1.stack" "myTable:Maya_Lambert6.stack";
 connectAttr "myTable:Maya_Lambert31SG.message" "myTable:materialInfo31.shadingGroup"
 		;
-connectAttr "myTable:Maya_Lambert31.message" "myTable:materialInfo31.material";
-connectAttr "myTable:Maya_Lambert31.message" "myTable:materialInfo31.texture" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert31.outColor" "myTable:Maya_Lambert31SG.surfaceShader"
-		;
-connectAttr "myTable:materialXStackShape1.stack" "myTable:Maya_Lambert31.stack";
 connectAttr "myTable:Maya_Lambert7SG.message" "myTable:materialInfo7.shadingGroup"
 		;
-connectAttr "myTable:Maya_Lambert7.message" "myTable:materialInfo7.material";
-connectAttr "myTable:Maya_Lambert7.message" "myTable:materialInfo7.texture" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert7.outColor" "myTable:Maya_Lambert7SG.surfaceShader"
-		;
-connectAttr "myTable:materialXStackShape1.stack" "myTable:Maya_Lambert7.stack";
 connectAttr "myTable:Maya_Lambert5SG.message" "myTable:materialInfo5.shadingGroup"
 		;
-connectAttr "myTable:Maya_Lambert5.message" "myTable:materialInfo5.material";
-connectAttr "myTable:Maya_Lambert5.message" "myTable:materialInfo5.texture" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert5.outColor" "myTable:Maya_Lambert5SG.surfaceShader"
-		;
-connectAttr "myTable:materialXStackShape1.stack" "myTable:Maya_Lambert5.stack";
-connectAttr "myTable:materialXStackShape1.stack" "Maya_Lambert1.stack";
-connectAttr "Maya_Lambert1.outColor" "Maya_Lambert1SG.surfaceShader";
-connectAttr "myTable:pCubeShape2.instObjGroups" "Maya_Lambert1SG.dagSetMembers" 
-		-nextAvailable;
 connectAttr "Maya_Lambert1SG.message" "materialInfo1.shadingGroup";
-connectAttr "Maya_Lambert1.message" "materialInfo1.material";
-connectAttr "Maya_Lambert1.message" "materialInfo1.texture" -nextAvailable;
-connectAttr "myTable:materialXStackShape1.stack" "Maya_Lambert2.stack";
-connectAttr "Maya_Lambert2.outColor" "Maya_Lambert2SG.surfaceShader";
-connectAttr "myTable:pCubeShape5.instObjGroups" "Maya_Lambert2SG.dagSetMembers" 
-		-nextAvailable;
 connectAttr "Maya_Lambert2SG.message" "materialInfo2.shadingGroup";
-connectAttr "Maya_Lambert2.message" "materialInfo2.material";
-connectAttr "Maya_Lambert2.message" "materialInfo2.texture" -nextAvailable;
-connectAttr "myTable:materialXStackShape1.stack" "Maya_Lambert3.stack";
-connectAttr "Maya_Lambert3.outColor" "Maya_Lambert3SG.surfaceShader";
-connectAttr "myTable:pCubeShape4.instObjGroups" "Maya_Lambert3SG.dagSetMembers" 
-		-nextAvailable;
 connectAttr "Maya_Lambert3SG.message" "materialInfo3.shadingGroup";
-connectAttr "Maya_Lambert3.message" "materialInfo3.material";
-connectAttr "Maya_Lambert3.message" "materialInfo3.texture" -nextAvailable;
-connectAttr "myTable:materialXStackShape1.stack" "Maya_Lambert4.stack";
-connectAttr "Maya_Lambert4.outColor" "Maya_Lambert4SG.surfaceShader";
-connectAttr "myTable:pCubeShape1.instObjGroups" "Maya_Lambert4SG.dagSetMembers" 
-		-nextAvailable;
 connectAttr "Maya_Lambert4SG.message" "materialInfo4.shadingGroup";
-connectAttr "Maya_Lambert4.message" "materialInfo4.material";
-connectAttr "Maya_Lambert4.message" "materialInfo4.texture" -nextAvailable;
-connectAttr "myTable:materialXStackShape1.stack" "Maya_Lambert5.stack";
-connectAttr "Maya_Lambert5.outColor" "Maya_Lambert5SG.surfaceShader";
-connectAttr "myTable:pCubeShape3.instObjGroups" "Maya_Lambert5SG.dagSetMembers" 
-		-nextAvailable;
 connectAttr "Maya_Lambert5SG.message" "materialInfo5.shadingGroup";
-connectAttr "Maya_Lambert5.message" "materialInfo5.material";
-connectAttr "Maya_Lambert5.message" "materialInfo5.texture" -nextAvailable;
 connectAttr "myTable:polySurfaceShape1.outMesh" "polyAutoProj1.inputPolymesh";
 connectAttr "myTable:pCubeShape3.worldMatrix" "polyAutoProj1.manipMatrix";
 connectAttr "myTable:polySurfaceShape2.outMesh" "polyAutoProj2.inputPolymesh";
@@ -927,6 +1671,56 @@ connectAttr "myTable:polySurfaceShape4.outMesh" "polyAutoProj4.inputPolymesh";
 connectAttr "myTable:pCubeShape4.worldMatrix" "polyAutoProj4.manipMatrix";
 connectAttr "myTable:polySurfaceShape5.outMesh" "polyAutoProj5.inputPolymesh";
 connectAttr "myTable:pCubeShape1.worldMatrix" "polyAutoProj5.manipMatrix";
+connectAttr "Maya_Lambert6SG.message" "materialInfo6.shadingGroup";
+connectAttr "Maya_Lambert7SG.message" "materialInfo7.shadingGroup";
+connectAttr "polyAutoProj2.output" "polyColorPerVertex1.inputPolymesh";
+connectAttr "polyAutoProj1.output" "polyColorPerVertex2.inputPolymesh";
+connectAttr "polyAutoProj4.output" "polyColorPerVertex3.inputPolymesh";
+connectAttr "polyAutoProj3.output" "polyColorPerVertex4.inputPolymesh";
+connectAttr "polyAutoProj5.output" "polyColorPerVertex5.inputPolymesh";
+connectAttr "Maya_Phong1SG.message" "materialInfo8.shadingGroup";
+connectAttr "Maya_Lambert1SG1.message" "materialInfo9.shadingGroup";
+connectAttr "Maya_Lambert1SG2.message" "materialInfo10.shadingGroup";
+connectAttr "place2dTexture2.outUV" "checker2.uvCoord";
+connectAttr "place2dTexture2.outUvFilterSize" "checker2.uvFilterSize";
+connectAttr "Maya_Lambert11SG.message" "materialInfo16.shadingGroup";
+connectAttr "checker2.outColor" "checker2Material.color";
+connectAttr "checker2Material.outColor" "checker2SG.surfaceShader";
+connectAttr "checker2SG.message" "materialInfo17.shadingGroup";
+connectAttr "checker2Material.message" "materialInfo17.material";
+connectAttr "checker2.message" "materialInfo17.texture" -nextAvailable;
+connectAttr "myTable:pCubeShape1.instObjGroups" "Maya_Lambert1SG3.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myTable:pCubeShape5.instObjGroups" "Maya_Lambert1SG3.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myTable:pCubeShape4.instObjGroups" "Maya_Lambert1SG3.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myTable:pCubeShape3.instObjGroups" "Maya_Lambert1SG3.dagSetMembers"
+		 -nextAvailable;
+connectAttr "Maya_Lambert1SG3.message" "materialInfo18.shadingGroup";
+connectAttr "materialXStackShape1.stack" "Maya_Lambert1.stack";
+connectAttr "Maya_Lambert1.outColor" "Maya_Lambert1SG4.surfaceShader";
+connectAttr "myTable:pCubeShape2.instObjGroups" "Maya_Lambert1SG4.dagSetMembers"
+		 -nextAvailable;
+connectAttr "Maya_Lambert1SG4.message" "materialInfo19.shadingGroup";
+connectAttr "Maya_Lambert1.message" "materialInfo19.material";
+connectAttr "Maya_Lambert1.message" "materialInfo19.texture" -nextAvailable;
+connectAttr "place2dTexture2.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[0].dependNode"
+		;
+connectAttr "checker2.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[1].dependNode"
+		;
+connectAttr "place2dTexture1.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[2].dependNode"
+		;
+connectAttr "Maya_Lambert1SG3.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[3].dependNode"
+		;
+connectAttr "checker2SG.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[4].dependNode"
+		;
+connectAttr "checker2Material.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[5].dependNode"
+		;
+connectAttr "Maya_Lambert1.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[6].dependNode"
+		;
+connectAttr "Maya_Lambert1SG4.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[7].dependNode"
+		;
 connectAttr "myTable:Maya_Lambert3SG.partition" ":renderPartition.sets" -nextAvailable
 		;
 connectAttr "myTable:Maya_Lambert5SG.partition" ":renderPartition.sets" -nextAvailable
@@ -942,26 +1736,24 @@ connectAttr "Maya_Lambert2SG.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "Maya_Lambert3SG.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "Maya_Lambert4SG.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "Maya_Lambert5SG.partition" ":renderPartition.sets" -nextAvailable;
-connectAttr "myTable:Maya_Lambert3.message" ":defaultShaderList1.shaders" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert5.message" ":defaultShaderList1.shaders" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert6.message" ":defaultShaderList1.shaders" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert7.message" ":defaultShaderList1.shaders" -nextAvailable
-		;
-connectAttr "myTable:Maya_Lambert31.message" ":defaultShaderList1.shaders" -nextAvailable
+connectAttr "Maya_Lambert6SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Lambert7SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Phong1SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Lambert1SG1.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Lambert1SG2.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Lambert11SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "checker2SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Lambert1SG3.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "Maya_Lambert1SG4.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "checker2Material.message" ":defaultShaderList1.shaders" -nextAvailable
 		;
 connectAttr "Maya_Lambert1.message" ":defaultShaderList1.shaders" -nextAvailable
 		;
-connectAttr "Maya_Lambert2.message" ":defaultShaderList1.shaders" -nextAvailable
+connectAttr "place2dTexture1.message" ":defaultRenderUtilityList1.utilities" -nextAvailable
 		;
-connectAttr "Maya_Lambert3.message" ":defaultShaderList1.shaders" -nextAvailable
-		;
-connectAttr "Maya_Lambert4.message" ":defaultShaderList1.shaders" -nextAvailable
-		;
-connectAttr "Maya_Lambert5.message" ":defaultShaderList1.shaders" -nextAvailable
+connectAttr "place2dTexture2.message" ":defaultRenderUtilityList1.utilities" -nextAvailable
 		;
 connectAttr "defaultRenderLayer.message" ":defaultRenderingList1.rendering" -nextAvailable
 		;
+connectAttr "checker2.message" ":defaultTextureList1.textures" -nextAvailable;
 // End of tableUVwrap.ma
