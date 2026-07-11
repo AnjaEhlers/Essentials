@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: interior scene.ma
-//Last modified: Fri, Jul 10, 2026 09:41:18 PM
+//Last modified: Fri, Jul 10, 2026 10:26:26 PM
 //Codeset: 1252
 requires maya "2026";
 requires -nodeType "materialxStack" -nodeType "MaterialXSurfaceShader" -dataType "MxDocumentStackData"
@@ -15,17 +15,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202505131231-aff5f20443";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "0F50597E-4DEF-08F3-EB41-38B629C050DD";
+fileInfo "UUID" "94F85731-4C09-2874-083C-57891A362134";
 createNode transform -shared -name "persp";
 	rename -uuid "13D4BC6F-43C9-DF11-39E4-219A68B9A6ED";
 	setAttr ".visibility" no;
-	setAttr ".translate" -type "double3" -48.045269519496948 68.678940744892628 -96.2384697847952 ;
-	setAttr ".rotate" -type "double3" -29.138351581163509 9918.6000000036238 0 ;
+	setAttr ".translate" -type "double3" -172.55859371502447 49.606854458411739 -262.02272967226889 ;
+	setAttr ".rotate" -type "double3" -11.138351582648344 9923.7999999967542 0 ;
 createNode camera -shared -name "perspShape" -parent "persp";
 	rename -uuid "6F26DB0D-4B5A-629A-D89A-059908327011";
 	setAttr -keyable off ".visibility" no;
 	setAttr ".focalLength" 34.999999999999993;
-	setAttr ".centerOfInterest" 127.57455747722732;
+	setAttr ".centerOfInterest" 261.00996904525067;
 	setAttr ".imageName" -type "string" "persp";
 	setAttr ".depthName" -type "string" "persp_depth";
 	setAttr ".maskName" -type "string" "persp_mask";
@@ -150,6 +150,7 @@ createNode transform -name "pointLight2";
 createNode pointLight -name "pointLightShape2" -parent "pointLight2";
 	rename -uuid "36918F1F-4704-99E7-8BCA-42B479C20188";
 	setAttr -keyable off ".visibility";
+	setAttr ".useOnlySingleDmap" no;
 createNode transform -name "pointLight3";
 	rename -uuid "942FAE90-4221-62A7-E36A-9C840C2F8154";
 	setAttr ".translate" -type "double3" 3.9305306310089083 0 21.119689173319077 ;
@@ -580,9 +581,6 @@ createNode mesh -name "pCube45Shape" -parent "pCube45";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
 	setAttr ".collisionDepthVelocityMultiplier[0]"  0 1 1;
-	setAttr ".creaseData" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".creaseVertexData" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -name "counterCheckered1:counterSet1";
 	rename -uuid "3B9E7F07-47A9-16DF-653E-12BAB7A264BD";
 	setAttr ".rotatePivot" -type "double3" 0.37266676033772272 -0.31601516603685598 
@@ -648,6 +646,7 @@ createNode mesh -name "counterCheckered1:counterBoxShape" -parent "counterChecke
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode mesh -name "counterCheckered1:polySurfaceShape20" -parent "counterCheckered1:counterBox";
 	rename -uuid "2CA8FBEB-4B3C-9CBF-09F4-6CBEE0345152";
 	setAttr -keyable off ".visibility";
@@ -850,6 +849,7 @@ createNode mesh -name "counterCheckered1:counterTopShape" -parent "counterChecke
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[2]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode mesh -name "counterCheckered1:polySurfaceShape14" -parent "counterCheckered1:counterTop";
 	rename -uuid "8F9D8482-4E9B-18BE-216F-2E9FC6E4D866";
 	setAttr -keyable off ".visibility";
@@ -1069,6 +1069,7 @@ createNode mesh -name "counterBoxShape" -parent "|counterSet1|counterBox";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode mesh -name "polySurfaceShape20" -parent "|counterSet1|counterBox";
 	rename -uuid "300294DF-4710-16C5-4590-C787E09AFC28";
 	setAttr -keyable off ".visibility";
@@ -1271,6 +1272,7 @@ createNode mesh -name "counterTopShape" -parent "|counterSet1|counterTop";
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[2]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode mesh -name "polySurfaceShape14" -parent "|counterSet1|counterTop";
 	rename -uuid "E722561D-4E9B-299A-B244-F1A642713C08";
 	setAttr -keyable off ".visibility";
@@ -1490,6 +1492,7 @@ createNode mesh -name "counterBoxShape" -parent "|counterSet2|counterBox";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode mesh -name "polySurfaceShape20" -parent "|counterSet2|counterBox";
 	rename -uuid "4393F2BC-4263-E609-944C-F8AAA07F6106";
 	setAttr -keyable off ".visibility";
@@ -1552,7 +1555,7 @@ createNode mesh -name "counterTopShape" -parent "|counterSet2|counterTop";
 		1 "f[13]";
 	setAttr ".visibleInReflections" yes;
 	setAttr ".visibleInRefractions" yes;
-	setAttr ".uvPivot" -type "double2" 0.86311635375022888 0.49702885746955872 ;
+	setAttr ".uvPivot" -type "double2" 0.31077815367985995 0.8882704257696149 ;
 	setAttr -size 3 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 38 ".uvSet[0].uvSetPoints[0:37]" -type "float2" 0.37717742
@@ -1570,14 +1573,14 @@ createNode mesh -name "counterTopShape" -parent "|counterSet2|counterTop";
 	setAttr -size 4 ".uvSet[1].uvSetPoints[0:3]" -type "float2" 0 0.5
 		 -5.9604645e-08 0.5 1 0.5 1 0.5;
 	setAttr ".uvSet[2].uvSetName" -type "string" "uvSet11";
-	setAttr -size 28 ".uvSet[2].uvSetPoints[0:27]" -type "float2" 0.24412371
-		 -0.0059424043 0.2413301 0.24403125 -0.27097371 0.24403125 -0.27376732 -0.0059424043
-		 0.24676329 0.24403125 0.72623277 -0.0059424043 0.72359318 0.24403125 0.24676329 0.744084
-		 0.2413301 0.744084 0.72902632 0.24403125 1.24133015 0.24403125 0.72902632 0.744084
-		 0.72359318 0.744084 0.24412371 0.99405766 -0.27376732 0.99405766 -0.27097371 0.744084
-		 0.72623277 0.99405766 1.24133015 0.744084 -0.27640691 0.744084 -0.27640691 0.24403125
-		 1.72623265 0.99405766 1.2441237 0.99405766 1.72359312 0.24403125 1.24676323 0.24403125
-		 1.2441237 -0.0059424043 1.72359312 0.744084 1.24676323 0.744084 1.72623265 -0.0059424043;
+	setAttr -size 28 ".uvSet[2].uvSetPoints[0:27]" -type "float2" 0.15487315
+		 0.67369419 0.15420873 0.73215604 0.034439877 0.73215604 0.033775523 0.67369419 0.15549029
+		 0.73214513 0.24393381 0.75900882 0.24325188 0.82359284 0.15549029 0.84907162 0.15420873
+		 0.84906077 0.24460392 0.82367861 0.37695241 0.82367861 0.24460392 0.95286226 0.24325188
+		 0.95278817 0.15487315 0.90752256 0.033775523 0.90752256 0.034439877 0.84906077 0.24393381
+		 1.017372251 0.37695241 0.95286226 0.033158258 0.84907162 0.033158258 0.73214513 0.50143224
+		 0.90752256 0.37773788 1.017372251 0.50081503 0.73214513 0.37841982 0.82359284 0.37773788
+		 0.75900882 0.50081503 0.84907162 0.37841982 0.95278817 0.50143224 0.67369419;
 	setAttr ".currentUVSet" -type "string" "uvSet11";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -1692,6 +1695,7 @@ createNode mesh -name "counterTopShape" -parent "|counterSet2|counterTop";
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[2]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode mesh -name "polySurfaceShape14" -parent "|counterSet2|counterTop";
 	rename -uuid "3E69E307-401F-7505-A016-B9A662542045";
 	setAttr -keyable off ".visibility";
@@ -10296,7 +10300,7 @@ createNode mesh -name "myMugCheckered:pTorusShape1" -parent "myMugCheckered:pTor
 	setAttr ".pinData[2]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[3]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
-	setAttr ".displayFacesWithGroupId" 272;
+	setAttr ".displayFacesWithGroupId" 113;
 createNode transform -name "mug";
 	rename -uuid "94CB03CC-4EF3-2341-BE96-06832C363C4C";
 	setAttr ".rotatePivot" -type "double3" 11.399011059125787 -0.09108465635732732 
@@ -26767,7 +26771,7 @@ createNode mesh -name "pTorusShape1" -parent "pTorus1";
 	setAttr ".pinData[2]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[3]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
-	setAttr ".displayFacesWithGroupId" 272;
+	setAttr ".displayFacesWithGroupId" 105;
 createNode mesh -name "polySurfaceShape2" -parent "pTorus1";
 	rename -uuid "B1BC431D-46CF-668A-F005-B090E5159BBC";
 	setAttr -keyable off ".visibility";
@@ -36245,7 +36249,7 @@ createNode mesh -name "groundShape" -parent "ground";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 0;
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 0;
-	setAttr ".uvPivot" -type "double2" 0.5 0.875 ;
+	setAttr ".uvPivot" -type "double2" 0.24221228063106537 0.50548481941223145 ;
 	setAttr -size 2 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 4 ".uvSet[0].uvSetPoints[0:3]" -type "float2" 0.375
@@ -36803,6 +36807,7 @@ createNode mesh -name "pCubeShape43" -parent "pCube43";
 	setAttr ".pinData[2]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[3]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".borderWidth" 3;
 createNode mesh -name "polySurfaceShape1" -parent "pCube43";
 	rename -uuid "1AC9C828-4FD3-6418-4F74-849D49150D31";
 	setAttr -keyable off ".visibility";
@@ -36995,6 +37000,7 @@ createNode mesh -name "polySurfaceShape1" -parent "pCube43";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".borderWidth" 3;
 createNode transform -name "pCube59" -parent "myWall:wallWest";
 	rename -uuid "CEC88517-4A79-99AE-F40A-C49D3A292ECD";
 	setAttr ".translate" -type "double3" 0.75798896921612524 0 32.337325548894661 ;
@@ -40155,7 +40161,7 @@ createNode mesh -name "pCubeShape66" -parent "pCube66";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 2 "f[28]" "f[34]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 10 "f[5]" "f[7]" "f[9]" "f[17]" "f[19]" "f[21]" "f[25]" "f[31]" "f[40:41]" "f[48:49]";
-	setAttr ".uvPivot" -type "double2" 0.5 0.5 ;
+	setAttr ".uvPivot" -type "double2" 1.0021821558475494 0.50000001490116119 ;
 	setAttr -size 4 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 76 ".uvSet[0].uvSetPoints[0:75]" -type "float2" 0.37500048
@@ -42979,6 +42985,7 @@ createNode mesh -name "myMicrowave:pCube45Shape" -parent "myMicrowave:pCube45";
 	setAttr ".pinData[5]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[6]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "mySofa:Couch";
 	rename -uuid "56FF6461-467E-A4A4-3493-358C083F9473";
 	setAttr ".rotatePivot" -type "double3" -43.731454387067885 -9.9109059102192241 
@@ -43006,7 +43013,7 @@ createNode mesh -name "mySofa:couchBackShape" -parent "mySofa:couchBack";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "f[64:67]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 5 "f[20:23]" "f[28:31]" "f[36:39]" "f[52:55]" "f[84:89]";
-	setAttr ".uvPivot" -type "double2" 0.68062958121299744 0.57154208421707153 ;
+	setAttr ".uvPivot" -type "double2" 0.12822810560464859 0.72959253191947937 ;
 	setAttr -size 2 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 127 ".uvSet[0].uvSetPoints[0:126]" -type "float2" 0.41743213
@@ -43040,33 +43047,34 @@ createNode mesh -name "mySofa:couchBackShape" -parent "mySofa:couchBack";
 		 0.625 0.625 0.86154115 0.125 0.60201591 0.66154408 0.56722987 0.625 0.4345381 0.70877755
 		 0.49999994 0.66575027 0.56546187 0.70877755 0.49999994 0.77872533;
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvSetcouchBack";
-	setAttr -size 107 ".uvSet[1].uvSetPoints[0:106]" -type "float2" 1.023037076
-		 0.68214273 1.03385675 0.77821583 0.68062961 0.78303742 0.68062961 0.68334806 1.050065756
-		 0.81437826 0.68062961 0.82643235 0.31119341 0.81437826 0.32740241 0.77821583 0.33822215
-		 0.68214273 1.05477345 0.68214273 1.042709708 0.67852646 1.041749001 0.5 1.054639578
-		 0.5 1.019488811 0.5 1.023037076 0.31785727 1.042709708 0.32147354 1.05477345 0.31785727
-		 1.055194259 0.77821583 1.065722227 0.78303742 1.065722227 0.82643235 1.065722227
-		 0.68334806 1.076671004 0.68214273 1.076250196 0.77821583 1.081378698 0.81437826 1.050065756
-		 0.18562153 1.03385675 0.22178417 0.68062961 0.21696243 0.68062961 0.17356744 0.68062961
-		 0.31665182 0.33822215 0.31785727 0.32740241 0.22178417 0.31119341 0.18562153 1.055194259
-		 0.22178417 1.065722227 0.21696243 1.065722227 0.31665182 1.065722227 0.17356744 1.081378698
-		 0.18562153 1.076250196 0.22178417 1.076671004 0.31785727 1.097587705 0.77821583 1.45081484
-		 0.78303742 1.45081484 0.82643235 1.1084075 0.68214273 1.45081496 0.68334806 1.79322243
-		 0.68214273 1.8040421 0.77821583 1.088734865 0.67852646 1.089695454 0.5 1.11195564
-		 0.5 1.076804876 0.5 1.088734865 0.32147354 1.1084075 0.31785727 1.097587705 0.22178417
-		 1.45081484 0.21696243 1.45081496 0.31665182 1.8040421 0.22178417 1.79322243 0.31785727
-		 1.82537961 0.77821583 0.29553694 0.78303742 0.29553694 0.82643235 0.29553694 0.68334806
-		 0.30648571 0.68214273 0.3060649 0.77821583 1.81289482 0.67852646 1.81193423 0.5 1.78967404
-		 0.5 1.81289482 0.32147354 1.82537961 0.22178417 0.29553694 0.21696243 0.29553694
-		 0.31665182 0.29553694 0.17356744 0.3060649 0.22178417 0.30648571 0.31785727 0.31854951
-		 0.67852646 0.31951022 0.5 0.34177041 0.5 0.30661964 0.5 0.31854951 0.32147354 1.065722227
-		 0.5 1.45081496 0.5 0.29553694 0.5 0.68062961 0.5 1.065673232 0.15910238 1.065673232
-		 0.84089744 1.045651674 0.76375079 1.045651674 0.23624906 1.08579278 0.76375079 1.08579278
-		 0.23624906 1.81583691 0.76375079 1.81583691 0.23624906 0.31560749 0.76375079 0.31560749
-		 0.23624906 1.83590746 0.78303742 1.83590746 0.68334806 1.83590746 0.21696243 1.82025099
-		 0.18562153 1.83590746 0.17356744 1.82482481 0.5 1.83590746 0.5 1.8249588 0.68214273
-		 1.8249588 0.31785727 1.83590746 0.31665182 1.45081484 0.17356744 1.82025099 0.81437826
-		 1.83590746 0.82643235 2.60604382 0.84089744 2.99118519 0.82643235;
+	setAttr -size 107 ".uvSet[1].uvSetPoints[0:106]" -type "float2" 0.075678177
+		 0.72249526 0.076396406 0.72887242 0.052949809 0.72919244 0.052949809 0.72257525 0.077472307
+		 0.73127282 0.052949809 0.73207295 0.02842726 0.73127282 0.02950325 0.72887242 0.030221315
+		 0.72249526 0.077784806 0.72249526 0.076984018 0.72225523 0.076920234 0.71040493 0.077775888
+		 0.71040493 0.075442664 0.71040493 0.075678177 0.69831461 0.076984018 0.69855464 0.077784806
+		 0.69831461 0.077812761 0.72887242 0.078511551 0.72919244 0.078511551 0.73207295 0.078511551
+		 0.72257525 0.079238318 0.72249526 0.079210371 0.72887242 0.079550825 0.73127282 0.077472307
+		 0.68953705 0.076396406 0.69193739 0.052949809 0.69161737 0.052949809 0.68873692 0.052949809
+		 0.69823462 0.030221315 0.69831461 0.02950325 0.69193739 0.02842726 0.68953705 0.077812761
+		 0.69193739 0.078511551 0.69161737 0.078511551 0.69823462 0.078511551 0.68873692 0.079550825
+		 0.68953705 0.079210371 0.69193739 0.079238318 0.69831461 0.080626719 0.72887242 0.10407332
+		 0.72919244 0.10407332 0.73207295 0.081344955 0.72249526 0.10407332 0.72257525 0.12680177
+		 0.72249526 0.12751992 0.72887242 0.080039106 0.72225523 0.080102861 0.71040493 0.081580468
+		 0.71040493 0.079247236 0.71040493 0.080039106 0.69855464 0.081344955 0.69831461 0.080626719
+		 0.69193739 0.10407332 0.69161737 0.10407332 0.69823462 0.12751992 0.69193739 0.12680177
+		 0.69831461 0.12893629 0.72887242 0.027388001 0.72919244 0.027388001 0.73207295 0.027388001
+		 0.72257525 0.028114812 0.72249526 0.028086843 0.72887242 0.12810758 0.72225523 0.12804383
+		 0.71040493 0.12656622 0.71040493 0.12810758 0.69855464 0.12893629 0.69193739 0.027388001
+		 0.69161737 0.027388001 0.69823462 0.027388001 0.68873692 0.028086843 0.69193739 0.028114812
+		 0.69831461 0.028915586 0.72225523 0.028979288 0.71040493 0.03045691 0.71040493 0.028123626
+		 0.71040493 0.028915586 0.69855464 0.078511551 0.71040493 0.10407332 0.71040493 0.027388001
+		 0.71040493 0.052949809 0.71040493 0.078508317 0.68777674 0.078508317 0.73303312 0.07717929
+		 0.72791225 0.07717929 0.69289762 0.079843789 0.72791225 0.079843789 0.69289762 0.12830286
+		 0.72791225 0.12830286 0.69289762 0.028720306 0.72791225 0.028720306 0.69289762 0.12963508
+		 0.72919244 0.12963508 0.72257525 0.12963508 0.69161737 0.12859589 0.68953705 0.12963508
+		 0.68873692 0.12889947 0.71040493 0.12963508 0.71040493 0.12890837 0.72249526 0.12890837
+		 0.69831461 0.12963508 0.69823462 0.10407332 0.68873692 0.12859589 0.73127282 0.12963508
+		 0.73207295 0.18075541 0.73303312 0.20632049 0.73207295;
 	setAttr ".currentUVSet" -type "string" "uvSetcouchBack";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -43479,7 +43487,7 @@ createNode mesh -name "mySofa:couchCushionShape" -parent "mySofa:couchCushion";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "f[16]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 5 "f[5]" "f[7]" "f[9]" "f[13]" "f[22:23]";
-	setAttr ".uvPivot" -type "double2" 0.50000017881393433 0.5 ;
+	setAttr ".uvPivot" -type "double2" 0.11503647787069404 0.70503492844614746 ;
 	setAttr -size 3 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 38 ".uvSet[0].uvSetPoints[0:37]" -type "float2" 0.38749874
@@ -43501,13 +43509,14 @@ createNode mesh -name "mySofa:couchCushionShape" -parent "mySofa:couchCushion";
 		 1.0098698139 0.011466384 0.059864819 0.98853362 0.0098698735 0.98853362 0.059864819
 		 1 0.95987445 1 0.95987445 1 0.059864819 1 0.059864819;
 	setAttr ".uvSet[2].uvSetName" -type "string" "uvCouchcushion1";
-	setAttr -size 24 ".uvSet[2].uvSetPoints[0:23]" -type "float2" 0.099512517
-		 0.79380774 0.099512517 0.82644975 0.9004876 0.82644975 0.9004876 0.79380774 0.090112656
-		 0.79380774 0.099512517 0.20619196 0.090112656 0.20619196 0.090112656 0.79380774 0.099512517
-		 0.82644975 0.099512517 0.17355028 0.9004876 0.20619196 0.9004876 0.17355028 0.099512517
-		 0.17355028 0.090112656 0.20619196 0.099512517 0.79380774 0.90048748 0.79380774 0.90048748
-		 0.82644975 0.099512517 0.20619196 0.90048748 0.17355028 0.90048748 0.20619196 0.90988731
-		 0.79380774 0.90988731 0.79380774 0.90988731 0.20619196 0.90988731 0.20619196;
+	setAttr -size 24 ".uvSet[2].uvSetPoints[0:23]" -type "float2" 0.0091043282
+		 0.72863835 0.0091043282 0.72915208 0.021709079 0.72915208 0.021709079 0.72863835
+		 0.0089564044 0.72863835 0.0091043282 0.71939117 0.0089564044 0.71939117 0.0089564044
+		 0.72863835 0.0091043282 0.72915208 0.0091043282 0.71887755 0.021709079 0.71939117
+		 0.021709079 0.71887755 0.0091043282 0.71887755 0.0089564044 0.71939117 0.0091043282
+		 0.72863835 0.021709079 0.72863835 0.021709079 0.72915208 0.0091043282 0.71939117
+		 0.021709079 0.71887755 0.021709079 0.71939117 0.021856995 0.72863835 0.021856995
+		 0.72863835 0.021856995 0.71939117 0.021856995 0.71939117;
 	setAttr ".currentUVSet" -type "string" "uvCouchcushion1";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -43691,13 +43700,13 @@ createNode mesh -name "mySofa:couchCushion1Shape" -parent "mySofa:couchCushion1"
 		 1.0098698139 0.011466384 0.059864819 0.98853362 0.0098698735 0.98853362 0.059864819
 		 1 0.95987445 1 0.95987445 1 0.059864819 1 0.059864819;
 	setAttr ".uvSet[2].uvSetName" -type "string" "uvCouchcushion1";
-	setAttr -size 24 ".uvSet[2].uvSetPoints[0:23]" -type "float2" 0.099512517
-		 0.79380774 0.099512517 0.82644975 0.9004876 0.82644975 0.9004876 0.79380774 0.090112656
-		 0.79380774 0.099512517 0.20619196 0.090112656 0.20619196 0.090112656 0.79380774 0.099512517
-		 0.82644975 0.099512517 0.17355028 0.9004876 0.20619196 0.9004876 0.17355028 0.099512517
-		 0.17355028 0.090112656 0.20619196 0.099512517 0.79380774 0.90048748 0.79380774 0.90048748
-		 0.82644975 0.099512517 0.20619196 0.90048748 0.17355028 0.90048748 0.20619196 0.90988731
-		 0.79380774 0.90988731 0.79380774 0.90988731 0.20619196 0.90988731 0.20619196;
+	setAttr -size 24 ".uvSet[2].uvSetPoints[0:23]" -type "float2" 0.014376277
+		 0.72990739 0.014376277 0.73207408 0.067543589 0.73207408 0.067543589 0.72990739 0.013752328
+		 0.72990739 0.014376277 0.69090247 0.013752328 0.69090247 0.013752328 0.72990739 0.014376277
+		 0.73207408 0.014376277 0.68873578 0.067543589 0.69090247 0.067543589 0.68873578 0.014376277
+		 0.68873578 0.013752328 0.69090247 0.014376277 0.72990739 0.067543589 0.72990739 0.067543589
+		 0.73207408 0.014376277 0.69090247 0.067543589 0.68873578 0.067543589 0.69090247 0.068167485
+		 0.72990739 0.068167485 0.72990739 0.068167485 0.69090247 0.068167485 0.69090247;
 	setAttr ".currentUVSet" -type "string" "uvCouchcushion1";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -43858,17 +43867,18 @@ createNode mesh -name "mySofa:couchArmShape" -parent "mySofa:couchArm";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "f[16]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 5 "f[5]" "f[7]" "f[9]" "f[13]" "f[22:23]";
-	setAttr ".uvPivot" -type "double2" 0.49999994039535522 0.50000011920928955 ;
+	setAttr ".uvPivot" -type "double2" 0.10704561416059732 0.71040493249893188 ;
 	setAttr -size 2 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvCouchArm";
-	setAttr -size 24 ".uvSet[1].uvSetPoints[0:23]" -type "float2" 0.038078308
-		 0.82985353 0.038078308 0.86650002 0.96192145 0.86650002 0.96192145 0.82985353 0 0.82985353
-		 0.038078308 0.17014652 0 0.17014652 0 0.82985353 0.038078308 0.86650002 0.038078308
-		 0.13350025 0.96192145 0.17014652 0.96192145 0.13350025 0.038078308 0.13350025 0 0.17014652
-		 0.038078308 0.82985353 0.96192145 0.82985353 0.96192145 0.86650002 0.038078308 0.17014652
-		 0.96192145 0.13350025 0.96192145 0.17014652 0.99999988 0.82985353 0.99999988 0.82985353
-		 0.99999988 0.17014652 0.99999988 0.17014652;
+	setAttr -size 24 ".uvSet[1].uvSetPoints[0:23]" -type "float2" 0.010298373
+		 0.73230004 0.010298373 0.73473263 0.071621455 0.73473263 0.071621455 0.73230004 0.0077707339
+		 0.73230004 0.010298373 0.68850982 0.0077707339 0.68850982 0.0077707339 0.73230004
+		 0.010298373 0.73473263 0.010298373 0.6860773 0.071621455 0.68850982 0.071621455 0.6860773
+		 0.010298373 0.6860773 0.0077707339 0.68850982 0.010298373 0.73230004 0.071621455
+		 0.73230004 0.071621455 0.73473263 0.010298373 0.68850982 0.071621455 0.6860773 0.071621455
+		 0.68850982 0.074149013 0.73230004 0.074149013 0.73230004 0.074149013 0.68850982 0.074149013
+		 0.68850982;
 	setAttr ".currentUVSet" -type "string" "uvCouchArm";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -43978,17 +43988,18 @@ createNode mesh -name "mySofa:couchArm1Shape" -parent "mySofa:couchArm1";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "f[16]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 5 "f[5]" "f[7]" "f[9]" "f[13]" "f[22:23]";
-	setAttr ".uvPivot" -type "double2" 0.49999994039535522 0.50000011920928955 ;
+	setAttr ".uvPivot" -type "double2" 0.040959914214909077 0.73473262786865234 ;
 	setAttr -size 2 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvCouchArm";
-	setAttr -size 24 ".uvSet[1].uvSetPoints[0:23]" -type "float2" 0.038078308
-		 0.82985353 0.038078308 0.86650002 0.96192145 0.86650002 0.96192145 0.82985353 0 0.82985353
-		 0.038078308 0.17014652 0 0.17014652 0 0.82985353 0.038078308 0.86650002 0.038078308
-		 0.13350025 0.96192145 0.17014652 0.96192145 0.13350025 0.038078308 0.13350025 0 0.17014652
-		 0.038078308 0.82985353 0.96192145 0.82985353 0.96192145 0.86650002 0.038078308 0.17014652
-		 0.96192145 0.13350025 0.96192145 0.17014652 0.99999988 0.82985353 0.99999988 0.82985353
-		 0.99999988 0.17014652 0.99999988 0.17014652;
+	setAttr -size 24 ".uvSet[1].uvSetPoints[0:23]" -type "float2" 0.010298373
+		 0.73230004 0.010298373 0.73473263 0.071621455 0.73473263 0.071621455 0.73230004 0.0077707339
+		 0.73230004 0.010298373 0.68850982 0.0077707339 0.68850982 0.0077707339 0.73230004
+		 0.010298373 0.73473263 0.010298373 0.6860773 0.071621455 0.68850982 0.071621455 0.6860773
+		 0.010298373 0.6860773 0.0077707339 0.68850982 0.010298373 0.73230004 0.071621455
+		 0.73230004 0.071621455 0.73473263 0.010298373 0.68850982 0.071621455 0.6860773 0.071621455
+		 0.68850982 0.074149013 0.73230004 0.074149013 0.73230004 0.074149013 0.68850982 0.074149013
+		 0.68850982;
 	setAttr ".currentUVSet" -type "string" "uvCouchArm";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -44076,6 +44087,7 @@ createNode mesh -name "mySofa:couchArm1Shape" -parent "mySofa:couchArm1";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".borderWidth" 3;
 createNode transform -name "mySofa:couchFoot" -parent "mySofa:Couch";
 	rename -uuid "D5D4EBA4-4E9E-8107-C791-0988F16E1ACC";
 	setAttr ".rotatePivot" -type "double3" -41.056095067245472 -0.1365665792420252 
@@ -44106,9 +44118,9 @@ createNode mesh -name "mySofa:couchFootShape" -parent "mySofa:couchFoot";
 		 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1
 		 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvCouchFoot";
-	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.064420164
-		 0.94363236 0.064420164 0.10468277 0.064420164 0.10468277 0.064420164 0.94363236 0.9355799
-		 0.10468277 0.9355799 0.94363236 0.9355799 0.10468277 0.9355799 0.94363236;
+	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.012046905
+		 0.73985249 0.012046905 0.68416446 0.012046905 0.68416446 0.012046905 0.73985249 0.069872953
+		 0.68416446 0.069872953 0.73985249 0.069872953 0.68416446 0.069872953 0.73985249;
 	setAttr ".currentUVSet" -type "string" "uvCouchFoot";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -44185,12 +44197,12 @@ createNode mesh -name "mySofa:couchFrameShape" -parent "mySofa:couchFrame";
 		 0.50506777 0.98665011 -0.24795684 0.01335007 -0.24795684 0.01335007 0.50506777 0.01335007
 		 0.50506777 0.98665011 0.50506777 0.98665011 0.50506777 0.01335007 0.50506777;
 	setAttr ".uvSet[2].uvSetName" -type "string" "uvCouchFrame1";
-	setAttr -size 20 ".uvSet[2].uvSetPoints[0:19]" -type "float2" 0.046725065
-		 0.24095345 0.046725065 0.046725065 0.046725065 0.046725065 0.046725065 0.24095345
-		 0.95327497 0.046725065 0.95327497 0.24095345 0.95327497 0.046725065 0.95327497 0.24095345
-		 0.95327497 0.95327497 0.95327497 0.75904608 0.046725065 0.75904608 0.046725065 0.95327497
-		 0.95327497 0.24095345 0.046725065 0.24095345 0.046725065 0.24095345 0.95327497 0.24095345
-		 0.046725065 0.24095345 0.95327497 0.24095345 0.95327497 0.95327497 0.046725065 0.95327497;
+	setAttr -size 20 ".uvSet[2].uvSetPoints[0:19]" -type "float2" 0.010872299
+		 0.69320989 0.010872299 0.68031734 0.010872299 0.68031734 0.010872299 0.69320989 0.071047477
+		 0.68031734 0.071047477 0.69320989 0.071047477 0.68031734 0.071047477 0.69320989 0.071047477
+		 0.74049252 0.071047477 0.72759998 0.010872299 0.72759998 0.010872299 0.74049252 0.071047477
+		 0.69320989 0.010872299 0.69320989 0.010872299 0.69320989 0.071047477 0.69320989 0.010872299
+		 0.69320989 0.071047477 0.69320989 0.071047477 0.74049252 0.010872299 0.74049252;
 	setAttr ".currentUVSet" -type "string" "uvCouchFrame1";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -44325,9 +44337,9 @@ createNode mesh -name "mySofa:couchFootShape2" -parent "mySofa:couchFoot2";
 		 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1
 		 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvCouchFoot";
-	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.064420164
-		 0.94363236 0.064420164 0.10468277 0.064420164 0.10468277 0.064420164 0.94363236 0.9355799
-		 0.10468277 0.9355799 0.94363236 0.9355799 0.10468277 0.9355799 0.94363236;
+	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.012046905
+		 0.73985249 0.012046905 0.68416446 0.012046905 0.68416446 0.012046905 0.73985249 0.069872953
+		 0.68416446 0.069872953 0.73985249 0.069872953 0.68416446 0.069872953 0.73985249;
 	setAttr ".currentUVSet" -type "string" "uvCouchFoot";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -44396,9 +44408,9 @@ createNode mesh -name "mySofa:couchfootShape3" -parent "mySofa:couchfoot3";
 		 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1
 		 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvCouchFoot";
-	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.064420164
-		 0.94363236 0.064420164 0.10468277 0.064420164 0.10468277 0.064420164 0.94363236 0.9355799
-		 0.10468277 0.9355799 0.94363236 0.9355799 0.10468277 0.9355799 0.94363236;
+	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.012046905
+		 0.73985249 0.012046905 0.68416446 0.012046905 0.68416446 0.012046905 0.73985249 0.069872953
+		 0.68416446 0.069872953 0.73985249 0.069872953 0.68416446 0.069872953 0.73985249;
 	setAttr ".currentUVSet" -type "string" "uvCouchFoot";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -44467,9 +44479,9 @@ createNode mesh -name "mySofa:couchfootShape4" -parent "mySofa:couchfoot4";
 		 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1
 		 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".uvSet[1].uvSetName" -type "string" "uvCouchFoot";
-	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.064420164
-		 0.94363236 0.064420164 0.10468277 0.064420164 0.10468277 0.064420164 0.94363236 0.9355799
-		 0.10468277 0.9355799 0.94363236 0.9355799 0.10468277 0.9355799 0.94363236;
+	setAttr -size 8 ".uvSet[1].uvSetPoints[0:7]" -type "float2" 0.012046905
+		 0.73985249 0.012046905 0.68416446 0.012046905 0.68416446 0.012046905 0.73985249 0.069872953
+		 0.68416446 0.069872953 0.73985249 0.069872953 0.68416446 0.069872953 0.73985249;
 	setAttr ".currentUVSet" -type "string" "uvCouchFoot";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -45043,6 +45055,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book25" -parent "booksBottomShelf2";
 	rename -uuid "A3555736-4D5E-3776-8827-879141408D4D";
 	setAttr ".rotatePivot" -type "double3" 13.460031444329758 9.2659541262335772 -4.3444317701368327 ;
@@ -45571,6 +45584,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book26" -parent "booksBottomShelf2";
 	rename -uuid "B4DCA284-4575-D320-4132-AE87595D962F";
 	setAttr ".rotatePivot" -type "double3" 13.467249880839466 9.2659541262335772 -3.9898591369026697 ;
@@ -46098,6 +46112,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book27" -parent "booksBottomShelf2";
 	rename -uuid "730DA496-43B2-2BBF-5EEF-8AA9A95ACD00";
 	setAttr ".rotatePivot" -type "double3" 13.474445920761069 9.2659541262335772 -3.6363866334832498 ;
@@ -46626,6 +46641,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book28" -parent "booksBottomShelf2";
 	rename -uuid "A286C533-4E8A-D603-9543-E996380EDD3C";
 	setAttr ".rotatePivot" -type "double3" 13.481806092035418 9.2659541262335772 -3.2748519290787375 ;
@@ -47153,6 +47169,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book29" -parent "booksBottomShelf2";
 	rename -uuid "FD161DA6-49C9-8859-4E98-63823A223F82";
 	setAttr ".rotatePivot" -type "double3" 13.48934488436808 9.2659541262335772 -2.9045432832657596 ;
@@ -47679,6 +47696,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book30" -parent "booksBottomShelf2";
 	rename -uuid "A3A5980A-4E06-4DEF-5D94-1FA0758254AC";
 	setAttr ".rotatePivot" -type "double3" 13.497101244351683 9.2659541262335772 -2.5235476230560705 ;
@@ -48206,6 +48224,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book31" -parent "booksBottomShelf2";
 	rename -uuid "AD64A785-4A43-3027-773F-4488649B3C88";
 	setAttr ".rotatePivot" -type "double3" 13.504813757974116 9.2659541262335772 -2.1447057145233388 ;
@@ -48734,6 +48753,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book32" -parent "booksBottomShelf2";
 	rename -uuid "0F405DC4-423A-33FF-3421-028283C8A07C";
 	setAttr ".rotatePivot" -type "double3" 13.512576080596169 9.2659541262335772 -1.763417167008563 ;
@@ -49262,6 +49282,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book33" -parent "booksBottomShelf2";
 	rename -uuid "9A742375-4DF8-ADD1-F3F8-6C9D52FA0FE8";
 	setAttr ".rotatePivot" -type "double3" 13.520008038298524 9.2659541262335772 -1.3983562831086651 ;
@@ -49790,6 +49811,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book34" -parent "booksBottomShelf2";
 	rename -uuid "B4A79B79-4014-17CE-D478-58B58E0E46EE";
 	setAttr ".rotatePivot" -type "double3" 13.527605929484899 9.2659541262335772 -1.0251446767786989 ;
@@ -50318,6 +50340,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book35" -parent "booksBottomShelf2";
 	rename -uuid "F048FDFE-4F0D-64BF-4600-0CAEDE527BD7";
 	setAttr ".rotatePivot" -type "double3" 13.535280045453586 9.2659541262335772 -0.64818887712562423 ;
@@ -50846,6 +50869,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book36" -parent "booksBottomShelf2";
 	rename -uuid "DD52A035-49FD-D7D9-CC89-03A62DD3D55C";
 	setAttr ".rotatePivot" -type "double3" 13.54247821557081 9.2659541262335772 -0.29461173760262982 ;
@@ -51374,6 +51398,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book37" -parent "booksBottomShelf2";
 	rename -uuid "09709FC2-4DC8-0B1F-DD92-4CAA53C02E9A";
 	setAttr ".rotatePivot" -type "double3" 13.549212407414434 9.2659541262335772 0.036174594241668412 ;
@@ -51902,6 +51927,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book38" -parent "booksBottomShelf2";
 	rename -uuid "162CFB7B-4AC2-4E61-FE88-B89CCF637154";
 	setAttr ".rotatePivot" -type "double3" 13.556580432321303 9.2659541262335772 0.3980950723742942 ;
@@ -52430,6 +52456,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book39" -parent "booksBottomShelf2";
 	rename -uuid "988EE3D6-4012-586A-3211-CFBB7A1A9703";
 	setAttr ".rotatePivot" -type "double3" 13.563697394156474 9.2659541262335772 0.74768322697393919 ;
@@ -52958,6 +52985,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book40" -parent "booksBottomShelf2";
 	rename -uuid "D876AF5F-494C-DF17-2663-D89EA1517DF3";
 	setAttr ".rotatePivot" -type "double3" 13.570328325095273 9.2659541262335772 1.0733973398017946 ;
@@ -53486,6 +53514,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book41" -parent "booksBottomShelf2";
 	rename -uuid "325CAAC4-40A0-9E25-0220-A4A548870B96";
 	setAttr ".rotatePivot" -type "double3" 13.577849115523222 9.2659541262335772 1.4428217244942032 ;
@@ -54014,6 +54043,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book42" -parent "booksBottomShelf2";
 	rename -uuid "089FC0DC-4CC9-9F69-139D-BC9027DE0C9F";
 	setAttr ".rotatePivot" -type "double3" 13.5850409390924 9.2659541262335772 1.7960871189115704 ;
@@ -54540,6 +54570,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book43" -parent "booksBottomShelf2";
 	rename -uuid "EBFFD613-4846-0051-2A1E-50A49DD36816";
 	setAttr ".rotatePivot" -type "double3" 13.592967416291181 9.2659541262335772 2.1854390081831392 ;
@@ -55066,6 +55097,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book44" -parent "booksBottomShelf2";
 	rename -uuid "96211913-47B3-DC4F-3790-31B8000FAA00";
 	setAttr ".rotatePivot" -type "double3" 13.600281189332419 9.2659541262335772 2.5446946118891582 ;
@@ -55592,6 +55624,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book45" -parent "booksBottomShelf2";
 	rename -uuid "ED9E3BC5-4678-E9C9-8891-3F9E59B846F7";
 	setAttr ".rotatePivot" -type "double3" 13.607476372615116 9.2659541262335772 2.8981250368456748 ;
@@ -56118,6 +56151,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book46" -parent "booksBottomShelf2";
 	rename -uuid "C47FAB74-42D8-9B62-87DC-16BCB098794D";
 	setAttr ".rotatePivot" -type "double3" 13.614280399984674 9.2659541262335772 3.2323417190560693 ;
@@ -56644,6 +56678,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book47" -parent "booksBottomShelf2";
 	rename -uuid "59CE094F-40B7-99E6-6188-C4AC2441CC06";
 	setAttr ".rotatePivot" -type "double3" 13.621173540001257 9.2659541262335772 3.5709356519173387 ;
@@ -57170,6 +57205,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book48" -parent "booksBottomShelf2";
 	rename -uuid "46C6B63D-46DB-F5D7-60D0-B08A1705F7DB";
 	setAttr ".rotatePivot" -type "double3" 13.627560618993634 9.2659541262335772 3.8846716547145879 ;
@@ -57696,6 +57732,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf2|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "booksBottomShelf1" -parent "Bookshelf";
 	rename -uuid "3D148580-4B1D-5CAF-C006-5781C9C9C62B";
 	setAttr ".rotatePivot" -type "double3" -0.40835662340449225 4.1714293121583701 
@@ -58229,6 +58266,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book25" -parent "booksBottomShelf1";
 	rename -uuid "C03D192A-4785-CE0E-58A3-7BAED45BA57B";
 	setAttr ".rotatePivot" -type "double3" 13.460031444329758 5.0734917695953214 -4.3444317701368327 ;
@@ -58757,6 +58795,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book26" -parent "booksBottomShelf1";
 	rename -uuid "84585ABC-4196-52D9-B26F-EC965987665D";
 	setAttr ".rotatePivot" -type "double3" 13.467249880839466 5.0734917695953214 -3.9898591369026697 ;
@@ -59285,6 +59324,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book27" -parent "booksBottomShelf1";
 	rename -uuid "72B654E7-489A-10BC-E669-58B76101D039";
 	setAttr ".rotatePivot" -type "double3" 13.474445920761069 5.0734917695953214 -3.6363866334832498 ;
@@ -59813,6 +59853,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book28" -parent "booksBottomShelf1";
 	rename -uuid "6C75BE2A-4608-97D4-2785-7597C84CE551";
 	setAttr ".rotatePivot" -type "double3" 13.481806092035418 5.0734917695953214 -3.2748519290787375 ;
@@ -60341,6 +60382,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book29" -parent "booksBottomShelf1";
 	rename -uuid "19A3686A-40E7-A1E7-DF35-789F12EB94AD";
 	setAttr ".rotatePivot" -type "double3" 13.48934488436808 5.0734917695953214 -2.9045432832657596 ;
@@ -60869,6 +60911,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book30" -parent "booksBottomShelf1";
 	rename -uuid "73BDD8F3-4AD5-67CF-E94D-C4A6151BF0DA";
 	setAttr ".rotatePivot" -type "double3" 13.497101244351683 5.0734917695953214 -2.5235476230560705 ;
@@ -61397,6 +61440,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book31" -parent "booksBottomShelf1";
 	rename -uuid "297680B6-40B2-68B9-5D1C-56B5C01CADF1";
 	setAttr ".rotatePivot" -type "double3" 13.504813757974116 5.0734917695953214 -2.1447057145233388 ;
@@ -61925,6 +61969,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book32" -parent "booksBottomShelf1";
 	rename -uuid "ADFF3C2C-4DD4-D9D0-8BEB-7FBEBB54C0D9";
 	setAttr ".rotatePivot" -type "double3" 13.512576080596169 5.0734917695953214 -1.763417167008563 ;
@@ -62453,6 +62498,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book33" -parent "booksBottomShelf1";
 	rename -uuid "1EF98575-4498-A7F4-E55A-FE8F61185586";
 	setAttr ".rotatePivot" -type "double3" 13.520008038298524 5.0734917695953214 -1.3983562831086651 ;
@@ -62981,6 +63027,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book34" -parent "booksBottomShelf1";
 	rename -uuid "3619BF08-4596-3EE5-6EF3-319F13689B2B";
 	setAttr ".rotatePivot" -type "double3" 13.527605929484899 5.0734917695953214 -1.0251446767786989 ;
@@ -63509,6 +63556,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book35" -parent "booksBottomShelf1";
 	rename -uuid "AE46B7C5-4B67-708E-5D4D-4898D315C99A";
 	setAttr ".rotatePivot" -type "double3" 13.535280045453586 5.0734917695953214 -0.64818887712562423 ;
@@ -64037,6 +64085,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book36" -parent "booksBottomShelf1";
 	rename -uuid "719E1C7D-4AAA-FA41-E4A1-E5BC3932D125";
 	setAttr ".rotatePivot" -type "double3" 13.54247821557081 5.0734917695953214 -0.29461173760262982 ;
@@ -64565,6 +64614,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book37" -parent "booksBottomShelf1";
 	rename -uuid "6D9C4815-4186-6CFC-A7E4-B4BB45CBE96C";
 	setAttr ".rotatePivot" -type "double3" 13.549212407414434 5.0734917695953214 0.036174594241668412 ;
@@ -65093,6 +65143,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book38" -parent "booksBottomShelf1";
 	rename -uuid "A89E57A8-4429-1FF5-2DAC-08AD970BC4EA";
 	setAttr ".rotatePivot" -type "double3" 13.556580432321303 5.0734917695953214 0.3980950723742942 ;
@@ -65621,6 +65672,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book39" -parent "booksBottomShelf1";
 	rename -uuid "0B25D827-495D-3C3E-BAAC-1F9E9DE4F363";
 	setAttr ".rotatePivot" -type "double3" 13.563697394156474 5.0734917695953214 0.74768322697393919 ;
@@ -66149,6 +66201,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book40" -parent "booksBottomShelf1";
 	rename -uuid "BD4A5DEE-4363-967B-C344-8EAAAF97B9DA";
 	setAttr ".rotatePivot" -type "double3" 13.570328325095273 5.0734917695953214 1.0733973398017946 ;
@@ -66677,6 +66730,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book41" -parent "booksBottomShelf1";
 	rename -uuid "8E733309-4A9A-B408-B68C-63BB655A41F2";
 	setAttr ".rotatePivot" -type "double3" 13.577849115523222 5.0734917695953214 1.4428217244942032 ;
@@ -67205,6 +67259,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book42" -parent "booksBottomShelf1";
 	rename -uuid "DD6F17A5-4A47-2FCE-4E41-30AAF6D3BF66";
 	setAttr ".rotatePivot" -type "double3" 13.5850409390924 5.0734917695953214 1.7960871189115704 ;
@@ -67732,6 +67787,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book43" -parent "booksBottomShelf1";
 	rename -uuid "C92F9E56-4AF6-EA2A-4EE1-55B3AA5DD397";
 	setAttr ".rotatePivot" -type "double3" 13.592967416291181 5.0734917695953214 2.1854390081831392 ;
@@ -68258,6 +68314,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book44" -parent "booksBottomShelf1";
 	rename -uuid "D5248B36-4660-3A5B-7341-94830172A304";
 	setAttr ".rotatePivot" -type "double3" 13.600281189332419 5.0734917695953214 2.5446946118891582 ;
@@ -68784,6 +68841,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book45" -parent "booksBottomShelf1";
 	rename -uuid "EC2C3BA1-444F-B780-2446-C6A34024A23A";
 	setAttr ".rotatePivot" -type "double3" 13.607476372615116 5.0734917695953214 2.8981250368456748 ;
@@ -69311,6 +69369,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book46" -parent "booksBottomShelf1";
 	rename -uuid "F6CB96F6-423C-F43C-E314-EABCFF9F6B75";
 	setAttr ".rotatePivot" -type "double3" 13.614280399984674 5.0734917695953214 3.2323417190560693 ;
@@ -69837,6 +69896,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book47" -parent "booksBottomShelf1";
 	rename -uuid "BBBFE610-4F98-DF2F-57E7-4782D0B3A552";
 	setAttr ".rotatePivot" -type "double3" 13.621173540001257 5.0734917695953214 3.5709356519173387 ;
@@ -70363,6 +70423,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book48" -parent "booksBottomShelf1";
 	rename -uuid "A471255C-4A1F-9883-3C26-89A01EA60B56";
 	setAttr ".rotatePivot" -type "double3" 13.627560618993634 5.0734917695953214 3.8846716547145879 ;
@@ -70889,6 +70950,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf1|boo
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "booksBottomShelf" -parent "Bookshelf";
 	rename -uuid "BE736E72-45A8-3DD9-81FB-0083A1BCD657";
 	setAttr ".rotatePivot" -type "double3" -0.40835662340449225 0 -0.30817304455075301 ;
@@ -71351,6 +71413,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book25" -parent "booksBottomShelf";
 	rename -uuid "DE1F4473-45D4-9588-5D5F-E5ACC39201CF";
 	setAttr ".rotatePivot" -type "double3" 13.460031444329758 0.90206245743695113 -4.3444317701368327 ;
@@ -71881,6 +71944,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book26" -parent "booksBottomShelf";
 	rename -uuid "6D2917A6-4FE6-5F18-648F-8E93DED95D06";
 	setAttr ".rotatePivot" -type "double3" 13.467249880839466 0.90206245743695113 -3.9898591369026697 ;
@@ -72411,6 +72475,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book27" -parent "booksBottomShelf";
 	rename -uuid "84F8157D-4AF1-4016-8791-AD8867830E2D";
 	setAttr ".rotatePivot" -type "double3" 13.474445920761069 0.90206245743695113 -3.6363866334832498 ;
@@ -72941,6 +73006,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book28" -parent "booksBottomShelf";
 	rename -uuid "3B679007-4DBF-A8A8-2148-AC992421C29C";
 	setAttr ".rotatePivot" -type "double3" 13.481806092035418 0.90206245743695113 -3.2748519290787375 ;
@@ -73471,6 +73537,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book29" -parent "booksBottomShelf";
 	rename -uuid "C7CCF433-4570-48E9-9D4D-60B3AF3E8CBA";
 	setAttr ".rotatePivot" -type "double3" 13.48934488436808 0.90206245743695113 -2.9045432832657596 ;
@@ -74001,6 +74068,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book30" -parent "booksBottomShelf";
 	rename -uuid "B7798F5F-4454-CDC8-7014-2ABA54F007AE";
 	setAttr ".rotatePivot" -type "double3" 13.497101244351683 0.90206245743695113 -2.5235476230560705 ;
@@ -74531,6 +74599,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book31" -parent "booksBottomShelf";
 	rename -uuid "26133A0D-42F7-3CC3-1661-CCA969AFAD67";
 	setAttr ".rotatePivot" -type "double3" 13.504813757974116 0.90206245743695113 -2.1447057145233388 ;
@@ -75061,6 +75130,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book32" -parent "booksBottomShelf";
 	rename -uuid "53DD7C72-4D6C-5AAF-4A48-D18B6701FDB4";
 	setAttr ".rotatePivot" -type "double3" 13.512576080596169 0.90206245743695113 -1.763417167008563 ;
@@ -75591,6 +75661,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book33" -parent "booksBottomShelf";
 	rename -uuid "E924D694-41EB-E947-2294-BAB3C7389AC4";
 	setAttr ".rotatePivot" -type "double3" 13.520008038298524 0.90206245743695113 -1.3983562831086651 ;
@@ -76121,6 +76192,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book34" -parent "booksBottomShelf";
 	rename -uuid "89B6E0C3-482D-5C22-8974-14980049D48D";
 	setAttr ".rotatePivot" -type "double3" 13.527605929484899 0.90206245743695113 -1.0251446767786989 ;
@@ -76651,6 +76723,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book35" -parent "booksBottomShelf";
 	rename -uuid "B22DB183-442C-4E84-61B4-EA9CF2DF4569";
 	setAttr ".rotatePivot" -type "double3" 13.535280045453586 0.90206245743695113 -0.64818887712562423 ;
@@ -77180,6 +77253,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book36" -parent "booksBottomShelf";
 	rename -uuid "30041A81-4AB9-75A5-5812-8DA580312BF8";
 	setAttr ".rotatePivot" -type "double3" 13.54247821557081 0.90206245743695113 -0.29461173760262982 ;
@@ -77711,6 +77785,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book37" -parent "booksBottomShelf";
 	rename -uuid "EE53B961-4CD9-3E38-C312-5CB4E3D6FBFB";
 	setAttr ".rotatePivot" -type "double3" 13.549212407414434 0.90206245743695113 0.036174594241668412 ;
@@ -78242,6 +78317,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book38" -parent "booksBottomShelf";
 	rename -uuid "6B5E38F5-4195-8468-F01C-608AF9102271";
 	setAttr ".rotatePivot" -type "double3" 13.556580432321303 0.90206245743695113 0.3980950723742942 ;
@@ -78773,6 +78849,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book39" -parent "booksBottomShelf";
 	rename -uuid "1BD99389-4F49-1B95-4148-8AA9BCB72663";
 	setAttr ".rotatePivot" -type "double3" 13.563697394156474 0.90206245743695113 0.74768322697393919 ;
@@ -79303,6 +79380,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book40" -parent "booksBottomShelf";
 	rename -uuid "E8EA9185-4D45-66A4-AEE0-AA8743D9B758";
 	setAttr ".rotatePivot" -type "double3" 13.570328325095273 0.90206245743695113 1.0733973398017946 ;
@@ -79833,6 +79911,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book41" -parent "booksBottomShelf";
 	rename -uuid "A420E8BD-4CC3-1051-F26B-D285A84519BE";
 	setAttr ".rotatePivot" -type "double3" 13.577849115523222 0.90206245743695113 1.4428217244942032 ;
@@ -80363,6 +80442,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book42" -parent "booksBottomShelf";
 	rename -uuid "81B5FCA8-40CC-1615-BE4A-1CB9F8FE01F3";
 	setAttr ".rotatePivot" -type "double3" 13.5850409390924 0.90206245743695113 1.7960871189115704 ;
@@ -80892,6 +80972,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book43" -parent "booksBottomShelf";
 	rename -uuid "612A8680-411E-A523-E9FA-4BA5BEED0D83";
 	setAttr ".rotatePivot" -type "double3" 13.592967416291181 0.90206245743695113 2.1854390081831392 ;
@@ -81419,6 +81500,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book44" -parent "booksBottomShelf";
 	rename -uuid "5FFB9DE5-4689-C04C-D5E7-ADAFDA70E2F7";
 	setAttr ".rotatePivot" -type "double3" 13.600281189332419 0.90206245743695113 2.5446946118891582 ;
@@ -81946,6 +82028,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book45" -parent "booksBottomShelf";
 	rename -uuid "858B3405-43DF-1E92-6683-068D7223DC3F";
 	setAttr ".rotatePivot" -type "double3" 13.607476372615116 0.90206245743695113 2.8981250368456748 ;
@@ -82474,6 +82557,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book46" -parent "booksBottomShelf";
 	rename -uuid "FCFD954A-446F-4D96-E17C-E4824FD7C7E8";
 	setAttr ".rotatePivot" -type "double3" 13.614280399984674 0.90206245743695113 3.2323417190560693 ;
@@ -83001,6 +83085,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book47" -parent "booksBottomShelf";
 	rename -uuid "F429F64B-4EC5-79C5-C0D6-DD95588D2789";
 	setAttr ".rotatePivot" -type "double3" 13.621173540001257 0.90206245743695113 3.5709356519173387 ;
@@ -83529,6 +83614,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "book48" -parent "booksBottomShelf";
 	rename -uuid "293EDFCE-40D7-BF7D-388D-69803A750C26";
 	setAttr ".rotatePivot" -type "double3" 13.627560618993634 0.90206245743695113 3.8846716547145879 ;
@@ -84057,6 +84143,7 @@ createNode mesh -name "bookFrameShape" -parent "|Bookshelf|booksBottomShelf|book
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "myBookcase:bookcaseFeet" -parent "Bookshelf";
 	rename -uuid "833452B6-4435-B283-CAF0-C59F34C8E33E";
 	setAttr ".rotatePivot" -type "double3" -0.03111992140889086 0 0 ;
@@ -84785,6 +84872,7 @@ createNode mesh -name "myBookcase:pCubeShape48" -parent "myBookcase:pCube48";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "myBookcase:pCube47" -parent "Bookshelf";
 	rename -uuid "69732738-41E6-FE9F-79B3-7E8E3BE37418";
 	setAttr ".rotatePivot" -type "double3" 18.721857037386538 9.5621841103351048 -1.0998449423880057 ;
@@ -84857,6 +84945,7 @@ createNode mesh -name "myBookcase:pCubeShape47" -parent "myBookcase:pCube47";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "myBookcase:pCube49" -parent "Bookshelf";
 	rename -uuid "CECEF930-42D7-5D20-26D0-2590F900AA23";
 	setAttr ".rotatePivot" -type "double3" 18.726736856859016 4.5502107503330844 -1.0998653895589303 ;
@@ -84929,6 +85018,7 @@ createNode mesh -name "myBookcase:pCubeShape49" -parent "myBookcase:pCube49";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "myBookcase:bookcaseBack" -parent "Bookshelf";
 	rename -uuid "FD06858E-4E48-5473-83C7-59AA47F0C845";
 	setAttr ".rotatePivot" -type "double3" 19.756602089138756 8.6396561321483976 -1.3663610942138875 ;
@@ -85063,6 +85153,7 @@ createNode mesh -name "pCubeShape6" -parent "|chairs|chairCheckeredFinished|pCub
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube7" -parent "chairCheckeredFinished";
 	rename -uuid "576D38EA-483B-6D18-2E64-0CA720DBCB31";
 	setAttr ".rotatePivot" -type "double3" 4.6708676675297758 3.5394330933406941 12.142459645815119 ;
@@ -85140,6 +85231,7 @@ createNode mesh -name "pCubeShape7" -parent "|chairs|chairCheckeredFinished|pCub
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube8" -parent "chairCheckeredFinished";
 	rename -uuid "5063DA1C-4C07-E2DF-F66C-1B8871C41AA3";
 	setAttr ".rotatePivot" -type "double3" 4.1062275379287652 0.77215079824028088 13.305328390823487 ;
@@ -85217,6 +85309,7 @@ createNode mesh -name "pCubeShape8" -parent "|chairs|chairCheckeredFinished|pCub
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube9" -parent "chairCheckeredFinished";
 	rename -uuid "0C64E5D1-4A40-B5A1-BACC-57AC833A2F13";
 	setAttr ".rotatePivot" -type "double3" 5.6824080805795392 0.76697679590727041 11.387129509634867 ;
@@ -85295,6 +85388,7 @@ createNode mesh -name "pCubeShape9" -parent "|chairs|chairCheckeredFinished|pCub
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube10" -parent "chairCheckeredFinished";
 	rename -uuid "3017EB5E-46A8-1FF2-2352-0F8810513821";
 	setAttr ".rotatePivot" -type "double3" 7.0204920300953937 0.78262442933283793 12.491822443517082 ;
@@ -85372,6 +85466,7 @@ createNode mesh -name "pCubeShape10" -parent "|chairs|chairCheckeredFinished|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube12" -parent "chairCheckeredFinished";
 	rename -uuid "795A3845-4829-06EE-C296-0B810C188820";
 	setAttr ".rotatePivot" -type "double3" 6.3504489613270474 2.780332480249724 11.633487165456403 ;
@@ -85449,6 +85544,7 @@ createNode mesh -name "pCubeShape12" -parent "|chairs|chairCheckeredFinished|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube11" -parent "chairCheckeredFinished";
 	rename -uuid "0B129A68-44B1-C147-C9F3-CD8C80F0ED16";
 	setAttr ".rotatePivot" -type "double3" 5.5563592709966123 0.78781094110473759 14.325529376528227 ;
@@ -85526,6 +85622,7 @@ createNode mesh -name "pCubeShape11" -parent "|chairs|chairCheckeredFinished|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube13" -parent "chairCheckeredFinished";
 	rename -uuid "3D023011-41EC-697F-B540-89827CC52DB4";
 	setAttr ".rotatePivot" -type "double3" 4.4858773636309124 2.7991698088554084 13.848988424822316 ;
@@ -85603,6 +85700,7 @@ createNode mesh -name "pCubeShape13" -parent "|chairs|chairCheckeredFinished|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "chairCheckeredFinished1" -parent "chairs";
 	rename -uuid "6B772781-4274-C988-4382-2396EB1C851F";
 	setAttr ".rotatePivot" -type "double3" -2.7009119831007995 -0.29589243021431955 
@@ -85685,6 +85783,7 @@ createNode mesh -name "pCubeShape6" -parent "|chairs|chairCheckeredFinished1|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube7" -parent "chairCheckeredFinished1";
 	rename -uuid "D15818B8-46DF-183A-8F79-999D58A7580C";
 	setAttr ".rotatePivot" -type "double3" 0.96436939591292092 3.5521420507975865 15.345742072340618 ;
@@ -85762,6 +85861,7 @@ createNode mesh -name "pCubeShape7" -parent "|chairs|chairCheckeredFinished1|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube8" -parent "chairCheckeredFinished1";
 	rename -uuid "BC862897-4F5A-D5E6-F432-D8A031A90BCD";
 	setAttr ".rotatePivot" -type "double3" 0.42809163728571598 0.78485975569717326 
@@ -85840,6 +85940,7 @@ createNode mesh -name "pCubeShape8" -parent "|chairs|chairCheckeredFinished1|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube9" -parent "chairCheckeredFinished1";
 	rename -uuid "A88BEA5A-4B05-38F5-E508-35B3F7B51D6A";
 	setAttr ".rotatePivot" -type "double3" 1.957297734066461 0.77968575336416279 14.566106941560449 ;
@@ -85918,6 +86019,7 @@ createNode mesh -name "pCubeShape9" -parent "|chairs|chairCheckeredFinished1|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube10" -parent "chairCheckeredFinished1";
 	rename -uuid "19CBD117-478A-1A3D-D10C-F594B48C2C92";
 	setAttr ".rotatePivot" -type "double3" 3.3217740360276391 0.79533338678973031 15.638030238959843 ;
@@ -85995,6 +86097,7 @@ createNode mesh -name "pCubeShape10" -parent "|chairs|chairCheckeredFinished1|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube12" -parent "chairCheckeredFinished1";
 	rename -uuid "DB756901-4873-889F-E458-0187807C581D";
 	setAttr ".rotatePivot" -type "double3" 2.6311156999335417 2.7930414377066164 14.796194015961724 ;
@@ -86072,6 +86175,7 @@ createNode mesh -name "pCubeShape12" -parent "|chairs|chairCheckeredFinished1|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube11" -parent "chairCheckeredFinished1";
 	rename -uuid "32C11DE2-48F7-CE20-1134-799A6987D51B";
 	setAttr ".rotatePivot" -type "double3" 1.9025340829915143 0.80051989856162997 17.506699232694519 ;
@@ -86149,6 +86253,7 @@ createNode mesh -name "pCubeShape11" -parent "|chairs|chairCheckeredFinished1|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube13" -parent "chairCheckeredFinished1";
 	rename -uuid "AB1890C9-4D6D-F447-757E-C986588D427D";
 	setAttr ".rotatePivot" -type "double3" 0.82081210065419441 2.8118787663123008 17.056254623915258 ;
@@ -86226,6 +86331,7 @@ createNode mesh -name "pCubeShape13" -parent "|chairs|chairCheckeredFinished1|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "chairCheckeredFinished2" -parent "chairs";
 	rename -uuid "5118DD5D-4368-CE8B-6815-18A702E6BDCB";
 	setAttr ".rotatePivot" -type "double3" 14.098198941005851 -0.17336484649196926 
@@ -86308,6 +86414,7 @@ createNode mesh -name "pCubeShape6" -parent "|chairs|chairCheckeredFinished2|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube7" -parent "chairCheckeredFinished2";
 	rename -uuid "623AAB1D-4018-4359-E9C7-798BB2F4B558";
 	setAttr ".rotatePivot" -type "double3" 10.326143346019535 3.6618519262346627 24.12598070509528 ;
@@ -86385,6 +86492,7 @@ createNode mesh -name "pCubeShape7" -parent "|chairs|chairCheckeredFinished2|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube8" -parent "chairCheckeredFinished2";
 	rename -uuid "05EC4D29-47EF-589F-69F2-E385D935DF98";
 	setAttr ".rotatePivot" -type "double3" 10.929804415472711 0.88430425464729012 23.008055958014502 ;
@@ -86462,6 +86570,7 @@ createNode mesh -name "pCubeShape8" -parent "|chairs|chairCheckeredFinished2|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube9" -parent "chairCheckeredFinished2";
 	rename -uuid "28749F7D-4B42-C9C1-8BDA-6DA8262FD32D";
 	setAttr ".rotatePivot" -type "double3" 9.3402133291733147 0.88959729725360681 24.91515610829024 ;
@@ -86540,6 +86649,7 @@ createNode mesh -name "pCubeShape9" -parent "|chairs|chairCheckeredFinished2|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube10" -parent "chairCheckeredFinished2";
 	rename -uuid "BD60A9A6-4B19-5737-89E3-BFA550F66777";
 	setAttr ".rotatePivot" -type "double3" 8.0099072350118679 0.87396894182347928 23.801108787528435 ;
@@ -86617,6 +86727,7 @@ createNode mesh -name "pCubeShape10" -parent "|chairs|chairCheckeredFinished2|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube12" -parent "chairCheckeredFinished2";
 	rename -uuid "393888DA-48E6-C26D-26D8-01AA2EF45924";
 	setAttr ".rotatePivot" -type "double3" 8.6515532785066114 2.8914789654700197 24.634462421719491 ;
@@ -86694,6 +86805,7 @@ createNode mesh -name "pCubeShape12" -parent "|chairs|chairCheckeredFinished2|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube11" -parent "chairCheckeredFinished2";
 	rename -uuid "38BD91F0-40B5-7032-F86C-9493C83550F6";
 	setAttr ".rotatePivot" -type "double3" 9.4868608745033765 0.86867030011089952 21.977712883306733 ;
@@ -86771,6 +86883,7 @@ createNode mesh -name "pCubeShape11" -parent "|chairs|chairCheckeredFinished2|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube13" -parent "chairCheckeredFinished2";
 	rename -uuid "18F5FD60-4E8A-6C7C-8E2F-AC9FF0658DE7";
 	setAttr ".rotatePivot" -type "double3" 10.531466829736523 2.8987204788067888 22.431895619435672 ;
@@ -86848,6 +86961,7 @@ createNode mesh -name "pCubeShape13" -parent "|chairs|chairCheckeredFinished2|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "chairCheckeredFinished3" -parent "chairs";
 	rename -uuid "BAEE577D-43D4-2542-3BA2-FDACA5FF7A70";
 	setAttr ".rotatePivot" -type "double3" 17.609111988407641 -0.13374706173566686 
@@ -86930,6 +87044,7 @@ createNode mesh -name "pCubeShape6" -parent "|chairs|chairCheckeredFinished3|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube7" -parent "chairCheckeredFinished3";
 	rename -uuid "828B5A9D-4856-96A1-CB57-D2A0C103A9D6";
 	setAttr ".rotatePivot" -type "double3" 13.897444588594967 3.7014697109909651 19.956557159213038 ;
@@ -87007,6 +87122,7 @@ createNode mesh -name "pCubeShape7" -parent "|chairs|chairCheckeredFinished3|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube8" -parent "chairCheckeredFinished3";
 	rename -uuid "40A1F5A6-41FA-5B60-8698-4C9710ADF2E8";
 	setAttr ".rotatePivot" -type "double3" 14.466890951810106 0.92392203940359252 18.820822477903171 ;
@@ -87084,6 +87200,7 @@ createNode mesh -name "pCubeShape8" -parent "|chairs|chairCheckeredFinished3|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube9" -parent "chairCheckeredFinished3";
 	rename -uuid "86759A6F-4B46-4F6C-C514-A2946218537A";
 	setAttr ".rotatePivot" -type "double3" 12.935925712090013 0.92921508200990921 20.775298428022033 ;
@@ -87162,6 +87279,7 @@ createNode mesh -name "pCubeShape9" -parent "|chairs|chairCheckeredFinished3|pCu
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube10" -parent "chairCheckeredFinished3";
 	rename -uuid "DE4A165C-4A94-47E0-8412-ABBC3BB41428";
 	setAttr ".rotatePivot" -type "double3" 11.572413926052848 0.91358672657978168 19.702148230520596 ;
@@ -87239,6 +87357,7 @@ createNode mesh -name "pCubeShape10" -parent "|chairs|chairCheckeredFinished3|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube12" -parent "chairCheckeredFinished3";
 	rename -uuid "D0B429E7-48E1-B169-14B3-42AF118880EF";
 	setAttr ".rotatePivot" -type "double3" 12.23906211292765 2.9310967502263221 20.515639545586978 ;
@@ -87316,6 +87435,7 @@ createNode mesh -name "pCubeShape12" -parent "|chairs|chairCheckeredFinished3|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube11" -parent "chairCheckeredFinished3";
 	rename -uuid "9AEE1AD7-4AAA-953F-8F0D-679E90F6676B";
 	setAttr ".rotatePivot" -type "double3" 12.993334614219549 0.90828808486720192 17.834757249852764 ;
@@ -87393,6 +87513,7 @@ createNode mesh -name "pCubeShape11" -parent "|chairs|chairCheckeredFinished3|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode transform -name "pCube13" -parent "chairCheckeredFinished3";
 	rename -uuid "B46F6066-44A2-AA33-B804-1395E3568669";
 	setAttr ".rotatePivot" -type "double3" 14.051246626509583 2.9383382635630912 18.257019885849104 ;
@@ -87470,21 +87591,22 @@ createNode mesh -name "pCubeShape13" -parent "|chairs|chairCheckeredFinished3|pC
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".pinData[1]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".displayFacesWithGroupId" 0;
 createNode lightLinker -shared -name "lightLinker1";
-	rename -uuid "C6745068-47E7-641B-1F7E-98A3C92B7ABF";
-	setAttr -size 162 ".link";
-	setAttr -size 162 ".shadowLink";
+	rename -uuid "7DAB8114-4DBB-77D5-5DCC-239ED5FCA6B4";
+	setAttr -size 165 ".link";
+	setAttr -size 165 ".shadowLink";
 createNode shapeEditorManager -name "shapeEditorManager";
-	rename -uuid "D27F3430-48A4-0519-67CC-8AB5A9F827D2";
+	rename -uuid "30F1A491-4603-8D16-4686-59934739F110";
 createNode poseInterpolatorManager -name "poseInterpolatorManager";
-	rename -uuid "A1646F8E-4273-5624-5BF4-57AFB76F12AA";
+	rename -uuid "135F49B2-47ED-2E7C-1C80-86BEA6783CA3";
 createNode displayLayerManager -name "layerManager";
-	rename -uuid "C84C52AD-4DBE-8E0C-E1A2-C0B61AEA4E0C";
+	rename -uuid "254DF719-4390-D41A-2A48-1998FC01A5D8";
 createNode displayLayer -name "defaultLayer";
 	rename -uuid "4409BF28-4D84-C387-F4E5-77951E2A7B52";
 	setAttr ".ufeMembers" -type "stringArray" 0  ;
 createNode renderLayerManager -name "renderLayerManager";
-	rename -uuid "D90C711A-4FDE-DF1F-3C1A-8BBE49AE0AEB";
+	rename -uuid "E7F84F3F-4A2A-9DAD-346C-45A93DCD205A";
 createNode renderLayer -name "defaultRenderLayer";
 	rename -uuid "32261B9B-43FB-8E88-2B9E-CCB394130D97";
 	setAttr ".global" yes;
@@ -87520,9 +87642,9 @@ createNode script -name "uiConfigurationScriptNode";
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
-		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"all\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1757\n            -height 1073\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1957\n            -height 1073\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n"
 		+ "            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
 		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
@@ -87549,8 +87671,8 @@ createNode script -name "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n"
 		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1757\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1757\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"all\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"all\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1957\\n    -height 1073\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".scriptType" 3;
 createNode script -name "sceneConfigurationScriptNode";
@@ -87835,7 +87957,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert31";
 createNode shadingEngine -name "Maya_Lambert31SG";
 	rename -uuid "634927EF-459E-741B-C319-888860856600";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 2 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo31";
 	rename -uuid "B7730179-4300-FC4E-F35E-408303EDD4FE";
@@ -88406,7 +88527,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert62";
 createNode shadingEngine -name "Maya_Lambert62SG";
 	rename -uuid "B5DFA095-480F-6EF8-9459-25A42F535D37";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 10 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo63";
 	rename -uuid "26D65476-4B95-7179-A30F-19A833224010";
@@ -88613,11 +88733,6 @@ createNode shadingEngine -name "Maya_Lambert79SG";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo80";
 	rename -uuid "466C5CE7-47EF-B02A-66A6-DAA43532F293";
-createNode nodeGraphEditorInfo -name "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uuid "83D02150-4DBC-9A1A-56FF-17B2B5427D92";
-	setAttr ".tabGraphInfo[0].tabName" -type "string" "Untitled_1";
-	setAttr ".tabGraphInfo[0].viewRectLow" -type "double2" -620.23807059204864 -353.5714145217629 ;
-	setAttr ".tabGraphInfo[0].viewRectHigh" -type "double2" 594.04759544228841 370.23808052615578 ;
 createNode MaterialXSurfaceShader -name "Maya_Lambert80";
 	rename -uuid "E22A3087-4E04-31C2-3D79-8994B9C96D5D";
 	setAttr ".ufePath" -type "string" "|materialXStack1|materialXStackShape1,%document74%Maya_Lambert1";
@@ -88634,7 +88749,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert81";
 createNode shadingEngine -name "Maya_Lambert81SG";
 	rename -uuid "805C4363-4A65-77FD-C65E-568ED259E6E8";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo82";
 	rename -uuid "D42F92AB-459C-8A7C-B5A8-468F5C713E37";
@@ -88644,7 +88758,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert82";
 createNode shadingEngine -name "Maya_Lambert82SG";
 	rename -uuid "27D92785-43DB-90D1-BAAE-B59CD5C29641";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo83";
 	rename -uuid "23D831F6-4002-8329-005C-008B5C46B649";
@@ -88654,7 +88767,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert83";
 createNode shadingEngine -name "Maya_Lambert83SG";
 	rename -uuid "912ECBC7-4667-6C67-FBA6-DFA0D2E4AD6F";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo84";
 	rename -uuid "1363D51C-460D-166C-934C-41A0B4D64A5A";
@@ -88664,7 +88776,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert84";
 createNode shadingEngine -name "Maya_Lambert84SG";
 	rename -uuid "EE872B42-4FF1-E29C-5805-E49042A7A0FD";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo85";
 	rename -uuid "968D8940-48AD-3323-0485-4594399AD17A";
@@ -88674,7 +88785,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert85";
 createNode shadingEngine -name "Maya_Lambert85SG";
 	rename -uuid "DAADDC34-422B-89B3-E50A-63A203C5E7AD";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo86";
 	rename -uuid "B5A9B05B-46F0-6C5B-537B-EE812E841011";
@@ -88684,7 +88794,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert86";
 createNode shadingEngine -name "Maya_Lambert86SG";
 	rename -uuid "4D228209-41CF-1C45-CE12-4AB95D189219";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo87";
 	rename -uuid "3772FC1A-45A7-F4B7-1F08-F5A4752429D7";
@@ -88694,7 +88803,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert87";
 createNode shadingEngine -name "Maya_Lambert87SG";
 	rename -uuid "3C6709F0-4170-01A1-A140-8DADC9DE231F";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo88";
 	rename -uuid "4B28E264-435C-353B-3011-D9B9442D2914";
@@ -88704,7 +88812,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert88";
 createNode shadingEngine -name "Maya_Lambert88SG";
 	rename -uuid "80A6617A-4577-5605-7FFE-AEBE10A52304";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 4 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo89";
 	rename -uuid "33CFE550-4F13-8A11-D873-F889FE3621F9";
@@ -88834,7 +88941,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert102";
 createNode shadingEngine -name "Maya_Lambert102SG";
 	rename -uuid "04CD1ED9-4F18-D00C-4CE2-6589F92D30FF";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 75 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo103";
 	rename -uuid "797DF472-4A39-520A-4F41-07AEA66769B3";
@@ -88844,7 +88950,6 @@ createNode MaterialXSurfaceShader -name "Maya_Lambert103";
 createNode shadingEngine -name "Maya_Lambert103SG";
 	rename -uuid "1EEFC2C1-405B-87D4-9266-8D9164345BD2";
 	setAttr ".isHistoricallyInteresting" 0;
-	setAttr -size 75 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo104";
 	rename -uuid "DC595C8F-468A-233C-5409-8D803B63F02F";
@@ -89037,6 +89142,61 @@ createNode shadingEngine -name "Maya_Lambert124SG";
 	setAttr ".renderableOnlySet" yes;
 createNode materialInfo -name "materialInfo125";
 	rename -uuid "5386C9F7-4A3E-1F61-4275-B691659D0DE5";
+createNode lambert -name "lambert2";
+	rename -uuid "B5358145-4453-ABBF-A223-4B88896120E9";
+createNode shadingEngine -name "lambert2SG";
+	rename -uuid "B0855658-483F-D5A7-C923-A9846B94231F";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo126";
+	rename -uuid "8DC5D3CA-444D-F50C-3ACB-B38DD1822424";
+createNode place2dTexture -name "place2dTexture1";
+	rename -uuid "8BB60F2A-4514-136E-4379-10A32A11C275";
+createNode file -name "Scene1_Texture_1";
+	rename -uuid "FE6E96A3-46FB-9A91-655E-019A7D1CB7F6";
+	setAttr ".fileTextureName" -type "string" "C:/Users/Anja Ehlers-Pehrson/OneDrive/Desktop/Scene1_Texture.png";
+	setAttr ".colorSpace" -type "string" "sRGB";
+createNode file -name "scene1_atlas_1";
+	rename -uuid "33D8BBC7-484A-C44E-07A5-02BB839DA8F9";
+	setAttr ".fileTextureName" -type "string" "C:/Users/Anja Ehlers-Pehrson/OneDrive/Pictures/scene1_atlas.png";
+	setAttr ".colorSpace" -type "string" "sRGB";
+createNode place2dTexture -name "place2dTexture2";
+	rename -uuid "C802750C-4106-ADDA-1E06-AC8F93C08E1B";
+createNode lambert -name "lambert3";
+	rename -uuid "BA7C2B80-4A60-2AE7-8E02-539C8B7E555A";
+createNode shadingEngine -name "lambert3SG";
+	rename -uuid "5B07456D-40BD-8682-6383-A99B383544A5";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr -size 236 ".dagSetMembers";
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo127";
+	rename -uuid "6B8EB8FC-4FDC-DAB3-CE93-3D9485D16D17";
+createNode nodeGraphEditorInfo -name "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uuid "B21FA75A-4F84-5F53-ABE0-EDA0EE0EECD4";
+	setAttr ".tabGraphInfo[0].tabName" -type "string" "Untitled_1";
+	setAttr ".tabGraphInfo[0].viewRectLow" -type "double2" -856.11763053829748 -1242.372729418453 ;
+	setAttr ".tabGraphInfo[0].viewRectHigh" -type "double2" 601.02522660455975 -373.80130084702438 ;
+	setAttr -size 4 ".tabGraphInfo[0].nodeInfo";
+	setAttr ".tabGraphInfo[0].nodeInfo[0].positionX" -435.62979125976562;
+	setAttr ".tabGraphInfo[0].nodeInfo[0].positionY" -811.129150390625;
+	setAttr ".tabGraphInfo[0].nodeInfo[0].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].positionX" -146.52099609375;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].positionY" -761.6317138671875;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].positionX" 117.93553161621094;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].positionY" -643.5780029296875;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].positionX" 463.46417236328125;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].positionY" -349.62362670898438;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].nodeVisualState" 1923;
+createNode shadingEngine -name "texturedFacets1";
+	rename -uuid "AAC4533A-4188-8271-9E00-28931ECC8690";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo128";
+	rename -uuid "32BCEA8C-46B7-BB75-E79F-CEA4A29D9347";
+createNode lambert -name "defaultPolygonShader1";
+	rename -uuid "991C701B-4544-8107-66AB-D18607406741";
 select -noExpand :time1;
 	setAttr ".outTime" 1;
 	setAttr ".unwarpedTime" 1;
@@ -89048,19 +89208,19 @@ select -noExpand :hardwareRenderingGlobals;
 	setAttr ".floatingPointRTEnable" yes;
 	setAttr ".floatingPointRTFormat" 1;
 select -noExpand :renderPartition;
-	setAttr -size 162 ".sets";
+	setAttr -size 165 ".sets";
 select -noExpand :renderGlobalsList1;
 select -noExpand :defaultShaderList1;
-	setAttr -size 149 ".shaders";
+	setAttr -size 152 ".shaders";
 select -noExpand :postProcessList1;
 	setAttr -size 2 ".postProcesses";
 select -noExpand :defaultRenderUtilityList1;
-	setAttr -size 4 ".utilities";
+	setAttr -size 6 ".utilities";
 select -noExpand :defaultRenderingList1;
 select -noExpand :lightList1;
 	setAttr -size 3 ".lights";
 select -noExpand :defaultTextureList1;
-	setAttr -size 9 ".textures";
+	setAttr -size 11 ".textures";
 select -noExpand :standardSurface1;
 	setAttr ".baseColor" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".specularRoughness" 0.5;
@@ -89269,6 +89429,9 @@ relationship "link" ":lightLinker1" "Maya_Lambert121SG.message" ":defaultLightSe
 relationship "link" ":lightLinker1" "Maya_Lambert122SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert123SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert124SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "texturedFacets1.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert1SG.message" ":defaultLightSet.message";
@@ -89431,6 +89594,9 @@ relationship "shadowLink" ":lightLinker1" "Maya_Lambert121SG.message" ":defaultL
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert122SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert123SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Maya_Lambert124SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "texturedFacets1.message" ":defaultLightSet.message";
 connectAttr "layerManager.displayLayerId[0]" "defaultLayer.identification";
 connectAttr "renderLayerManager.renderLayerId[0]" "defaultRenderLayer.identification"
 		;
@@ -89462,15 +89628,11 @@ connectAttr "Maya_Lambert4.message" "materialInfo4.material";
 connectAttr "Maya_Lambert4.message" "materialInfo4.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert5.stack";
 connectAttr "Maya_Lambert5.outColor" "Maya_Lambert5SG.surfaceShader";
-connectAttr "pCubeShape1.instObjGroups" "Maya_Lambert5SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert5SG.message" "materialInfo5.shadingGroup";
 connectAttr "Maya_Lambert5.message" "materialInfo5.material";
 connectAttr "Maya_Lambert5.message" "materialInfo5.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert6.stack";
 connectAttr "Maya_Lambert6.outColor" "Maya_Lambert6SG.surfaceShader";
-connectAttr "pCubeShape3.instObjGroups" "Maya_Lambert6SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert6SG.message" "materialInfo6.shadingGroup";
 connectAttr "Maya_Lambert6.message" "materialInfo6.material";
 connectAttr "Maya_Lambert6.message" "materialInfo6.texture" -nextAvailable;
@@ -89596,10 +89758,6 @@ connectAttr "Maya_Lambert30.message" "materialInfo30.material";
 connectAttr "Maya_Lambert30.message" "materialInfo30.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert31.stack";
 connectAttr "Maya_Lambert31.outColor" "Maya_Lambert31SG.surfaceShader";
-connectAttr "pCubeShape4.instObjGroups" "Maya_Lambert31SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "|counterSet1|counterBox|counterBoxShape.instObjGroups" "Maya_Lambert31SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert31SG.message" "materialInfo31.shadingGroup";
 connectAttr "Maya_Lambert31.message" "materialInfo31.material";
 connectAttr "Maya_Lambert31.message" "materialInfo31.texture" -nextAvailable;
@@ -89894,8 +90052,6 @@ connectAttr "Maya_Lambert56.message" "materialInfo57.material";
 connectAttr "Maya_Lambert56.message" "materialInfo57.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert57.stack";
 connectAttr "Maya_Lambert57.outColor" "Maya_Lambert57SG.surfaceShader";
-connectAttr "pCubeShape2.instObjGroups" "Maya_Lambert57SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert57SG.message" "materialInfo58.shadingGroup";
 connectAttr "Maya_Lambert57.message" "materialInfo58.material";
 connectAttr "Maya_Lambert57.message" "materialInfo58.texture" -nextAvailable;
@@ -89983,26 +90139,6 @@ connectAttr "myWall:Maya_Lambert29.outColor" "myWall:Maya_Lambert29SG.surfaceSha
 connectAttr "myWall:materialXStackShape1.stack" "myWall:Maya_Lambert29.stack";
 connectAttr "materialXStackShape1.stack" "Maya_Lambert62.stack";
 connectAttr "Maya_Lambert62.outColor" "Maya_Lambert62SG.surfaceShader";
-connectAttr "myWall:pCubeShape43.instObjGroups" "Maya_Lambert62SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "pCubeShape43.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape59.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape60.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape61.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape62.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape63.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape64.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape65.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
-connectAttr "pCubeShape66.instObjGroups" "Maya_Lambert62SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert62SG.message" "materialInfo63.shadingGroup";
 connectAttr "Maya_Lambert62.message" "materialInfo63.material";
 connectAttr "Maya_Lambert62.message" "materialInfo63.texture" -nextAvailable;
@@ -90071,8 +90207,6 @@ connectAttr "Maya_Lambert65.message" "materialInfo66.material";
 connectAttr "Maya_Lambert65.message" "materialInfo66.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert66.stack";
 connectAttr "Maya_Lambert66.outColor" "Maya_Lambert66SG.surfaceShader";
-connectAttr "|counterSet2|counterTop|counterTopShape.instObjGroups" "Maya_Lambert66SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert66SG.message" "materialInfo67.shadingGroup";
 connectAttr "Maya_Lambert66.message" "materialInfo67.material";
 connectAttr "Maya_Lambert66.message" "materialInfo67.texture" -nextAvailable;
@@ -90093,8 +90227,6 @@ connectAttr "Maya_Lambert69.message" "materialInfo70.material";
 connectAttr "Maya_Lambert69.message" "materialInfo70.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert70.stack";
 connectAttr "Maya_Lambert70.outColor" "Maya_Lambert70SG.surfaceShader";
-connectAttr "myBookcase:bookcaseFrameShape.instObjGroups" "Maya_Lambert70SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert70SG.message" "materialInfo71.shadingGroup";
 connectAttr "Maya_Lambert70.message" "materialInfo71.material";
 connectAttr "Maya_Lambert70.message" "materialInfo71.texture" -nextAvailable;
@@ -90105,15 +90237,11 @@ connectAttr "Maya_Lambert71.message" "materialInfo72.material";
 connectAttr "Maya_Lambert71.message" "materialInfo72.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert72.stack";
 connectAttr "Maya_Lambert72.outColor" "Maya_Lambert72SG.surfaceShader";
-connectAttr "counterCheckered1:counterBoxShape.instObjGroups" "Maya_Lambert72SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert72SG.message" "materialInfo73.shadingGroup";
 connectAttr "Maya_Lambert72.message" "materialInfo73.material";
 connectAttr "Maya_Lambert72.message" "materialInfo73.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert73.stack";
 connectAttr "Maya_Lambert73.outColor" "Maya_Lambert73SG.surfaceShader";
-connectAttr "counterCheckered1:counterTopShape.instObjGroups" "Maya_Lambert73SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert73SG.message" "materialInfo74.shadingGroup";
 connectAttr "Maya_Lambert73.message" "materialInfo74.material";
 connectAttr "Maya_Lambert73.message" "materialInfo74.texture" -nextAvailable;
@@ -90124,22 +90252,16 @@ connectAttr "Maya_Lambert74.message" "materialInfo75.material";
 connectAttr "Maya_Lambert74.message" "materialInfo75.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert75.stack";
 connectAttr "Maya_Lambert75.outColor" "Maya_Lambert75SG.surfaceShader";
-connectAttr "|counterSet1|counterTop|counterTopShape.instObjGroups" "Maya_Lambert75SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert75SG.message" "materialInfo76.shadingGroup";
 connectAttr "Maya_Lambert75.message" "materialInfo76.material";
 connectAttr "Maya_Lambert75.message" "materialInfo76.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert76.stack";
 connectAttr "Maya_Lambert76.outColor" "Maya_Lambert76SG.surfaceShader";
-connectAttr "|counterSet2|counterBox|counterBoxShape.instObjGroups" "Maya_Lambert76SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert76SG.message" "materialInfo77.shadingGroup";
 connectAttr "Maya_Lambert76.message" "materialInfo77.material";
 connectAttr "Maya_Lambert76.message" "materialInfo77.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert77.stack";
 connectAttr "Maya_Lambert77.outColor" "Maya_Lambert77SG.surfaceShader";
-connectAttr "pCubeShape5.instObjGroups" "Maya_Lambert77SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert77SG.message" "materialInfo78.shadingGroup";
 connectAttr "Maya_Lambert77.message" "materialInfo78.material";
 connectAttr "Maya_Lambert77.message" "materialInfo78.texture" -nextAvailable;
@@ -90160,182 +90282,96 @@ connectAttr "Maya_Lambert80.message" "materialInfo81.material";
 connectAttr "Maya_Lambert80.message" "materialInfo81.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert81.stack";
 connectAttr "Maya_Lambert81.outColor" "Maya_Lambert81SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube13|pCubeShape13.instObjGroups" "Maya_Lambert81SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube13|pCubeShape13.instObjGroups" "Maya_Lambert81SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube13|pCubeShape13.instObjGroups" "Maya_Lambert81SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube13|pCubeShape13.instObjGroups" "Maya_Lambert81SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert81SG.message" "materialInfo82.shadingGroup";
 connectAttr "Maya_Lambert81.message" "materialInfo82.material";
 connectAttr "Maya_Lambert81.message" "materialInfo82.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert82.stack";
 connectAttr "Maya_Lambert82.outColor" "Maya_Lambert82SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube12|pCubeShape12.instObjGroups" "Maya_Lambert82SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube12|pCubeShape12.instObjGroups" "Maya_Lambert82SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube12|pCubeShape12.instObjGroups" "Maya_Lambert82SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube12|pCubeShape12.instObjGroups" "Maya_Lambert82SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert82SG.message" "materialInfo83.shadingGroup";
 connectAttr "Maya_Lambert82.message" "materialInfo83.material";
 connectAttr "Maya_Lambert82.message" "materialInfo83.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert83.stack";
 connectAttr "Maya_Lambert83.outColor" "Maya_Lambert83SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube7|pCubeShape7.instObjGroups" "Maya_Lambert83SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube7|pCubeShape7.instObjGroups" "Maya_Lambert83SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube7|pCubeShape7.instObjGroups" "Maya_Lambert83SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube7|pCubeShape7.instObjGroups" "Maya_Lambert83SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert83SG.message" "materialInfo84.shadingGroup";
 connectAttr "Maya_Lambert83.message" "materialInfo84.material";
 connectAttr "Maya_Lambert83.message" "materialInfo84.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert84.stack";
 connectAttr "Maya_Lambert84.outColor" "Maya_Lambert84SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube6|pCubeShape6.instObjGroups" "Maya_Lambert84SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube6|pCubeShape6.instObjGroups" "Maya_Lambert84SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube6|pCubeShape6.instObjGroups" "Maya_Lambert84SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube6|pCubeShape6.instObjGroups" "Maya_Lambert84SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert84SG.message" "materialInfo85.shadingGroup";
 connectAttr "Maya_Lambert84.message" "materialInfo85.material";
 connectAttr "Maya_Lambert84.message" "materialInfo85.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert85.stack";
 connectAttr "Maya_Lambert85.outColor" "Maya_Lambert85SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube10|pCubeShape10.instObjGroups" "Maya_Lambert85SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube10|pCubeShape10.instObjGroups" "Maya_Lambert85SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube10|pCubeShape10.instObjGroups" "Maya_Lambert85SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube10|pCubeShape10.instObjGroups" "Maya_Lambert85SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert85SG.message" "materialInfo86.shadingGroup";
 connectAttr "Maya_Lambert85.message" "materialInfo86.material";
 connectAttr "Maya_Lambert85.message" "materialInfo86.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert86.stack";
 connectAttr "Maya_Lambert86.outColor" "Maya_Lambert86SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube11|pCubeShape11.instObjGroups" "Maya_Lambert86SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube11|pCubeShape11.instObjGroups" "Maya_Lambert86SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube11|pCubeShape11.instObjGroups" "Maya_Lambert86SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube11|pCubeShape11.instObjGroups" "Maya_Lambert86SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert86SG.message" "materialInfo87.shadingGroup";
 connectAttr "Maya_Lambert86.message" "materialInfo87.material";
 connectAttr "Maya_Lambert86.message" "materialInfo87.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert87.stack";
 connectAttr "Maya_Lambert87.outColor" "Maya_Lambert87SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube9|pCubeShape9.instObjGroups" "Maya_Lambert87SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube9|pCubeShape9.instObjGroups" "Maya_Lambert87SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube9|pCubeShape9.instObjGroups" "Maya_Lambert87SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube9|pCubeShape9.instObjGroups" "Maya_Lambert87SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert87SG.message" "materialInfo88.shadingGroup";
 connectAttr "Maya_Lambert87.message" "materialInfo88.material";
 connectAttr "Maya_Lambert87.message" "materialInfo88.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert88.stack";
 connectAttr "Maya_Lambert88.outColor" "Maya_Lambert88SG.surfaceShader";
-connectAttr "|chairs|chairCheckeredFinished|pCube8|pCubeShape8.instObjGroups" "Maya_Lambert88SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished1|pCube8|pCubeShape8.instObjGroups" "Maya_Lambert88SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished2|pCube8|pCubeShape8.instObjGroups" "Maya_Lambert88SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|chairs|chairCheckeredFinished3|pCube8|pCubeShape8.instObjGroups" "Maya_Lambert88SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert88SG.message" "materialInfo89.shadingGroup";
 connectAttr "Maya_Lambert88.message" "materialInfo89.material";
 connectAttr "Maya_Lambert88.message" "materialInfo89.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert89.stack";
 connectAttr "Maya_Lambert89.outColor" "Maya_Lambert89SG.surfaceShader";
-connectAttr "pCylinderShape1.instObjGroups" "Maya_Lambert89SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert89SG.message" "materialInfo90.shadingGroup";
 connectAttr "Maya_Lambert89.message" "materialInfo90.material";
 connectAttr "Maya_Lambert89.message" "materialInfo90.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert90.stack";
 connectAttr "Maya_Lambert90.outColor" "Maya_Lambert90SG.surfaceShader";
-connectAttr "pTorusShape1.instObjGroups" "Maya_Lambert90SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert90SG.message" "materialInfo91.shadingGroup";
 connectAttr "Maya_Lambert90.message" "materialInfo91.material";
 connectAttr "Maya_Lambert90.message" "materialInfo91.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert91.stack";
 connectAttr "Maya_Lambert91.outColor" "Maya_Lambert91SG.surfaceShader";
-connectAttr "myMugCheckered:pCylinderShape1.instObjGroups" "Maya_Lambert91SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert91SG.message" "materialInfo92.shadingGroup";
 connectAttr "Maya_Lambert91.message" "materialInfo92.material";
 connectAttr "Maya_Lambert91.message" "materialInfo92.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert92.stack";
 connectAttr "Maya_Lambert92.outColor" "Maya_Lambert92SG.surfaceShader";
-connectAttr "myMugCheckered:pTorusShape1.instObjGroups" "Maya_Lambert92SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert92SG.message" "materialInfo93.shadingGroup";
 connectAttr "Maya_Lambert92.message" "materialInfo93.material";
 connectAttr "Maya_Lambert92.message" "materialInfo93.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert93.stack";
 connectAttr "Maya_Lambert93.outColor" "Maya_Lambert93SG.surfaceShader";
-connectAttr "groundShape.instObjGroups" "Maya_Lambert93SG.dagSetMembers" -nextAvailable
-		;
 connectAttr "Maya_Lambert93SG.message" "materialInfo94.shadingGroup";
 connectAttr "Maya_Lambert93.message" "materialInfo94.material";
 connectAttr "Maya_Lambert93.message" "materialInfo94.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert94.stack";
 connectAttr "Maya_Lambert94.outColor" "Maya_Lambert94SG.surfaceShader";
-connectAttr "myBookcase:bookcaseBackShape.instObjGroups" "Maya_Lambert94SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert94SG.message" "materialInfo95.shadingGroup";
 connectAttr "Maya_Lambert94.message" "materialInfo95.material";
 connectAttr "Maya_Lambert94.message" "materialInfo95.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert95.stack";
 connectAttr "Maya_Lambert95.outColor" "Maya_Lambert95SG.surfaceShader";
-connectAttr "myBookcase:pCubeShape36.instObjGroups" "Maya_Lambert95SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert95SG.message" "materialInfo96.shadingGroup";
 connectAttr "Maya_Lambert95.message" "materialInfo96.material";
 connectAttr "Maya_Lambert95.message" "materialInfo96.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert96.stack";
 connectAttr "Maya_Lambert96.outColor" "Maya_Lambert96SG.surfaceShader";
-connectAttr "myBookcase:pCubeShape37.instObjGroups" "Maya_Lambert96SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert96SG.message" "materialInfo97.shadingGroup";
 connectAttr "Maya_Lambert96.message" "materialInfo97.material";
 connectAttr "Maya_Lambert96.message" "materialInfo97.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert97.stack";
 connectAttr "Maya_Lambert97.outColor" "Maya_Lambert97SG.surfaceShader";
-connectAttr "myBookcase:pCubeShape45.instObjGroups" "Maya_Lambert97SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert97SG.message" "materialInfo98.shadingGroup";
 connectAttr "Maya_Lambert97.message" "materialInfo98.material";
 connectAttr "Maya_Lambert97.message" "materialInfo98.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert98.stack";
 connectAttr "Maya_Lambert98.outColor" "Maya_Lambert98SG.surfaceShader";
-connectAttr "myBookcase:pCubeShape49.instObjGroups" "Maya_Lambert98SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert98SG.message" "materialInfo99.shadingGroup";
 connectAttr "Maya_Lambert98.message" "materialInfo99.material";
 connectAttr "Maya_Lambert98.message" "materialInfo99.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert99.stack";
 connectAttr "Maya_Lambert99.outColor" "Maya_Lambert99SG.surfaceShader";
-connectAttr "myBookcase:pCubeShape48.instObjGroups" "Maya_Lambert99SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert99SG.message" "materialInfo100.shadingGroup";
 connectAttr "Maya_Lambert99.message" "materialInfo100.material";
 connectAttr "Maya_Lambert99.message" "materialInfo100.texture" -nextAvailable;
@@ -90351,461 +90387,668 @@ connectAttr "Maya_Lambert101.message" "materialInfo102.material";
 connectAttr "Maya_Lambert101.message" "materialInfo102.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert102.stack";
 connectAttr "Maya_Lambert102.outColor" "Maya_Lambert102SG.surfaceShader";
-connectAttr "|Bookshelf|booksBottomShelf|book14|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book25|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book26|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book27|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book28|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book29|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book30|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book31|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book32|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book33|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book34|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book35|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book36|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book37|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book38|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book39|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book40|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book41|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book42|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book43|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book44|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book45|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book46|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book47|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book48|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book14|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book25|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book26|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book27|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book28|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book29|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book30|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book31|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book32|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book33|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book34|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book35|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book36|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book37|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book38|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book39|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book40|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book41|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book42|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book43|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book44|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book45|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book46|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book47|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book48|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book14|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book25|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book26|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book27|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book28|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book29|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book30|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book31|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book32|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book33|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book34|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book35|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book36|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book37|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book38|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book39|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book40|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book41|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book42|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book43|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book44|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book45|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book46|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book47|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book48|bookFrame|bookFrameShape.instObjGroups" "Maya_Lambert102SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert102SG.message" "materialInfo103.shadingGroup";
 connectAttr "Maya_Lambert102.message" "materialInfo103.material";
 connectAttr "Maya_Lambert102.message" "materialInfo103.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert103.stack";
 connectAttr "Maya_Lambert103.outColor" "Maya_Lambert103SG.surfaceShader";
-connectAttr "|Bookshelf|booksBottomShelf|book14|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book25|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book26|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book27|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book28|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book29|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book30|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book31|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book32|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book33|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book34|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book35|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book36|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book37|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book38|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book39|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book40|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book41|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book42|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book43|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book44|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book45|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book46|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book47|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf|book48|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book14|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book25|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book26|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book27|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book28|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book29|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book30|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book31|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book32|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book33|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book34|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book35|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book36|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book37|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book38|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book39|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book40|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book41|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book42|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book43|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book44|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book45|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book46|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book47|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf1|book48|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book14|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book25|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book26|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book27|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book28|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book29|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book30|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book31|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book32|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book33|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book34|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book35|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book36|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book37|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book38|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book39|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book40|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book41|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book42|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book43|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book44|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book45|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book46|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book47|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
-connectAttr "|Bookshelf|booksBottomShelf2|book48|pages|pagesShape.instObjGroups" "Maya_Lambert103SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert103SG.message" "materialInfo104.shadingGroup";
 connectAttr "Maya_Lambert103.message" "materialInfo104.material";
 connectAttr "Maya_Lambert103.message" "materialInfo104.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert104.stack";
 connectAttr "Maya_Lambert104.outColor" "Maya_Lambert104SG.surfaceShader";
-connectAttr "myBookcase:pCubeShape47.instObjGroups" "Maya_Lambert104SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert104SG.message" "materialInfo105.shadingGroup";
 connectAttr "Maya_Lambert104.message" "materialInfo105.material";
 connectAttr "Maya_Lambert104.message" "materialInfo105.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert105.stack";
 connectAttr "Maya_Lambert105.outColor" "Maya_Lambert105SG.surfaceShader";
-connectAttr "teemoShroom:shroomCapShape.instObjGroups" "Maya_Lambert105SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert105SG.message" "materialInfo106.shadingGroup";
 connectAttr "Maya_Lambert105.message" "materialInfo106.material";
 connectAttr "Maya_Lambert105.message" "materialInfo106.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert106.stack";
 connectAttr "Maya_Lambert106.outColor" "Maya_Lambert106SG.surfaceShader";
-connectAttr "teemoShroom:sporeShape.instObjGroups" "Maya_Lambert106SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert106SG.message" "materialInfo107.shadingGroup";
 connectAttr "Maya_Lambert106.message" "materialInfo107.material";
 connectAttr "Maya_Lambert106.message" "materialInfo107.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert107.stack";
 connectAttr "Maya_Lambert107.outColor" "Maya_Lambert107SG.surfaceShader";
-connectAttr "teemoShroom:sporeShape2.instObjGroups" "Maya_Lambert107SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert107SG.message" "materialInfo108.shadingGroup";
 connectAttr "Maya_Lambert107.message" "materialInfo108.material";
 connectAttr "Maya_Lambert107.message" "materialInfo108.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert108.stack";
 connectAttr "Maya_Lambert108.outColor" "Maya_Lambert108SG.surfaceShader";
-connectAttr "teemoShroom:sporeShape6.instObjGroups" "Maya_Lambert108SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert108SG.message" "materialInfo109.shadingGroup";
 connectAttr "Maya_Lambert108.message" "materialInfo109.material";
 connectAttr "Maya_Lambert108.message" "materialInfo109.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert109.stack";
 connectAttr "Maya_Lambert109.outColor" "Maya_Lambert109SG.surfaceShader";
-connectAttr "teemoShroom:sporeShape5.instObjGroups" "Maya_Lambert109SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert109SG.message" "materialInfo110.shadingGroup";
 connectAttr "Maya_Lambert109.message" "materialInfo110.material";
 connectAttr "Maya_Lambert109.message" "materialInfo110.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert110.stack";
 connectAttr "Maya_Lambert110.outColor" "Maya_Lambert110SG.surfaceShader";
-connectAttr "teemoShroom:spore_Shape3.instObjGroups" "Maya_Lambert110SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert110SG.message" "materialInfo111.shadingGroup";
 connectAttr "Maya_Lambert110.message" "materialInfo111.material";
 connectAttr "Maya_Lambert110.message" "materialInfo111.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert111.stack";
 connectAttr "Maya_Lambert111.outColor" "Maya_Lambert111SG.surfaceShader";
-connectAttr "teemoShroom:sporeShape7.instObjGroups" "Maya_Lambert111SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert111SG.message" "materialInfo112.shadingGroup";
 connectAttr "Maya_Lambert111.message" "materialInfo112.material";
 connectAttr "Maya_Lambert111.message" "materialInfo112.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert112.stack";
 connectAttr "Maya_Lambert112.outColor" "Maya_Lambert112SG.surfaceShader";
-connectAttr "teemoShroom:sporeShape4.instObjGroups" "Maya_Lambert112SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert112SG.message" "materialInfo113.shadingGroup";
 connectAttr "Maya_Lambert112.message" "materialInfo113.material";
 connectAttr "Maya_Lambert112.message" "materialInfo113.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert113.stack";
 connectAttr "Maya_Lambert113.outColor" "Maya_Lambert113SG.surfaceShader";
-connectAttr "teemoShroom:shroomStemShape.instObjGroups" "Maya_Lambert113SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert113SG.message" "materialInfo114.shadingGroup";
 connectAttr "Maya_Lambert113.message" "materialInfo114.material";
 connectAttr "Maya_Lambert113.message" "materialInfo114.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert114.stack";
 connectAttr "Maya_Lambert114.outColor" "Maya_Lambert114SG.surfaceShader";
-connectAttr "myMicrowave:pCube45Shape.instObjGroups" "Maya_Lambert114SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert114SG.message" "materialInfo115.shadingGroup";
 connectAttr "Maya_Lambert114.message" "materialInfo115.material";
 connectAttr "Maya_Lambert114.message" "materialInfo115.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert115.stack";
 connectAttr "Maya_Lambert115.outColor" "Maya_Lambert115SG.surfaceShader";
-connectAttr "mySofa:couchBackShape.instObjGroups" "Maya_Lambert115SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert115SG.message" "materialInfo116.shadingGroup";
 connectAttr "Maya_Lambert115.message" "materialInfo116.material";
 connectAttr "Maya_Lambert115.message" "materialInfo116.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert116.stack";
 connectAttr "Maya_Lambert116.outColor" "Maya_Lambert116SG.surfaceShader";
-connectAttr "mySofa:couchCushionShape.instObjGroups" "Maya_Lambert116SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert116SG.message" "materialInfo117.shadingGroup";
 connectAttr "Maya_Lambert116.message" "materialInfo117.material";
 connectAttr "Maya_Lambert116.message" "materialInfo117.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert117.stack";
 connectAttr "Maya_Lambert117.outColor" "Maya_Lambert117SG.surfaceShader";
-connectAttr "mySofa:couchCushion1Shape.instObjGroups" "Maya_Lambert117SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert117SG.message" "materialInfo118.shadingGroup";
 connectAttr "Maya_Lambert117.message" "materialInfo118.material";
 connectAttr "Maya_Lambert117.message" "materialInfo118.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert118.stack";
 connectAttr "Maya_Lambert118.outColor" "Maya_Lambert118SG.surfaceShader";
-connectAttr "mySofa:couchArmShape.instObjGroups" "Maya_Lambert118SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert118SG.message" "materialInfo119.shadingGroup";
 connectAttr "Maya_Lambert118.message" "materialInfo119.material";
 connectAttr "Maya_Lambert118.message" "materialInfo119.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert119.stack";
 connectAttr "Maya_Lambert119.outColor" "Maya_Lambert119SG.surfaceShader";
-connectAttr "mySofa:couchArm1Shape.instObjGroups" "Maya_Lambert119SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert119SG.message" "materialInfo120.shadingGroup";
 connectAttr "Maya_Lambert119.message" "materialInfo120.material";
 connectAttr "Maya_Lambert119.message" "materialInfo120.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert120.stack";
 connectAttr "Maya_Lambert120.outColor" "Maya_Lambert120SG.surfaceShader";
-connectAttr "mySofa:couchFrameShape.instObjGroups" "Maya_Lambert120SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert120SG.message" "materialInfo121.shadingGroup";
 connectAttr "Maya_Lambert120.message" "materialInfo121.material";
 connectAttr "Maya_Lambert120.message" "materialInfo121.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert121.stack";
 connectAttr "Maya_Lambert121.outColor" "Maya_Lambert121SG.surfaceShader";
-connectAttr "mySofa:couchFootShape2.instObjGroups" "Maya_Lambert121SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert121SG.message" "materialInfo122.shadingGroup";
 connectAttr "Maya_Lambert121.message" "materialInfo122.material";
 connectAttr "Maya_Lambert121.message" "materialInfo122.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert122.stack";
 connectAttr "Maya_Lambert122.outColor" "Maya_Lambert122SG.surfaceShader";
-connectAttr "mySofa:couchfootShape3.instObjGroups" "Maya_Lambert122SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert122SG.message" "materialInfo123.shadingGroup";
 connectAttr "Maya_Lambert122.message" "materialInfo123.material";
 connectAttr "Maya_Lambert122.message" "materialInfo123.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert123.stack";
 connectAttr "Maya_Lambert123.outColor" "Maya_Lambert123SG.surfaceShader";
-connectAttr "mySofa:couchfootShape4.instObjGroups" "Maya_Lambert123SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert123SG.message" "materialInfo124.shadingGroup";
 connectAttr "Maya_Lambert123.message" "materialInfo124.material";
 connectAttr "Maya_Lambert123.message" "materialInfo124.texture" -nextAvailable;
 connectAttr "materialXStackShape1.stack" "Maya_Lambert124.stack";
 connectAttr "Maya_Lambert124.outColor" "Maya_Lambert124SG.surfaceShader";
-connectAttr "mySofa:couchFootShape.instObjGroups" "Maya_Lambert124SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "Maya_Lambert124SG.message" "materialInfo125.shadingGroup";
 connectAttr "Maya_Lambert124.message" "materialInfo125.material";
 connectAttr "Maya_Lambert124.message" "materialInfo125.texture" -nextAvailable;
+connectAttr "Scene1_Texture_1.outColor" "lambert2.color";
+connectAttr "lambert2.outColor" "lambert2SG.surfaceShader";
+connectAttr "lambert2SG.message" "materialInfo126.shadingGroup";
+connectAttr "lambert2.message" "materialInfo126.material";
+connectAttr "Scene1_Texture_1.message" "materialInfo126.texture" -nextAvailable;
+connectAttr ":defaultColorMgtGlobals.cmEnabled" "Scene1_Texture_1.colorManagementEnabled"
+		;
+connectAttr ":defaultColorMgtGlobals.configFileEnabled" "Scene1_Texture_1.colorManagementConfigFileEnabled"
+		;
+connectAttr ":defaultColorMgtGlobals.configFilePath" "Scene1_Texture_1.colorManagementConfigFilePath"
+		;
+connectAttr ":defaultColorMgtGlobals.workingSpaceName" "Scene1_Texture_1.workingSpace"
+		;
+connectAttr "place2dTexture1.coverage" "Scene1_Texture_1.coverage";
+connectAttr "place2dTexture1.translateFrame" "Scene1_Texture_1.translateFrame";
+connectAttr "place2dTexture1.rotateFrame" "Scene1_Texture_1.rotateFrame";
+connectAttr "place2dTexture1.mirrorU" "Scene1_Texture_1.mirrorU";
+connectAttr "place2dTexture1.mirrorV" "Scene1_Texture_1.mirrorV";
+connectAttr "place2dTexture1.stagger" "Scene1_Texture_1.stagger";
+connectAttr "place2dTexture1.wrapU" "Scene1_Texture_1.wrapU";
+connectAttr "place2dTexture1.wrapV" "Scene1_Texture_1.wrapV";
+connectAttr "place2dTexture1.repeatUV" "Scene1_Texture_1.repeatUV";
+connectAttr "place2dTexture1.offset" "Scene1_Texture_1.offset";
+connectAttr "place2dTexture1.rotateUV" "Scene1_Texture_1.rotateUV";
+connectAttr "place2dTexture1.noiseUV" "Scene1_Texture_1.noiseUV";
+connectAttr "place2dTexture1.vertexUvOne" "Scene1_Texture_1.vertexUvOne";
+connectAttr "place2dTexture1.vertexUvTwo" "Scene1_Texture_1.vertexUvTwo";
+connectAttr "place2dTexture1.vertexUvThree" "Scene1_Texture_1.vertexUvThree";
+connectAttr "place2dTexture1.vertexCameraOne" "Scene1_Texture_1.vertexCameraOne"
+		;
+connectAttr "place2dTexture1.outUV" "Scene1_Texture_1.uvCoord";
+connectAttr "place2dTexture1.outUvFilterSize" "Scene1_Texture_1.uvFilterSize";
+connectAttr ":defaultColorMgtGlobals.cmEnabled" "scene1_atlas_1.colorManagementEnabled"
+		;
+connectAttr ":defaultColorMgtGlobals.configFileEnabled" "scene1_atlas_1.colorManagementConfigFileEnabled"
+		;
+connectAttr ":defaultColorMgtGlobals.configFilePath" "scene1_atlas_1.colorManagementConfigFilePath"
+		;
+connectAttr ":defaultColorMgtGlobals.workingSpaceName" "scene1_atlas_1.workingSpace"
+		;
+connectAttr "place2dTexture2.coverage" "scene1_atlas_1.coverage";
+connectAttr "place2dTexture2.translateFrame" "scene1_atlas_1.translateFrame";
+connectAttr "place2dTexture2.rotateFrame" "scene1_atlas_1.rotateFrame";
+connectAttr "place2dTexture2.mirrorU" "scene1_atlas_1.mirrorU";
+connectAttr "place2dTexture2.mirrorV" "scene1_atlas_1.mirrorV";
+connectAttr "place2dTexture2.stagger" "scene1_atlas_1.stagger";
+connectAttr "place2dTexture2.wrapU" "scene1_atlas_1.wrapU";
+connectAttr "place2dTexture2.wrapV" "scene1_atlas_1.wrapV";
+connectAttr "place2dTexture2.repeatUV" "scene1_atlas_1.repeatUV";
+connectAttr "place2dTexture2.offset" "scene1_atlas_1.offset";
+connectAttr "place2dTexture2.rotateUV" "scene1_atlas_1.rotateUV";
+connectAttr "place2dTexture2.noiseUV" "scene1_atlas_1.noiseUV";
+connectAttr "place2dTexture2.vertexUvOne" "scene1_atlas_1.vertexUvOne";
+connectAttr "place2dTexture2.vertexUvTwo" "scene1_atlas_1.vertexUvTwo";
+connectAttr "place2dTexture2.vertexUvThree" "scene1_atlas_1.vertexUvThree";
+connectAttr "place2dTexture2.vertexCameraOne" "scene1_atlas_1.vertexCameraOne";
+connectAttr "place2dTexture2.outUV" "scene1_atlas_1.uvCoord";
+connectAttr "place2dTexture2.outUvFilterSize" "scene1_atlas_1.uvFilterSize";
+connectAttr "scene1_atlas_1.outColor" "lambert3.color";
+connectAttr "lambert3.outColor" "lambert3SG.surfaceShader";
+connectAttr "teemoShroom:sporeShape6.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book38|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book47|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book30|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape4.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "myBookcase:pCubeShape47.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|chairs|chairCheckeredFinished3|pCube13|pCubeShape13.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book47|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube13|pCubeShape13.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape65.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book29|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book32|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|counterSet2|counterBox|counterBoxShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book34|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book27|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube10|pCubeShape10.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube10|pCubeShape10.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book48|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|counterSet1|counterTop|counterTopShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished3|pCube9|pCubeShape9.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book30|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book46|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "teemoShroom:shroomCapShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book46|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCylinderShape1.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book28|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book43|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book31|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book25|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube13|pCubeShape13.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape3.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|counterSet2|counterTop|counterTopShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchFootShape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "myBookcase:pCubeShape49.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book38|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book31|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube12|pCubeShape12.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube9|pCubeShape9.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book28|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchfootShape3.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "myWall:pCubeShape43.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "myBookcase:bookcaseBackShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished3|pCube7|pCubeShape7.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "counterCheckered1:counterBoxShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube8|pCubeShape8.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchCushion1Shape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube8|pCubeShape8.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book27|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book31|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book36|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished3|pCube6|pCubeShape6.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "groundShape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "pTorusShape1.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "pCubeShape5.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|chairs|chairCheckeredFinished3|pCube11|pCubeShape11.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book41|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book37|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book46|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book37|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myBookcase:pCubeShape45.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book30|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book44|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube12|pCubeShape12.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book48|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book35|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book26|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "teemoShroom:sporeShape5.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book47|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book33|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished3|pCube12|pCubeShape12.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchBackShape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book29|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book46|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book40|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube7|pCubeShape7.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape59.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book29|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube7|pCubeShape7.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube11|pCubeShape11.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book14|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book39|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "teemoShroom:spore_Shape3.instObjGroups" "lambert3SG.dagSetMembers" 
+		-nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book38|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchFrameShape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book36|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape64.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book37|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book41|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book44|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book42|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book43|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book34|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book39|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book33|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myBookcase:pCubeShape48.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "teemoShroom:sporeShape7.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "mySofa:couchfootShape4.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book37|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book33|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape66.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book31|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book32|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book29|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myMugCheckered:pTorusShape1.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book35|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book38|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape2.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book42|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book39|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book31|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book25|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book47|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book44|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book26|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book27|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube6|pCubeShape6.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book42|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book45|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube9|pCubeShape9.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book41|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book48|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube7|pCubeShape7.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book44|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "counterCheckered1:counterTopShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube8|pCubeShape8.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "teemoShroom:sporeShape4.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book48|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book28|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book34|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book47|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchArm1Shape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book28|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myMugCheckered:pCylinderShape1.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape43.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "myMicrowave:pCube45Shape.instObjGroups" "lambert3SG.dagSetMembers" 
+		-nextAvailable;
+connectAttr "|counterSet1|counterBox|counterBoxShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube12|pCubeShape12.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube11|pCubeShape11.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape1.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "teemoShroom:sporeShape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book35|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube10|pCubeShape10.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book26|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book43|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myBookcase:pCubeShape36.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book28|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube9|pCubeShape9.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book25|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book31|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished1|pCube11|pCubeShape11.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book32|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book43|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myBookcase:pCubeShape37.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book42|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book34|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "teemoShroom:shroomStemShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book43|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book14|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book27|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book45|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished|pCube6|pCubeShape6.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape62.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book25|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book44|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book43|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book32|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchFootShape2.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf1|book45|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book41|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book46|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book32|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book45|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book33|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book47|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book30|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book45|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book37|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book27|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape61.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book27|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book40|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book36|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book42|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book44|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book26|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book36|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book46|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book25|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book37|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book33|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book39|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book45|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book35|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book42|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book40|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book40|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book41|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book41|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book48|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape60.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book29|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book48|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book14|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book38|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book38|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book25|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book14|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube13|pCubeShape13.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished3|pCube8|pCubeShape8.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book40|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished3|pCube10|pCubeShape10.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "myBookcase:bookcaseFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book33|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book34|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|chairs|chairCheckeredFinished2|pCube6|pCubeShape6.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "pCubeShape63.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book36|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchCushionShape.instObjGroups" "lambert3SG.dagSetMembers" 
+		-nextAvailable;
+connectAttr "teemoShroom:sporeShape2.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf|book35|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book14|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book29|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book28|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book35|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book40|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book30|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book26|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book39|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book36|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf2|book30|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book14|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book34|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "mySofa:couchArmShape.instObjGroups" "lambert3SG.dagSetMembers" -nextAvailable
+		;
+connectAttr "|Bookshelf|booksBottomShelf2|book39|pages|pagesShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf|book26|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "|Bookshelf|booksBottomShelf1|book32|bookFrame|bookFrameShape.instObjGroups" "lambert3SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "lambert3SG.message" "materialInfo127.shadingGroup";
+connectAttr "lambert3.message" "materialInfo127.material";
+connectAttr "scene1_atlas_1.message" "materialInfo127.texture" -nextAvailable;
+connectAttr "place2dTexture2.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[0].dependNode"
+		;
+connectAttr "scene1_atlas_1.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[1].dependNode"
+		;
+connectAttr "lambert3.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[2].dependNode"
+		;
+connectAttr "lambert3SG.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[3].dependNode"
+		;
+connectAttr "defaultPolygonShader1.outColor" "texturedFacets1.surfaceShader";
+connectAttr "texturedFacets1.message" "materialInfo128.shadingGroup";
+connectAttr "defaultPolygonShader1.message" "materialInfo128.material";
+connectAttr "defaultPolygonTexture.message" "materialInfo128.texture" -nextAvailable
+		;
+connectAttr "defaultPolygonTexture.outColor" "defaultPolygonShader1.color";
 connectAttr "Maya_Lambert1SG.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "Maya_Lambert2SG.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "Maya_Lambert3SG.partition" ":renderPartition.sets" -nextAvailable;
@@ -91026,6 +91269,9 @@ connectAttr "Maya_Lambert123SG.partition" ":renderPartition.sets" -nextAvailable
 		;
 connectAttr "Maya_Lambert124SG.partition" ":renderPartition.sets" -nextAvailable
 		;
+connectAttr "lambert2SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "lambert3SG.partition" ":renderPartition.sets" -nextAvailable;
+connectAttr "texturedFacets1.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "Maya_Lambert1.message" ":defaultShaderList1.shaders" -nextAvailable
 		;
 connectAttr "Maya_Lambert2.message" ":defaultShaderList1.shaders" -nextAvailable
@@ -91312,6 +91558,10 @@ connectAttr "Maya_Lambert123.message" ":defaultShaderList1.shaders" -nextAvailab
 		;
 connectAttr "Maya_Lambert124.message" ":defaultShaderList1.shaders" -nextAvailable
 		;
+connectAttr "lambert2.message" ":defaultShaderList1.shaders" -nextAvailable;
+connectAttr "lambert3.message" ":defaultShaderList1.shaders" -nextAvailable;
+connectAttr "defaultPolygonShader1.message" ":defaultShaderList1.shaders" -nextAvailable
+		;
 connectAttr "tableCheckered:place2dTexture2.message" ":defaultRenderUtilityList1.utilities"
 		 -nextAvailable;
 connectAttr "counterCheckered:tableCheckered:place2dTexture2.message" ":defaultRenderUtilityList1.utilities"
@@ -91320,6 +91570,10 @@ connectAttr "counterCheckered1:tableCheckered:place2dTexture2.message" ":default
 		 -nextAvailable;
 connectAttr "chairCheckered:tableCheckered:place2dTexture2.message" ":defaultRenderUtilityList1.utilities"
 		 -nextAvailable;
+connectAttr "place2dTexture1.message" ":defaultRenderUtilityList1.utilities" -nextAvailable
+		;
+connectAttr "place2dTexture2.message" ":defaultRenderUtilityList1.utilities" -nextAvailable
+		;
 connectAttr "defaultRenderLayer.message" ":defaultRenderingList1.rendering" -nextAvailable
 		;
 connectAttr "pointLightShape1.lightData" ":lightList1.lights" -nextAvailable;
@@ -91343,6 +91597,10 @@ connectAttr "myMicrowave:defaultPolygonTexture.message" ":defaultTextureList1.te
 		 -nextAvailable;
 connectAttr "myBook:defaultPolygonTexture.message" ":defaultTextureList1.textures"
 		 -nextAvailable;
+connectAttr "Scene1_Texture_1.message" ":defaultTextureList1.textures" -nextAvailable
+		;
+connectAttr "scene1_atlas_1.message" ":defaultTextureList1.textures" -nextAvailable
+		;
 connectAttr "groupId3.message" ":initialShadingGroup.groupNodes" -nextAvailable;
 connectAttr "groupId5.message" ":initialShadingGroup.groupNodes" -nextAvailable;
 connectAttr "pointLight1.instObjGroups" ":defaultLightSet.dagSetMembers" -nextAvailable
