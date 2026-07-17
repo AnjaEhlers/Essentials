@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Scene2.ma
-//Last modified: Fri, Jul 17, 2026 11:33:05 AM
+//Last modified: Fri, Jul 17, 2026 02:08:29 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202505131231-aff5f20443";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "CD8E661C-401C-D7EA-E92E-0DADEE3D4A19";
+fileInfo "UUID" "829DEAD2-4BA6-5CB9-6195-E1B1D76C72EB";
 createNode transform -shared -name "persp";
 	rename -uuid "A5879836-41DA-203D-0D04-39AC3585B57C";
 	setAttr ".visibility" no;
-	setAttr ".translate" -type "double3" 26.649204193026478 19.678509019546823 27.372005699953505 ;
-	setAttr ".rotate" -type "double3" -11.738352729470744 390.99999999975398 9.2763532826383259e-16 ;
+	setAttr ".translate" -type "double3" 73.272312983126213 19.171696698733701 8.0140842723823695 ;
+	setAttr ".rotate" -type "double3" -6.3383527295359761 438.19999999966421 1.944141862843239e-15 ;
 createNode camera -shared -name "perspShape" -parent "persp";
 	rename -uuid "341A096A-434E-62E1-BC87-7AA28686C05E";
 	setAttr -keyable off ".visibility" no;
 	setAttr ".focalLength" 34.999999999999993;
-	setAttr ".centerOfInterest" 39.648752849357386;
+	setAttr ".centerOfInterest" 68.473402050408353;
 	setAttr ".imageName" -type "string" "persp";
 	setAttr ".depthName" -type "string" "persp_depth";
 	setAttr ".maskName" -type "string" "persp_mask";
@@ -151,6 +151,7 @@ createNode mesh -name "pCubeShape2" -parent "pCube2";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "f[4]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 1 "f[1]";
+	setAttr ".uvPivot" -type "double2" 0.5 0.5 ;
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 14 ".uvSet[0].uvSetPoints[0:13]" -type "float2" 0.375
 		 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1
@@ -315,7 +316,7 @@ createNode mesh -name "asset1phone:pCubeShape1" -parent "asset1phone:pCube1";
 	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "f[15]";
 	setAttr ".componentTags[5].componentTagName" -type "string" "top";
 	setAttr ".componentTags[5].componentTagContents" -type "componentList" 5 "f[5]" "f[7]" "f[9]" "f[12]" "f[21:22]";
-	setAttr ".uvPivot" -type "double2" 0.48950222134590149 0.37147754430770874 ;
+	setAttr ".uvPivot" -type "double2" 0.11190501600503922 0.2411748543381691 ;
 	setAttr -size 22 ".uvSet";
 	setAttr ".uvSet[0].uvSetName" -type "string" "map1";
 	setAttr -size 78 ".uvSet[0].uvSetPoints[0:77]" -type "float2" 0.43749374
@@ -416,26 +417,26 @@ createNode mesh -name "asset1phone:pCubeShape1" -parent "asset1phone:pCube1";
 	setAttr -size 8 ".uvSet[20].uvSetPoints[0:7]" -type "float2" 0 -5.9604645e-08
 		 1 -5.9604645e-08 1 -5.9604645e-08 0 -5.9604645e-08 1 1 0 1 0 1 1 1;
 	setAttr ".uvSet[21].uvSetName" -type "string" "uvSetasset14";
-	setAttr -size 76 ".uvSet[21].uvSetPoints[0:75]" -type "float2" 0.49052808
-		 0.33501357 0.49189556 0.31461859 0.49859577 0.29951137 0.49722809 0.31990665 0.49213892
-		 0.31699508 0.4907645 0.3374967 0.49737608 0.32258922 0.4987492 0.30209076 0.44422668
-		 0.38202035 0.44316059 0.38141394 0.45149851 0.44484413 0.45210814 0.44575679 0.44056344
-		 0.37825036 0.44223112 0.38112307 0.43870825 0.37737668 0.43779993 0.37522364 0.43569613
-		 0.37321222 0.4336071 0.37133813 0.4316445 0.36968613 0.42734951 0.36480927 0.42520046
-		 0.36243641 0.42541629 0.35818672 0.4280057 0.34165841 0.43010628 0.34021562 0.43754214
-		 0.37941945 0.44948179 0.44541585 0.44458997 0.4445821 0.42529571 0.33946896 0.42640609
-		 0.34142393 0.42307922 0.35784388 0.42258626 0.36212027 0.42478955 0.36442697 0.42996371
-		 0.36910999 0.43194443 0.37075198 0.43405479 0.3726027 0.4361341 0.37456429 0.42854089
-		 0.33900183 0.45417207 0.3184638 0.45694155 0.31709766 0.42693162 0.33878833 0.44955653
-		 0.32086194 0.45138711 0.32024312 0.54553509 0.32275498 0.54594839 0.32193673 0.55281639
-		 0.33757526 0.45607048 0.31770706 0.4526931 0.31955171 0.5473572 0.31667095 0.55641818
-		 0.33039713 0.55551291 0.33340389 0.45012164 0.44696701 0.44699222 0.44670606 0.4623065
-		 0.36722159 0.48808062 0.29600096 0.49173272 0.29739267 0.46651429 0.36705208 0.45470428
-		 0.34779757 0.45956463 0.29598808 0.4673591 0.29797649 0.46292731 0.34819353 0.47062242
-		 0.34666747 0.49362922 0.3167147 0.49729499 0.31830233 0.47485295 0.34650087 0.49805945
-		 0.31636304 0.54255217 0.35783607 0.49787176 0.3237915 0.46314135 0.3674379 0.46939144
-		 0.34638095 0.42393154 0.35792243 0.42567044 0.36444819 0.55377662 0.33634573 0.54685837
-		 0.31949222 0.54455847 0.35082012 0.49236614 0.31630599 0.48885688 0.29644513;
+	setAttr -size 76 ".uvSet[21].uvSetPoints[0:75]" -type "float2" 0.11293086
+		 0.20471089 0.11429834 0.1843159 0.12099856 0.16920869 0.11963087 0.18960397 0.11454171
+		 0.1866924 0.11316729 0.20719402 0.11977887 0.19228654 0.12115198 0.17178808 0.066629469
+		 0.25171766 0.065563381 0.25111124 0.073901296 0.31454143 0.074510932 0.3154541 0.062966228
+		 0.24794768 0.064633906 0.25082037 0.061111033 0.24707399 0.060202718 0.24492095 0.058098912
+		 0.24290954 0.056009889 0.24103545 0.054047287 0.23938344 0.049752295 0.23450659 0.04760325
+		 0.23213373 0.047819078 0.22788404 0.050408483 0.21135573 0.052509069 0.20991294 0.059944928
+		 0.24911676 0.071884573 0.31511316 0.06699276 0.31427941 0.047698498 0.20916627 0.048808873
+		 0.21112125 0.04548201 0.22754119 0.044989049 0.23181759 0.047192335 0.23412429 0.052366495
+		 0.23880731 0.054347217 0.24044929 0.056457579 0.24230002 0.058536887 0.24426161 0.050943673
+		 0.20869915 0.076574862 0.18816112 0.079344332 0.18679498 0.049334407 0.20848565 0.071959317
+		 0.19055925 0.073789895 0.18994044 0.16793789 0.1924523 0.16835119 0.19163404 0.17521919
+		 0.20727257 0.07847327 0.18740438 0.075095892 0.18924902 0.16976 0.18636827 0.17882098
+		 0.20009445 0.17791571 0.2031012 0.072524428 0.31666431 0.069395006 0.31640336 0.084709287
+		 0.23691891 0.11048341 0.16569827 0.1141355 0.16708998 0.088917077 0.2367494 0.077107072
+		 0.21749489 0.081967413 0.1656854 0.089761883 0.16767381 0.085330099 0.21789084 0.093025208
+		 0.21636479 0.116032 0.18641202 0.11969778 0.18799965 0.097255737 0.21619819 0.12046224
+		 0.18606035 0.16495498 0.22753339 0.12027454 0.19348882 0.085544139 0.23713522 0.091794223
+		 0.21607827 0.046334326 0.22761975 0.048073232 0.23414551 0.17617942 0.20604305 0.16926117
+		 0.18918954 0.16696127 0.22051744 0.11476892 0.18600331 0.11125967 0.16614245;
 	setAttr ".currentUVSet" -type "string" "uvSetasset14";
 	setAttr ".displayColorChannel" -type "string" "Ambient+Diffuse";
 	setAttr ".collisionOffsetVelocityMultiplier[0]"  0 1 1;
@@ -720,20 +721,20 @@ createNode mesh -name "asset1phone:pCubeShape1" -parent "asset1phone:pCube1";
 	setAttr ".pinData[21]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -shared -name "lightLinker1";
-	rename -uuid "A7770FCB-4889-C9CE-3E23-B3B07F911288";
-	setAttr -size 3 ".link";
-	setAttr -size 3 ".shadowLink";
+	rename -uuid "7B53AE72-452A-8BD2-FA78-BAB8E348890A";
+	setAttr -size 4 ".link";
+	setAttr -size 4 ".shadowLink";
 createNode shapeEditorManager -name "shapeEditorManager";
-	rename -uuid "1B3AD74F-406A-5C8E-CB3D-858B2E7423C0";
+	rename -uuid "DCFC106B-4F78-59C3-AE04-FE8E6A349B36";
 createNode poseInterpolatorManager -name "poseInterpolatorManager";
-	rename -uuid "BD66474F-4020-6CD0-265F-66B699968E95";
+	rename -uuid "2CFA169D-49DC-9DE0-C3BC-369C804D127C";
 createNode displayLayerManager -name "layerManager";
-	rename -uuid "1809661B-48A8-EE08-477C-D583EB711422";
+	rename -uuid "5DB309DE-42E0-7C3B-D81C-CA9B90FD1C04";
 createNode displayLayer -name "defaultLayer";
 	rename -uuid "969CF75F-4FC0-53FB-5223-9F8F8D257B73";
 	setAttr ".ufeMembers" -type "stringArray" 0  ;
 createNode renderLayerManager -name "renderLayerManager";
-	rename -uuid "4D60BA4D-4501-1C1C-FC5E-5884FA4BE7E1";
+	rename -uuid "FE86AFE0-4029-755B-B6BE-57AFC24F5FEF";
 createNode renderLayer -name "defaultRenderLayer";
 	rename -uuid "064BC2F0-4089-EAEA-0BF4-EFBF09EA9E1F";
 	setAttr ".global" yes;
@@ -802,11 +803,38 @@ createNode file -name "asset1phone:scene2_mat_1";
 	setAttr ".colorSpace" -type "string" "sRGB";
 createNode place2dTexture -name "asset1phone:place2dTexture1";
 	rename -uuid "69C44354-4C07-6E53-E418-98BD65183A46";
+createNode file -name "scene2_mat_1";
+	rename -uuid "1E5F7F56-449E-B724-20E2-7EB2E5434697";
+	setAttr ".fileTextureName" -type "string" "C:/Users/Anja Ehlers-Pehrson/OneDrive/Pictures/scene2_mat.png";
+	setAttr ".colorSpace" -type "string" "sRGB";
+createNode place2dTexture -name "place2dTexture1";
+	rename -uuid "70CC36B5-48D1-1913-A69D-438A4A3292F4";
+createNode lambert -name "scene2_mat_1Material";
+	rename -uuid "9D76A7FC-4D88-F8E4-F3A5-F1BDBA8DF914";
+createNode shadingEngine -name "scene2_mat_1SG";
+	rename -uuid "6A4BF015-4C4F-1E18-8ABD-6FA34897B404";
+	setAttr ".isHistoricallyInteresting" 0;
+	setAttr ".renderableOnlySet" yes;
+createNode materialInfo -name "materialInfo1";
+	rename -uuid "BEB2458E-4D71-E1BE-771F-428613DB0AB4";
 createNode nodeGraphEditorInfo -name "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uuid "3284DA06-4909-A4F6-28EF-32B446574590";
+	rename -uuid "B10F3C36-461C-70B0-B8F0-C38B5771153F";
 	setAttr ".tabGraphInfo[0].tabName" -type "string" "Untitled_1";
-	setAttr ".tabGraphInfo[0].viewRectLow" -type "double2" -569.04759643569912 -317.85713022663532 ;
-	setAttr ".tabGraphInfo[0].viewRectHigh" -type "double2" 569.04759643569912 317.85713022663532 ;
+	setAttr ".tabGraphInfo[0].viewRectLow" -type "double2" -1672.2480091961534 -725.49308255527228 ;
+	setAttr ".tabGraphInfo[0].viewRectHigh" -type "double2" 603.94237654664266 545.93543835126854 ;
+	setAttr -size 4 ".tabGraphInfo[0].nodeInfo";
+	setAttr ".tabGraphInfo[0].nodeInfo[0].positionX" 300;
+	setAttr ".tabGraphInfo[0].nodeInfo[0].positionY" 22.857143402099609;
+	setAttr ".tabGraphInfo[0].nodeInfo[0].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].positionX" -7.1428570747375488;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].positionY" 45.714286804199219;
+	setAttr ".tabGraphInfo[0].nodeInfo[1].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].positionX" -621.4285888671875;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].positionY" 22.857143402099609;
+	setAttr ".tabGraphInfo[0].nodeInfo[2].nodeVisualState" 1923;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].positionX" -314.28570556640625;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].positionY" 45.714286804199219;
+	setAttr ".tabGraphInfo[0].nodeInfo[3].nodeVisualState" 1923;
 select -noExpand :time1;
 	setAttr ".outTime" 1;
 	setAttr ".unwarpedTime" 1;
@@ -818,15 +846,17 @@ select -noExpand :hardwareRenderingGlobals;
 	setAttr ".floatingPointRTEnable" yes;
 	setAttr ".floatingPointRTFormat" 1;
 select -noExpand :renderPartition;
-	setAttr -size 3 ".sets";
+	setAttr -size 4 ".sets";
 select -noExpand :renderGlobalsList1;
 select -noExpand :defaultShaderList1;
-	setAttr -size 7 ".shaders";
+	setAttr -size 8 ".shaders";
 select -noExpand :postProcessList1;
 	setAttr -size 2 ".postProcesses";
 select -noExpand :defaultRenderUtilityList1;
+	setAttr -size 2 ".utilities";
 select -noExpand :defaultRenderingList1;
 select -noExpand :defaultTextureList1;
+	setAttr -size 2 ".textures";
 select -noExpand :standardSurface1;
 	setAttr ".baseColor" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".specularRoughness" 0.5;
@@ -857,14 +887,14 @@ select -noExpand :defaultColorMgtGlobals;
 select -noExpand :hardwareRenderGlobals;
 	setAttr ".colorTextureResolution" 256;
 	setAttr ".bumpTextureResolution" 512;
-select -noExpand :ikSystem;
-	setAttr -size 4 ".ikSolver";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "asset1phone:scene2_mat_1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "scene2_mat_1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "asset1phone:scene2_mat_1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "scene2_mat_1SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.displayLayerId[0]" "defaultLayer.identification";
 connectAttr "renderLayerManager.renderLayerId[0]" "defaultRenderLayer.identification"
 		;
@@ -876,8 +906,6 @@ connectAttr "asset1phone:scene2_mat_1.message" "asset1phone:materialInfo2.textur
 		 -nextAvailable;
 connectAttr "asset1phone:scene2_mat_1Material.outColor" "asset1phone:scene2_mat_1SG.surfaceShader"
 		;
-connectAttr "asset1phone:pCubeShape1.instObjGroups" "asset1phone:scene2_mat_1SG.dagSetMembers"
-		 -nextAvailable;
 connectAttr "asset1phone:scene2_mat_1.outColor" "asset1phone:scene2_mat_1Material.color"
 		;
 connectAttr ":defaultColorMgtGlobals.cmEnabled" "asset1phone:scene2_mat_1.colorManagementEnabled"
@@ -924,15 +952,63 @@ connectAttr "asset1phone:place2dTexture1.outUV" "asset1phone:scene2_mat_1.uvCoor
 		;
 connectAttr "asset1phone:place2dTexture1.outUvFilterSize" "asset1phone:scene2_mat_1.uvFilterSize"
 		;
+connectAttr ":defaultColorMgtGlobals.cmEnabled" "scene2_mat_1.colorManagementEnabled"
+		;
+connectAttr ":defaultColorMgtGlobals.configFileEnabled" "scene2_mat_1.colorManagementConfigFileEnabled"
+		;
+connectAttr ":defaultColorMgtGlobals.configFilePath" "scene2_mat_1.colorManagementConfigFilePath"
+		;
+connectAttr ":defaultColorMgtGlobals.workingSpaceName" "scene2_mat_1.workingSpace"
+		;
+connectAttr "place2dTexture1.coverage" "scene2_mat_1.coverage";
+connectAttr "place2dTexture1.translateFrame" "scene2_mat_1.translateFrame";
+connectAttr "place2dTexture1.rotateFrame" "scene2_mat_1.rotateFrame";
+connectAttr "place2dTexture1.mirrorU" "scene2_mat_1.mirrorU";
+connectAttr "place2dTexture1.mirrorV" "scene2_mat_1.mirrorV";
+connectAttr "place2dTexture1.stagger" "scene2_mat_1.stagger";
+connectAttr "place2dTexture1.wrapU" "scene2_mat_1.wrapU";
+connectAttr "place2dTexture1.wrapV" "scene2_mat_1.wrapV";
+connectAttr "place2dTexture1.repeatUV" "scene2_mat_1.repeatUV";
+connectAttr "place2dTexture1.offset" "scene2_mat_1.offset";
+connectAttr "place2dTexture1.rotateUV" "scene2_mat_1.rotateUV";
+connectAttr "place2dTexture1.noiseUV" "scene2_mat_1.noiseUV";
+connectAttr "place2dTexture1.vertexUvOne" "scene2_mat_1.vertexUvOne";
+connectAttr "place2dTexture1.vertexUvTwo" "scene2_mat_1.vertexUvTwo";
+connectAttr "place2dTexture1.vertexUvThree" "scene2_mat_1.vertexUvThree";
+connectAttr "place2dTexture1.vertexCameraOne" "scene2_mat_1.vertexCameraOne";
+connectAttr "place2dTexture1.outUV" "scene2_mat_1.uvCoord";
+connectAttr "place2dTexture1.outUvFilterSize" "scene2_mat_1.uvFilterSize";
+connectAttr "scene2_mat_1.outColor" "scene2_mat_1Material.color";
+connectAttr "scene2_mat_1Material.outColor" "scene2_mat_1SG.surfaceShader";
+connectAttr "asset1phone:pCubeShape1.instObjGroups" "scene2_mat_1SG.dagSetMembers"
+		 -nextAvailable;
+connectAttr "scene2_mat_1SG.message" "materialInfo1.shadingGroup";
+connectAttr "scene2_mat_1Material.message" "materialInfo1.material";
+connectAttr "scene2_mat_1.message" "materialInfo1.texture" -nextAvailable;
+connectAttr "scene2_mat_1SG.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[0].dependNode"
+		;
+connectAttr "scene2_mat_1Material.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[1].dependNode"
+		;
+connectAttr "place2dTexture1.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[2].dependNode"
+		;
+connectAttr "scene2_mat_1.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[3].dependNode"
+		;
 connectAttr "asset1phone:scene2_mat_1SG.partition" ":renderPartition.sets" -nextAvailable
 		;
+connectAttr "scene2_mat_1SG.partition" ":renderPartition.sets" -nextAvailable;
 connectAttr "asset1phone:scene2_mat_1Material.message" ":defaultShaderList1.shaders"
 		 -nextAvailable;
+connectAttr "scene2_mat_1Material.message" ":defaultShaderList1.shaders" -nextAvailable
+		;
 connectAttr "asset1phone:place2dTexture1.message" ":defaultRenderUtilityList1.utilities"
 		 -nextAvailable;
+connectAttr "place2dTexture1.message" ":defaultRenderUtilityList1.utilities" -nextAvailable
+		;
 connectAttr "defaultRenderLayer.message" ":defaultRenderingList1.rendering" -nextAvailable
 		;
 connectAttr "asset1phone:scene2_mat_1.message" ":defaultTextureList1.textures" -nextAvailable
+		;
+connectAttr "scene2_mat_1.message" ":defaultTextureList1.textures" -nextAvailable
 		;
 connectAttr "pCubeShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" -nextAvailable
 		;
