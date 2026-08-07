@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Scene2.ma
-//Last modified: Thu, Aug 06, 2026 12:08:41 AM
+//Last modified: Thu, Aug 06, 2026 12:09:09 AM
 //Codeset: 1252
 file -rdi 1 -ns "asset3" -rfn "asset2RN" -op "v=1;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/asset2.ma";
 file -rdi 1 -ns "asset1" -rfn "asset1RN" -op "v=1;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/asset1.ma";
@@ -30,12 +30,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202505131231-aff5f20443";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "86AD4476-48EE-6DA9-8E7B-FE91F09E25D7";
+fileInfo "UUID" "A96FD489-46F3-A5C1-8BBF-62A90ED2085F";
 createNode transform -shared -name "persp";
 	rename -uuid "A5879836-41DA-203D-0D04-39AC3585B57C";
 	setAttr ".visibility" no;
-	setAttr ".translate" -type "double3" 5.4601434890139631 18.733709359560375 36.968703491334537 ;
-	setAttr ".rotate" -type "double3" -8.7383527430147723 726.99999999974762 0 ;
+	setAttr ".translate" -type "double3" -0.73996187059704965 16.397230315443249 37.590075658897248 ;
+	setAttr ".rotate" -type "double3" -5.7383527430152181 718.99999999973829 1.1804637541719109e-16 ;
 createNode camera -shared -name "perspShape" -parent "persp";
 	rename -uuid "341A096A-434E-62E1-BC87-7AA28686C05E";
 	setAttr -keyable off ".visibility" no;
@@ -1065,7 +1065,7 @@ createNode reference -name "asset6RN";
 	setAttr ".proxyTag" -type "string" "";
 lockNode -l 1 ;
 createNode nodeGraphEditorInfo -name "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uuid "886458DA-4A26-B698-1B7A-BD8DF57250F3";
+	rename -uuid "1A0A0D70-4261-2BB8-2BFE-67A9B8319540";
 	setAttr ".tabGraphInfo[0].tabName" -type "string" "Untitled_1";
 	setAttr ".tabGraphInfo[0].viewRectLow" -type "double2" -711.11359440714011 -1527.3808916882888 ;
 	setAttr ".tabGraphInfo[0].viewRectHigh" -type "double2" 1809.923074553898 28.571427436102116 ;
