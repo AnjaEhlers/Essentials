@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Scene2.ma
-//Last modified: Fri, Aug 07, 2026 10:33:47 PM
+//Last modified: Fri, Aug 07, 2026 11:09:48 PM
 //Codeset: 1252
 file -rdi 1 -ns "asset3" -rfn "asset2RN" -op "v=1;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/asset2.ma";
 file -rdi 1 -ns "asset1" -rfn "asset1RN" -op "v=1;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/asset1.ma";
@@ -27,23 +27,24 @@ requires -nodeType "materialxStack" -nodeType "MaterialXSurfaceShader" -dataType
 		 "LookdevXMaya" "1.8.0";
 requires "stereoCamera" "10.0";
 requires "mtoa" "5.5.2";
+requires "stereoCamera" "10.0";
 currentUnit -linear centimeter -angle degree -time film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202505131231-aff5f20443";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "6DFA959D-425A-5E02-9C4A-0DA16FBB56D6";
+fileInfo "UUID" "EEDF1EE0-42AD-1C93-5DA4-BBB1668B6DFF";
 createNode transform -shared -name "persp";
 	rename -uuid "A5879836-41DA-203D-0D04-39AC3585B57C";
 	setAttr ".visibility" no;
-	setAttr ".translate" -type "double3" -23.184952393585824 18.772718147316553 25.753927886469473 ;
-	setAttr ".rotate" -type "double3" -12.338352661470211 2847.399999999735 0 ;
+	setAttr ".translate" -type "double3" -49.598550546351696 36.366168231032631 70.661549638908809 ;
+	setAttr ".rotate" -type "double3" -15.938352659780833 2848.6000000001022 -9.3156572860481809e-16 ;
 createNode camera -shared -name "perspShape" -parent "persp";
 	rename -uuid "341A096A-434E-62E1-BC87-7AA28686C05E";
 	setAttr -keyable off ".visibility" no;
 	setAttr ".focalLength" 34.999999999999993;
-	setAttr ".centerOfInterest" 41.642694390947149;
+	setAttr ".centerOfInterest" 96.473269674919237;
 	setAttr ".imageName" -type "string" "persp";
 	setAttr ".depthName" -type "string" "persp_depth";
 	setAttr ".maskName" -type "string" "persp_mask";
@@ -236,7 +237,7 @@ createNode mesh -name "pCubeShape2" -parent "pCube2";
 		13 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode fosterParent -name "asset7RNfosterParent1";
-	rename -uuid "06F5B5E5-4BEF-9FD3-1ED2-898E3A9830A2";
+	rename -uuid "43FD3D86-4E6E-55EE-666A-26B5D942A786";
 createNode mesh -name "polySurfaceShape2" -parent "asset7RNfosterParent1";
 	rename -uuid "B16FAD46-428E-AA38-5979-C09580C6D205";
 	setAttr -keyable off ".visibility";
@@ -656,20 +657,20 @@ createNode mesh -name "polySurfaceShape2" -parent "asset7RNfosterParent1";
 	setAttr ".pinData[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".holeFaceData" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -shared -name "lightLinker1";
-	rename -uuid "6CAC7BA3-4EDD-C70C-6A33-CA9B8BDE5875";
+	rename -uuid "A8C8FE63-4258-70BB-5CDD-49A63289A912";
 	setAttr -size 16 ".link";
 	setAttr -size 16 ".shadowLink";
 createNode shapeEditorManager -name "shapeEditorManager";
-	rename -uuid "192C90EA-4595-3AB6-2D53-A5931767685A";
+	rename -uuid "04199853-4221-7CD2-964D-6D96C6AEFE0A";
 createNode poseInterpolatorManager -name "poseInterpolatorManager";
-	rename -uuid "D4A90483-4A7C-DB73-41B0-65AD9A102845";
+	rename -uuid "67C80C91-437E-098B-345D-069F3B07DB22";
 createNode displayLayerManager -name "layerManager";
-	rename -uuid "F185075F-48E2-0792-DFCE-25BDBC181736";
+	rename -uuid "53BF2ABE-4CEE-D65C-3B20-4682E63705E9";
 createNode displayLayer -name "defaultLayer";
 	rename -uuid "969CF75F-4FC0-53FB-5223-9F8F8D257B73";
 	setAttr ".ufeMembers" -type "stringArray" 0  ;
 createNode renderLayerManager -name "renderLayerManager";
-	rename -uuid "7D48CDE9-42A2-F3EB-6F42-69968BCAB195";
+	rename -uuid "51AADC1C-4172-92B7-2ECB-FBBE5E3CEE41";
 createNode renderLayer -name "defaultRenderLayer";
 	rename -uuid "064BC2F0-4089-EAEA-0BF4-EFBF09EA9E1F";
 	setAttr ".global" yes;
@@ -679,15 +680,15 @@ createNode script -name "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 854\n            -height 513\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
-		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 853\n            -height 513\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
-		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 854\n            -height 513\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
-		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
+		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
 		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1714\n            -height 1073\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n"
@@ -874,21 +875,21 @@ createNode reference -name "asset2RN";
 		
 		2 "|asset3:desk|asset3:desktop|asset3:desktopShape" "pt[0:7]" " -s 8 -type \"float3\" 11.424564 7.34177679999999988 -0.35291481000000002 11.424564 7.34177679999999988 -0.35291481000000002 10.476931 7.34177679999999988 -11.47972 10.476931 7.34177679999999988 -11.47972 -13.1534 7.34177679999999988 -10.590933 -13.1534 7.34177679999999988 -10.590933 -12.205767 7.34177679999999988 0.53587245999999999 -12.205767 7.34177679999999988 0.53587245999999999"
 		
-		3 "|asset3:desk|asset3:desktop|asset3:desktopShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		3 "|asset3:desk|asset3:pCube17|asset3:pCubeShape17.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
 		3 "|asset3:desk|asset3:backside|asset3:backsideShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
-		3 "|asset3:desk|asset3:pCube11|asset3:pCubeShape11.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		3 "|asset3:desk|asset3:desktop|asset3:desktopShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
-		3 "|asset3:desk|asset3:pCube13|asset3:pCubeShape13.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		3 "|asset3:desk|asset3:pCube15|asset3:pCubeShape15.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|asset3:desk|asset3:pCube11|asset3:pCubeShape11.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
 		3 "|asset3:desk|asset3:pCube16|asset3:pCubeShape16.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
+		3 "|asset3:desk|asset3:pCube13|asset3:pCubeShape13.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
 		3 "|asset3:desk|asset3:pCube18|asset3:pCubeShape18.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|asset3:desk|asset3:pCube17|asset3:pCubeShape17.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|asset3:desk|asset3:pCube15|asset3:pCubeShape15.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
 		5 3 "asset2RN" "|asset3:desk|asset3:pCube17|asset3:pCubeShape17.instObjGroups" 
 		"asset2RN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -1850,7 +1851,7 @@ createNode reference -name "asset7RN";
 	setAttr ".edits" -type "dataReferenceEdits" 
 		"asset7RN"
 		"asset7RN" 0
-		"asset7RN" 345
+		"asset7RN" 103
 		0 "|asset7RNfosterParent1|polySurfaceShape2" "|asset7_pCylinder2" "-s -r "
 		
 		2 "|asset7_pCube1" "translate" " -type \"double3\" 0 0 0"
@@ -1918,493 +1919,9 @@ createNode reference -name "asset7RN";
 		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		
 		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts" " -s 244"
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[0]" " -type \"float3\" 0 0 0"
+		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pt[0:165]" " -type \"float3\" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
 		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[1]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[2]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[3]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[4]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[5]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[6]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[7]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[8]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[9]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[10]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[11]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[12]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[13]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[14]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[15]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[16]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[17]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[18]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[19]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[20]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[21]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[22]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[23]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[24]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[25]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[26]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[27]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[28]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[29]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[30]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[31]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[32]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[33]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[34]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[35]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[36]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[37]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[38]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[39]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[40]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[41]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[42]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[43]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[44]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[45]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[46]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[47]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[48]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[49]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[50]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[51]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[52]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[53]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[54]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[55]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[56]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[57]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[58]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[59]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[60]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[61]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[62]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[63]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[64]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[65]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[66]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[67]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[68]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[69]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[70]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[71]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[72]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[73]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[74]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[75]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[76]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[77]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[78]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[79]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[80]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[81]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[82]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[83]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[84]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[85]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[86]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[87]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[88]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[89]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[90]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[91]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[92]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[93]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[94]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[95]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[96]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[97]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[98]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[99]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[100]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[101]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[102]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[103]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[104]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[105]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[106]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[107]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[108]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[109]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[110]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[111]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[112]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[113]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[114]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[115]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[116]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[117]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[118]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[119]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[120]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[121]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[122]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[123]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[124]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[125]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[126]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[127]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[128]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[129]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[130]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[131]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[132]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[133]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[134]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[135]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[136]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[137]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[138]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[139]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[140]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[141]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[142]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[143]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[144]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[145]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[146]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[147]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[148]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[149]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[150]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[151]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[152]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[153]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[154]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[155]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[156]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[157]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[158]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[159]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[160]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[161]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[162]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[163]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[164]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[165]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[166]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[167]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[168]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[169]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[170]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[171]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[172]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[173]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[174]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[175]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[176]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[177]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[178]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[179]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[180]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[181]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[182]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[183]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[184]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[185]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[186]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[187]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[188]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[189]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[190]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[191]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[192]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[193]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[194]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[195]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[196]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[197]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[198]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[199]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[200]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[201]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[202]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[203]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[204]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[205]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[206]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[207]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[208]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[209]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[210]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[211]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[212]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[213]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[214]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[215]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[216]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[217]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[218]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[219]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[220]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[221]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[222]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[223]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[224]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[225]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[226]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[227]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[228]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[229]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[230]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[231]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[232]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[233]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[234]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[235]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[236]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[237]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[238]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[239]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[240]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[241]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[242]" " -type \"float3\" 0 0 0"
-		
-		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pnts[243]" " -type \"float3\" 0 0 0"
+		2 "|asset7_pCylinder2|asset7_pCylinderShape2" "pt[166:243]" " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
 		
 		2 "|asset7_pCube2" "translate" " -type \"double3\" 0 0 0"
 		2 "|asset7_pCube2" "rotate" " -type \"double3\" 0 0 0"
@@ -3319,6 +2836,35 @@ createNode nodeGraphEditorInfo -name "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tabGraphInfo[0].nodeInfo[7].positionX" -168.91505432128906;
 	setAttr ".tabGraphInfo[0].nodeInfo[7].positionY" -270.9813232421875;
 	setAttr ".tabGraphInfo[0].nodeInfo[7].nodeVisualState" 1923;
+createNode componentTagBase -name "componentTagBase2";
+	rename -uuid "19AFB51E-4754-B082-07C2-D1980F481E38";
+	setAttr -size 10 ".componentTags";
+	setAttr ".componentTags[0].componentTagName" -type "string" "bottom";
+	setAttr ".componentTags[0].componentTagContents" -type "componentList" 1 "f[32:191]";
+	setAttr ".componentTags[1].componentTagName" -type "string" "bottomRing";
+	setAttr ".componentTags[1].componentTagContents" -type "componentList" 1 "e[0:15]";
+	setAttr ".componentTags[2].componentTagName" -type "string" "cylBottomCap";
+	setAttr ".componentTags[2].componentTagContents" -type "componentList" 1 "vtx[0:15]";
+	setAttr ".componentTags[3].componentTagName" -type "string" "cylBottomRing";
+	setAttr ".componentTags[3].componentTagContents" -type "componentList" 1 "vtx[0:15]";
+	setAttr ".componentTags[4].componentTagName" -type "string" "cylSides";
+	setAttr ".componentTags[4].componentTagContents" -type "componentList" 1 "vtx[0:31]";
+	setAttr ".componentTags[5].componentTagName" -type "string" "cylTopCap";
+	setAttr ".componentTags[5].componentTagContents" -type "componentList" 1 "vtx[16:32]";
+	setAttr ".componentTags[6].componentTagName" -type "string" "cylTopRing";
+	setAttr ".componentTags[6].componentTagContents" -type "componentList" 1 "vtx[16:31]";
+	setAttr ".componentTags[7].componentTagName" -type "string" "sides";
+	setAttr ".componentTags[7].componentTagContents" -type "componentList" 1 "f[0:15]";
+	setAttr ".componentTags[8].componentTagName" -type "string" "top";
+	setAttr ".componentTags[8].componentTagContents" -type "componentList" 1 "f[16:31]";
+	setAttr ".componentTags[9].componentTagName" -type "string" "topRing";
+	setAttr ".componentTags[9].componentTagContents" -type "componentList" 1 "e[16:31]";
+createNode deleteComponent -name "deleteComponent47";
+	rename -uuid "48B9B8C7-4809-F47A-10A3-C99692EA37E1";
+	setAttr ".deleteComponents" -type "componentList" 3 "f[73]" "f[78:152]" "f[184]";
+createNode deleteComponent -name "deleteComponent48";
+	rename -uuid "2A6707DD-4027-8D81-99C1-259928B901DC";
+	setAttr ".deleteComponents" -type "componentList" 1 "f[73:76]";
 select -noExpand :time1;
 	setAttr ".outTime" 1;
 	setAttr ".unwarpedTime" 1;
@@ -3348,7 +2894,7 @@ select -noExpand :standardSurface1;
 select -noExpand :openPBR_shader1;
 	setAttr ".specularRoughness" 0.5;
 select -noExpand :initialShadingGroup;
-	setAttr -size 17 ".dagSetMembers";
+	setAttr -size 16 ".dagSetMembers";
 	setAttr ".renderableOnlySet" yes;
 	setAttr -size 2 ".groupNodes";
 select -noExpand :initialParticleSE;
@@ -3391,9 +2937,9 @@ connectAttr "asset2RN.placeHolderList[8]" "scene2_mat_1SG.dagSetMembers" -nextAv
 		;
 connectAttr "polyCopyUV1.output" "asset1RN.placeHolderList[3]";
 connectAttr "polyTweakUV2.uvTweak[0]" "asset7RN.placeHolderList[1]";
-connectAttr "deleteComponent46.outputGeometry" "asset7RN.placeHolderList[2]";
-connectAttr "asset7RN.placeHolderList[3]" "polyExtrudeFace1.manipMatrix";
-connectAttr "asset7RN.placeHolderList[4]" "polyExtrudeFace2.manipMatrix";
+connectAttr "deleteComponent48.outputGeometry" "asset7RN.placeHolderList[2]";
+connectAttr "asset7RN.placeHolderList[3]" "polyExtrudeFace2.manipMatrix";
+connectAttr "asset7RN.placeHolderList[4]" "polyExtrudeFace1.manipMatrix";
 connectAttr "asset7RN.placeHolderList[5]" "polyExtrudeFace3.manipMatrix";
 connectAttr "asset7RN.placeHolderList[6]" "polyExtrudeFace4.manipMatrix";
 connectAttr "asset7RN.placeHolderList[7]" "polyExtrudeFace5.manipMatrix";
@@ -3726,6 +3272,12 @@ connectAttr "file1.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphIn
 connectAttr "lambert2.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[6].dependNode"
 		;
 connectAttr "place2dTexture4.message" "hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[7].dependNode"
+		;
+connectAttr "deleteComponent46.outputGeometry" "componentTagBase2.inputGeometry"
+		;
+connectAttr "componentTagBase2.outputGeometry" "deleteComponent47.inputGeometry"
+		;
+connectAttr "deleteComponent47.outputGeometry" "deleteComponent48.inputGeometry"
 		;
 connectAttr "asset1phone:scene2_mat_1SG.partition" ":renderPartition.sets" -nextAvailable
 		;
